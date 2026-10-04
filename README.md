@@ -1,33 +1,33 @@
-# Nome da solução (a definir)
+# Bulbe Acompanha
 
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
 > Cliente: **Bulbe Energia** · Turma **A** · Squad **09**
 
-Descrição da solução: a definir pelo squad.
+Aplicação web que acompanha o cliente novo após a adesão, mostra o status da conexão e confirma os canais de contato para reduzir falhas de comunicação até a primeira fatura.
 
 ---
 
 ## 1. Problema
 
-[Qual parte da dor da Bulbe o squad escolheu atacar e por quê. Use pelo menos um dado da apresentação da Bulbe como evidência.]
+O cliente novo pode ficar sem sinal de acompanhamento depois da adesão e antes da primeira fatura. Essa espera gera insegurança e aumenta o risco de a Bulbe não conseguir entregar uma comunicação importante.
 
-- **Dor escolhida:** [ex.: clientes que não recebem ou não entendem a 1ª fatura]
-- **Evidência:** [ex.: cerca de 20% de falha na entrega de mensagens de WhatsApp]
-- **Indicador que a solução pretende mover:** [pagamento da 1ª fatura | churn do 1º mês | entregabilidade das comunicações]
+- **Dor escolhida:** silêncio no onboarding e falta de confirmação dos canais de contato após a adesão.
+- **Evidência:** clientes chegaram a ficar até 20 dias sem nenhuma comunicação, e cerca de 20% das mensagens de WhatsApp falham.
+- **Indicador que a solução pretende mover:** entregabilidade das comunicações.
 
 ## 2. Persona e jornada
 
-- **Persona:** [nome fictício, idade, contexto em uma linha]
+- **Persona:** cliente pessoa física no primeiro mês de Bulbe; a persona detalhada será definida pelo squad em `docs/jornada.md`.
 - **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
 
 ## 3. Solução
 
-[Descrição curta da solução e das principais telas.]
+A solução apresenta ao cliente o andamento do primeiro mês, confirma os canais de contato e sinaliza os próximos passos até a chegada da primeira fatura. O escopo será detalhado a partir do mapa de jornada e das histórias de usuário.
 
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
-| [Início] | [ ] | [HU01] |
-| [ ] | [ ] | [ ] |
+| Acompanhamento do primeiro mês | Mostra o status da conexão, os próximos passos e os canais de contato confirmados. | A definir |
+| [Próxima tela] | [A definir] | [A definir] |
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
