@@ -74,10 +74,10 @@ Descrição da solução: a definir pelo squad.
 | Integrante | GitHub | Papel principal |
 | --- | --- | --- |
 | Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | A definir |
-| alicearoeira | [@alicearoeira](https://github.com/alicearoeira) | A definir |
+| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | A definir |
 | Bruna Sanches | [@brunanssanches](https://github.com/brunanssanches) | A definir |
-| manupfinheiro | [@manupfinheiro](https://github.com/manupfinheiro) | A definir |
-| mariaclarag23 | [@mariaclarag23](https://github.com/mariaclarag23) | A definir |
+| Manuella Ferreira | [@manupfinheiro](https://github.com/manupfinheiro) | A definir |
+| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | A definir |
 | Julia | Usuário do GitHub pendente | A definir |
 
 ## 9. Entregas
