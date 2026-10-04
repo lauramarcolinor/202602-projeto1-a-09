@@ -75,7 +75,7 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 | --- | --- | --- |
 | Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Coordenação do produto e evidências |
 | Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa, persona e jornada |
-| Bruna Sanches | [@brunanschess](https://github.com/brunanschess) | UX/UI e wireframes |
+| Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | UX/UI e wireframes |
 | Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Frontend: HTML e CSS |
 | Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | JavaScript, dados e integração |
 | Julia | Usuário do GitHub pendente | Qualidade, GitHub e documentação |
