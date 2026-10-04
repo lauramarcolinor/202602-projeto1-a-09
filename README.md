@@ -73,12 +73,12 @@ Descrição da solução: a definir pelo squad.
 
 | Integrante | GitHub | Papel principal |
 | --- | --- | --- |
-| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | A definir |
-| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | A definir |
-| Bruna Sanches | [@brunanssanches](https://github.com/brunanssanches) | A definir |
-| Manuella Ferreira | [@manupfinheiro](https://github.com/manupfinheiro) | A definir |
-| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | A definir |
-| Julia | Usuário do GitHub pendente | A definir |
+| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Coordenação do produto e evidências |
+| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa, persona e jornada |
+| Bruna Sanches | [@brunanssanches](https://github.com/brunanssanches) | UX/UI e wireframes |
+| Manuella Ferreira | [@manupfinheiro](https://github.com/manupfinheiro) | Frontend: HTML e CSS |
+| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | JavaScript, dados e integração |
+| Julia | Usuário do GitHub pendente | Qualidade, GitHub e documentação |
 
 ## 9. Entregas
 
