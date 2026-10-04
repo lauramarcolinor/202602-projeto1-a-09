@@ -17,7 +17,7 @@ O cliente novo pode ficar sem sinal de acompanhamento depois da adesão e antes 
 
 ## 2. Persona e jornada
 
-- **Persona:** cliente pessoa física no primeiro mês de Bulbe; a persona detalhada será definida pelo squad em `docs/jornada.md`.
+- **Persona:** cliente pessoa física no primeiro mês de Bulbe; a persona detalhada está documentada em `docs/jornada.md`.
 - **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
 
 ## 3. Solução
@@ -26,8 +26,8 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
-| Acompanhamento do primeiro mês | Mostra o status da conexão, os próximos passos e os canais de contato confirmados. | A definir |
-| [Próxima tela] | [A definir] | [A definir] |
+| Acompanhamento do primeiro mês | Mostra o status da conexão, os próximos passos e os canais de contato confirmados. | Oportunidades #7–#9; histórias serão detalhadas na Aula 20. |
+| Explicação da primeira fatura e pagamento | Explica o valor, o vencimento e as formas de pagamento, com destaque para PIX e lembretes. | Oportunidades #8 e #9; histórias serão detalhadas na Aula 20. |
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
@@ -75,8 +75,8 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 | --- | --- | --- |
 | Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Coordenação do produto e evidências |
 | Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa, persona e jornada |
-| Bruna Sanches | [@brunanssanches](https://github.com/brunanssanches) | UX/UI e wireframes |
-| Manuella Ferreira | [@manupfinheiro](https://github.com/manupfinheiro) | Frontend: HTML e CSS |
+| Bruna Sanches | [@brunanschess](https://github.com/brunanschess) | UX/UI e wireframes |
+| Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Frontend: HTML e CSS |
 | Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | JavaScript, dados e integração |
 | Julia | Usuário do GitHub pendente | Qualidade, GitHub e documentação |
 
@@ -84,7 +84,7 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 
 | Marco | Aula | Status |
 | --- | --- | --- |
-| Mapa de jornada | 19 | [ ] |
+| Mapa de jornada | 19 | [x] |
 | Histórias de usuário | 20 | [ ] |
 | Wireframes | 21–23 | [ ] |
 | Sprint Review I | 24 | [ ] |
