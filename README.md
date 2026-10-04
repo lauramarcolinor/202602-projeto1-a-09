@@ -1,9 +1,9 @@
-# [Nome da solução]
+# Nome da solução (a definir)
 
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **[A/B]** · Squad **[XX]**
+> Cliente: **Bulbe Energia** · Turma **A** · Squad **09**
 
-[Uma frase que resume a solução: o que ela faz e para quem. Exemplo: "Painel que acompanha o cliente novo da Bulbe da adesão ao pagamento da primeira fatura."]
+Descrição da solução: a definir pelo squad.
 
 ---
 
@@ -42,7 +42,7 @@
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/[usuario]/202602-projeto1-[turma]-[squad].git
+   git clone https://github.com/lauramarcolinor/202602-projeto1-a-09.git
    ```
 2. Abra a pasta no VS Code.
 3. Instale a extensão **Live Server** (o VS Code vai sugerir automaticamente).
@@ -67,15 +67,18 @@
 
 ## 7. Quadro do projeto
 
-- **GitHub Projects:** [link para o quadro do squad]
+- **GitHub Projects:** link a ser incluído após a criação do quadro.
 
 ## 8. Equipe
 
 | Integrante | GitHub | Papel principal |
 | --- | --- | --- |
-| [Nome] | [@usuario](https://github.com/usuario) | [ex.: Scrum Master, front-end, dados, documentação] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
-| [Nome] | [@usuario](https://github.com/usuario) | [ ] |
+| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | A definir |
+| alicearoeira | [@alicearoeira](https://github.com/alicearoeira) | A definir |
+| Bruna Sanches | [@brunanssanches](https://github.com/brunanssanches) | A definir |
+| manupfinheiro | [@manupfinheiro](https://github.com/manupfinheiro) | A definir |
+| mariaclarag23 | [@mariaclarag23](https://github.com/mariaclarag23) | A definir |
+| Julia | Usuário do GitHub pendente | A definir |
 
 ## 9. Entregas
 
