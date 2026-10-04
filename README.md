@@ -67,7 +67,7 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 
 ## 7. Quadro do projeto
 
-- **GitHub Projects:** link a ser incluído após a criação do quadro.
+- **GitHub Projects:** [Quadro do projeto](https://github.com/users/lauramarcolinor/projects/2/views/1)
 
 ## 8. Equipe
 
