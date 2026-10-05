@@ -78,7 +78,7 @@ A solução apresenta ao cliente o andamento do primeiro mês, confirma os canai
 | Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | UX/UI e wireframes |
 | Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Frontend: HTML e CSS |
 | Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | JavaScript, dados e integração |
-| Julia | Usuário do GitHub pendente | Qualidade, GitHub e documentação |
+| Julia | [@juliamelodumont](https://github.com/juliamelodumont) | Qualidade, GitHub e documentação |
 
 ## 9. Entregas
 
