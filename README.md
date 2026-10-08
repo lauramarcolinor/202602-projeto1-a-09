@@ -3,31 +3,35 @@
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
 > Cliente: **Bulbe Energia** · Turma **A** · Squad **09**
 
-Aplicação web que acompanha o cliente novo após a adesão, mostra o status da conexão e confirma os canais de contato para reduzir falhas de comunicação até a primeira fatura.
+Aplicação web que ajuda o cliente novo a entender e pagar a primeira fatura da Bulbe, mostrando o valor, a composição, o vencimento, as formas de pagamento e a confirmação da transação.
 
 ---
 
 ## 1. Problema
 
-O cliente novo pode ficar sem sinal de acompanhamento depois da adesão e antes da primeira fatura. Essa espera gera insegurança e aumenta o risco de a Bulbe não conseguir entregar uma comunicação importante.
+O cliente novo pode ter dificuldade para entender e pagar a primeira fatura da Bulbe. A falta de clareza sobre o valor, a composição, o vencimento e as formas de pagamento pode gerar atrasos.
 
-- **Dor escolhida:** silêncio no onboarding e falta de confirmação dos canais de contato após a adesão.
-- **Evidência:** clientes chegaram a ficar até 20 dias sem nenhuma comunicação, e cerca de 20% das mensagens de WhatsApp falham.
-- **Indicador que a solução pretende mover:** entregabilidade das comunicações.
+- **Dor escolhida:** dificuldade para compreender e pagar a primeira fatura.
+- **Evidência:** a inadimplência da primeira fatura chega a 32,4%.
+- **Indicador que a solução pretende mover:** pagamento da primeira fatura.
 
 ## 2. Persona e jornada
 
-- **Persona:** cliente pessoa física no primeiro mês de Bulbe; a persona detalhada está documentada em `docs/jornada.md`.
+- **Persona:** cliente pessoa física no primeiro mês da Bulbe, que precisa entender e pagar corretamente sua primeira fatura; a persona detalhada está documentada em `docs/jornada.md`.
 - **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
 
 ## 3. Solução
 
-A solução apresenta ao cliente o andamento do primeiro mês, confirma os canais de contato e sinaliza os próximos passos até a chegada da primeira fatura. O escopo será detalhado a partir do mapa de jornada e das histórias de usuário.
+A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu valor e vencimento, conhecer as formas de pagamento, utilizar o PIX e receber lembretes antes do vencimento. O escopo será detalhado a partir do mapa de jornada e das histórias de usuário.
 
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
-| Acompanhamento do primeiro mês | Mostra o status da conexão, os próximos passos e os canais de contato confirmados. | Oportunidades #7–#9; histórias serão detalhadas na Aula 20. |
-| Explicação da primeira fatura e pagamento | Explica o valor, o vencimento e as formas de pagamento, com destaque para PIX e lembretes. | Oportunidades #8 e #9; histórias serão detalhadas na Aula 20. |
+| Resumo da primeira fatura | Apresenta o valor total e a situação da primeira cobrança. | HU01 — a definir |
+| Detalhes e vencimento | Explica a composição da fatura e destaca a data de vencimento. | HU02 — a definir |
+| Formas de pagamento | Apresenta as opções disponíveis para quitar a fatura. | HU03 — a definir |
+| Pagamento via PIX | Orienta o cliente no pagamento por PIX. | HU04 — a definir |
+| Lembrete de vencimento | Permite acompanhar o prazo e receber um lembrete. | HU05 — a definir |
+| Confirmação do pagamento | Informa se o pagamento foi realizado e confirmado. | HU06 — a definir |
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
