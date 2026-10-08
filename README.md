@@ -89,7 +89,7 @@ A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu va
 | Marco | Aula | Status |
 | --- | --- | --- |
 | Mapa de jornada | 19 | [x] |
-| Histórias de usuário | 20 | [ ] |
+| Histórias de usuário | 20 | [x] |
 | Wireframes | 21–23 | [ ] |
 | Sprint Review I | 24 | [ ] |
 | Implementação | 25–28 | [ ] |
