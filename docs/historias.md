@@ -4,12 +4,12 @@
 
 | ID | História | Oportunidade de origem | Prioridade | Tela | Responsável | Issue |
 | --- | --- | --- | --- | --- | --- | --- |
-| HU01 | Como cliente novo da Bulbe, quero visualizar o resumo da minha primeira fatura para saber quanto preciso pagar. | #8 Explicar a primeira fatura | Alta | Resumo da primeira fatura | Laura Marcolino | A criar |
-| HU02 | Como cliente novo da Bulbe, quero entender a composição e o vencimento da minha primeira fatura para me organizar e evitar atrasos. | #8 Explicar a primeira fatura | Alta | Detalhes e vencimento | Alice Aroeira | A criar |
-| HU03 | Como cliente novo da Bulbe, quero visualizar as formas de pagamento disponíveis para escolher a mais conveniente. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Formas de pagamento | Bruna Sanches | A criar |
-| HU04 | Como cliente novo da Bulbe, quero pagar minha primeira fatura via PIX para realizar o pagamento de forma rápida e simples. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Pagamento via PIX | Manuella Ferreira | A criar |
-| HU05 | Como cliente novo da Bulbe, quero receber um lembrete antes do vencimento para não esquecer de pagar minha fatura. | #9 Facilitar o pagamento com PIX e lembretes | Média | Lembrete de vencimento | Maria Clara | A criar |
-| HU06 | Como cliente novo da Bulbe, quero visualizar a confirmação do pagamento para saber que minha fatura foi quitada corretamente. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Confirmação do pagamento | Julia Dumont | A criar |
+| HU01 | Como cliente novo da Bulbe, quero visualizar o resumo da minha primeira fatura para saber quanto preciso pagar. | #8 Explicar a primeira fatura | Alta | Resumo da primeira fatura | Laura Marcolino | #12 |
+| HU02 | Como cliente novo da Bulbe, quero entender a composição e o vencimento da minha primeira fatura para me organizar e evitar atrasos. | #8 Explicar a primeira fatura | Alta | Detalhes e vencimento | Alice Aroeira | #13 |
+| HU03 | Como cliente novo da Bulbe, quero visualizar as formas de pagamento disponíveis para escolher a mais conveniente. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Formas de pagamento | Bruna Sanches | #10 |
+| HU04 | Como cliente novo da Bulbe, quero pagar minha primeira fatura via PIX para realizar o pagamento de forma rápida e simples. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Pagamento via PIX | Manuella Ferreira | #15 |
+| HU05 | Como cliente novo da Bulbe, quero receber um lembrete antes do vencimento para não esquecer de pagar minha fatura. | #9 Facilitar o pagamento com PIX e lembretes | Média | Lembrete de vencimento | Maria Clara | #11 |
+| HU06 | Como cliente novo da Bulbe, quero visualizar a confirmação do pagamento para saber que minha fatura foi quitada corretamente. | #9 Facilitar o pagamento com PIX e lembretes | Alta | Confirmação do pagamento | Julia Dumont | #14 |
 
 ## Critérios de aceite
 
