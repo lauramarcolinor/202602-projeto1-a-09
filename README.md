@@ -77,12 +77,14 @@ A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu va
 
 | Integrante | GitHub | Papel principal |
 | --- | --- | --- |
-| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Coordenação do produto e evidências |
-| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa, persona e jornada |
-| Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | UX/UI e wireframes |
-| Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Frontend: HTML e CSS |
-| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | JavaScript, dados e integração |
-| Julia Dumont | [@juliamelodumont](https://github.com/juliamelodumont) | Qualidade, GitHub e documentação |
+| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Organização do projeto |
+| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa e jornada do cliente |
+| Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | Design e wireframes |
+| Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Desenvolvimento das telas |
+| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | Dados e funcionalidades |
+| Julia Dumont | [@juliamelodumont](https://github.com/juliamelodumont) | Revisão e documentação |
+
+> Os papéis indicam o foco principal de cada integrante. Todas participam das decisões, revisões, testes e demais atividades do projeto.
 
 ## 9. Entregas
 
