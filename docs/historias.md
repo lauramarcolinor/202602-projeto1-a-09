@@ -42,9 +42,6 @@
 - [ ] A tela informa a data de vencimento da fatura.
 - [ ] O cliente consegue escolher ou confirmar o recebimento de um lembrete.
 - [ ] A confirmação do lembrete aparece após a ação.
-- [ ] A tela deve apresentar o lembrete correspondente a 7 dias antes, 2 dias antes ou ao dia do vencimento da primeira fatura, conforme a data simulada.
-
-> No protótipo, os lembretes são simulados. O envio automático depende de backend e fica como evolução futura.
 
 ### HU06 — Confirmação do pagamento
 
