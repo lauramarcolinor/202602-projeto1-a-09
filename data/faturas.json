@@ -18,5 +18,19 @@
     "economia": 40.92,
     "status": "prevista",
     "pixCopiaECola": null
+  },
+  {
+    "id": 103,
+    "clienteId": 1,
+    "referencia": "2026-03",
+    "primeiraFatura": true,
+    "vencimento": "2026-03-05",
+    "valorOriginal": 386.45,
+    "valor": 344.42,
+    "economia": 42.03,
+    "consumoKwh": 249,
+    "instalacao": "3001423519",
+    "status": "paga",
+    "pixCopiaECola": "PIX-FICTICIO-0103"
   }
 ]

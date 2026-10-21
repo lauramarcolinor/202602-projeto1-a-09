@@ -24,3 +24,22 @@ export async function buscarFaturasDoCliente(clienteId) {
   const faturas = await buscarFaturas();
   return faturas.filter((fatura) => fatura.clienteId === clienteId);
 }
+
+export function buscarPagamentos() {
+  return lerJSON('pagamentos.json');
+}
+
+export async function buscarPagamentoDaFatura(faturaId) {
+  const pagamentos = await buscarPagamentos();
+  return pagamentos.find((pagamento) => pagamento.faturaId === faturaId) ?? null;
+}
+
+export async function buscarFaturaPorId(faturaId) {
+  const faturas = await buscarFaturas();
+  return faturas.find((fatura) => fatura.id === faturaId) ?? null;
+}
+
+export async function buscarClientePorId(clienteId) {
+  const clientes = await buscarClientes();
+  return clientes.find((cliente) => cliente.id === clienteId) ?? null;
+}

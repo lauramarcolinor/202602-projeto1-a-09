@@ -1,0 +1,20 @@
+[
+  {
+    "id": 9001,
+    "faturaId": 103,
+    "clienteId": 1,
+    "valorPago": 344.42,
+    "dataPagamento": "2026-03-03T14:32:00",
+    "metodo": "pix",
+    "codigoAutenticacao": "4734 4849 0000 78",
+    "status": "confirmado",
+    "comprovanteEnviadoPara": [
+      "e-mail",
+      "WhatsApp"
+    ],
+    "proximaFatura": {
+      "referencia": "2026-04",
+      "vencimento": "2026-04-05"
+    }
+  }
+]

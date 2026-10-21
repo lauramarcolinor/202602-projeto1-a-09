@@ -45,6 +45,9 @@
 
 ### HU06 — Confirmação do pagamento
 
-- [ ] A tela informa claramente que o pagamento foi registrado no protótipo.
-- [ ] O valor e a data do pagamento aparecem na confirmação.
-- [ ] A tela apresenta os próximos passos do cliente.
+- [x] A tela informa claramente que o pagamento foi registrado no protótipo.
+- [x] O valor e a data do pagamento aparecem na confirmação.
+- [x] A tela apresenta os próximos passos do cliente.
+
+> Implementada em [`pages/confirmacao-pagamento.html`](../pages/confirmacao-pagamento.html).
+> Tela: [`docs/wireframes/hu06-confirmacao-pagamento.jpg`](wireframes/hu06-confirmacao-pagamento.jpg)

@@ -1,0 +1,319 @@
+/* ============================================================
+   HU06 · Confirmação do pagamento
+   Estilos específicos da tela. Depende de bulbe.css.
+   ============================================================ */
+
+/* ---------- Herói de sucesso ---------- */
+
+.sucesso {
+  background: linear-gradient(170deg, var(--bulbe-verde) 0%, var(--bulbe-verde-escuro) 100%);
+  border-radius: var(--bulbe-raio-g) var(--bulbe-raio-g) 0 0;
+  color: #fff;
+  text-align: center;
+  padding: 30px var(--bulbe-margem) 34px;
+}
+
+.sucesso__selo {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 18px;
+  border-radius: var(--bulbe-raio-pill);
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  animation: pulso 2.4s ease-out infinite;
+}
+.sucesso__selo svg { width: 42px; height: 42px; }
+@media (prefers-reduced-motion: no-preference) {
+  .sucesso__selo path {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: risca 0.55s 0.1s ease-out forwards;
+  }
+}
+
+@keyframes risca { to { stroke-dashoffset: 0; } }
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35); }
+  70%  { box-shadow: 0 0 0 22px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.sucesso__titulo {
+  margin: 0 0 6px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.sucesso__texto {
+  margin: 0 0 22px;
+  font-size: 0.95rem;
+  opacity: 0.92;
+}
+
+.sucesso__valor {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  display: block;
+}
+.sucesso__valor small {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: 4px;
+  opacity: 0.9;
+}
+
+.sucesso__quando {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+/* ---------- Título de seção ---------- */
+
+.secao-titulo {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--bulbe-tinta);
+}
+
+/* ---------- Comprovante ---------- */
+
+.comprovante { margin-bottom: 24px; }
+
+.comprovante__linha {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--bulbe-borda);
+  font-size: 0.92rem;
+}
+.comprovante__linha:last-of-type { border-bottom: 0; padding-bottom: 4px; }
+.comprovante__linha dt { color: var(--bulbe-texto-suave); }
+.comprovante__linha dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--bulbe-tinta);
+  text-align: right;
+}
+.comprovante__linha dd.economia { color: var(--bulbe-verde-escuro); }
+.comprovante__linha dd.codigo {
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.comprovante__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 2px solid var(--bulbe-tinta);
+}
+.comprovante__total dt { font-weight: 600; color: var(--bulbe-tinta); }
+.comprovante__total dd {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--bulbe-azul);
+}
+
+.copiar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--bulbe-fundo);
+  border: 1px solid var(--bulbe-borda);
+  border-radius: var(--bulbe-raio-pill);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bulbe-azul);
+  cursor: pointer;
+}
+.copiar:hover { border-color: var(--bulbe-azul); }
+.copiar:focus-visible { outline: 2px solid var(--bulbe-azul); outline-offset: 2px; }
+
+/* ---------- Economia destacada ---------- */
+
+.economia-faixa {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bulbe-verde-claro);
+  border-radius: var(--bulbe-raio);
+  padding: 14px 16px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  color: var(--bulbe-verde-escuro);
+}
+.economia-faixa strong { font-size: 1.05rem; }
+
+/* ---------- Próximos passos (critério 3) ---------- */
+
+.passos {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+  counter-reset: passo;
+}
+
+.passos li {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding-bottom: 20px;
+}
+.passos li:last-child { padding-bottom: 0; }
+
+.passos li::before {
+  counter-increment: passo;
+  content: counter(passo);
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--bulbe-raio-pill);
+  background: var(--bulbe-azul);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+/* linha vertical ligando os passos */
+.passos li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 14.5px;
+  top: 32px;
+  bottom: 6px;
+  width: 1.5px;
+  background: var(--bulbe-borda);
+}
+
+.passos h3 {
+  margin: 4px 0 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bulbe-tinta);
+}
+.passos p {
+  margin: 0;
+  font-size: 0.87rem;
+  color: var(--bulbe-texto-suave);
+}
+.passos a {
+  color: var(--bulbe-azul);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+}
+
+/* ---------- Ações ---------- */
+
+.acoes { display: grid; gap: 10px; margin-bottom: 20px; }
+
+/* ---------- Estados de carregamento e erro ---------- */
+
+.estado {
+  padding: 40px var(--bulbe-margem);
+  text-align: center;
+  color: var(--bulbe-texto-suave);
+}
+.estado--erro { color: #b4232a; }
+
+/* ---------- Etiqueta de estado no herói (heurística 1) ---------- */
+
+.etiqueta--sucesso {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+  margin: 16px 0 0;
+  font-size: 0.82rem;
+}
+
+/* ---------- Cartão de valor (mesma anatomia da HU01) ---------- */
+
+.cartao-valor { margin-bottom: 24px; }
+
+.rotulo {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bulbe-texto-suave);
+}
+
+.valor-de {
+  margin: 6px 0 10px;
+  font-size: 0.95rem;
+  color: var(--bulbe-texto-suave);
+  text-decoration: line-through;
+}
+
+.desconto-pill {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  background: var(--bulbe-verde-claro);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bulbe-verde-escuro);
+}
+
+.valor-total {
+  display: block;
+  margin: 4px 0 12px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--bulbe-azul);
+}
+
+.valor-quando {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: var(--bulbe-texto);
+}
+.valor-quando strong { color: var(--bulbe-tinta); font-weight: 600; }
+
+.valor-prazo {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--bulbe-verde-escuro);
+  font-weight: 500;
+}
+
+/* ---------- Ajuda e recuperação (heurísticas 9 e 10) ---------- */
+
+.ajuda {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--bulbe-superficie);
+  border: 1px solid var(--bulbe-borda);
+  border-radius: var(--bulbe-raio);
+  font-size: 0.87rem;
+  color: var(--bulbe-texto-suave);
+  text-align: center;
+}
+.ajuda a {
+  display: inline-block;
+  margin-top: 2px;
+  color: var(--bulbe-azul);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+}
