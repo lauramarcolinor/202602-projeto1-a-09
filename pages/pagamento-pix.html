@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulbe Acompanha — Pagamento via PIX</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#08068D;--titulo:#11167F;--texto:#1A1F5C;--suave:#4D5375;--borda:#DDE1EE;--verde:#0B7F4B}
+*{box-sizing:border-box}
+body{margin:0;background:#EEF0F7;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--texto)}
+button{font-family:inherit;cursor:pointer}
+.app{max-width:430px;margin:0 auto;min-height:100vh;background:var(--azul);display:flex;flex-direction:column}
+.topo{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 26px;color:#fff}
+.logo{font-size:30px;font-weight:800;letter-spacing:-1px}
+.ib{width:44px;height:44px;border:0;background:none;padding:0;display:flex;align-items:center;justify-content:center}
+main{flex:1;background:#fff;border-radius:16px 16px 0 0;margin-top:-14px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.card{border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
+h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
+.linha{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.tag{font-size:11px;font-weight:700;color:#7A4B00;background:#FFF1CC;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.sub{margin:4px 0 0;font-size:13px;color:var(--suave)}
+.rot{font-size:11px;font-weight:700;text-transform:uppercase}
+.de{font-size:15px;font-weight:700;color:#6B7194;text-decoration:line-through}
+.desc{background:#DDF3E6;color:var(--verde);border-radius:6px;padding:10px 12px;font-size:14px;font-weight:700}
+.total{font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--titulo);line-height:1.1}
+.venc{font-size:17px;font-weight:800;color:var(--titulo)}
+.pix{display:flex;gap:10px;align-items:center}
+.pix p{margin:0;font-size:12px;color:var(--suave)}
+.pix-i{width:38px;height:38px;border-radius:10px;background:#E8F7EF;display:flex;align-items:center;justify-content:center;flex:none}
+.qr{align-self:center;width:214px;height:214px;padding:12px;border:2px solid var(--borda);border-radius:12px}
+.qr svg{width:100%;height:100%}
+.nota{align-self:center;font-size:12px;color:#5B6178;text-align:center}
+.ou{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#5B6178}
+.ou::before,.ou::after{content:"";flex:1;height:1px;background:var(--borda)}
+.cod{background:#EDEBF8;border-radius:8px;padding:12px;margin:6px 0 0;font:12.5px/1.5 ui-monospace,Consolas,monospace;word-break:break-all}
+.btn{height:52px;border-radius:8px;font-size:15px;font-weight:700;width:100%;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.b1{border:0;background:var(--azul);color:#fff}
+.b2{border:2px solid var(--azul);background:#fff;color:var(--azul);height:48px;font-size:14px}
+.info{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--suave);margin-top:6px}
+.passo{display:flex;gap:12px}
+.n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.passo b{display:block;font-size:15px}
+.passo span{font-size:13px;color:var(--suave);line-height:1.45}
+.depois{background:#E8F7EF;border:1px solid #BFE5D0;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.depois h2{color:#0B5E38}
+.depois ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.depois li{display:flex;gap:10px;font-size:14px;line-height:1.45}
+.depois li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--verde);margin-top:7px}
+.ret{margin:0;text-align:center;font-size:13px;color:var(--suave)}
+.duv{background:#F3F4FB;border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.duv-i{width:44px;height:44px;border-radius:50%;border:2px solid var(--azul);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--azul)}
+.duv-t{flex:1;min-width:140px}
+.duv-t b{display:block;font-size:15px;color:var(--titulo)}
+.duv-t span{font-size:13px;color:var(--suave)}
+.duv .btn{width:auto;height:48px;padding:0 14px;font-size:13px}
+nav{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--borda);display:flex;padding:6px 4px 10px}
+nav a{flex:1;min-height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--suave);font-size:12px;font-weight:600}
+nav a[aria-current]{color:var(--azul);font-weight:800}
+@media(max-width:360px){.duv .btn{width:100%}.qr{width:190px;height:190px}.total{font-size:36px}}
+@media(min-width:431px){body{padding:24px 0}.app{min-height:0;border-radius:24px;overflow:hidden}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topo">
+    <button class="ib" aria-label="Abrir menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <span class="logo">bulbe</span>
+    <button class="ib" aria-label="Minha conta"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.2-3.5 4-5 7-5s5.8 1.5 7 5"/></svg></button>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="linha">
+        <div><h1>Pagamento da 1ª fatura</h1><p class="sub">Primeira fatura · março/26</p></div>
+        <span class="tag">Em aberto</span>
+      </div>
+      <div><span class="rot">Valor da fatura</span><div class="de">De R$ 386,45</div></div>
+      <div class="desc">Desconto Bulbe: R$ 42,03</div>
+      <div><span class="rot">Total a pagar</span><div class="total">R$ 344,42</div></div>
+      <div><span class="sub">Vencimento</span><div class="venc">05/03/2026</div></div>
+    </section>
+
+    <section class="card">
+      <div class="pix">
+        <div class="pix-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B7F4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6.5l2.6-2.6a2 2 0 0 1 2.8 0L16 6.5M8 17.5l2.6 2.6a2 2 0 0 0 2.8 0l2.6-2.6M6.5 8l-2.6 2.6a2 2 0 0 0 0 2.8L6.5 16M17.5 8l2.6 2.6a2 2 0 0 1 0 2.8L17.5 16"/></svg></div>
+        <div><h2>Pague com PIX</h2><p>Rápido, seguro e confirmado na hora.</p></div>
+      </div>
+      <div class="qr"><svg viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="QR Code ilustrativo do PIX"><path id="qr" fill="#11167F"/></svg></div>
+      <span class="nota">QR Code ilustrativo · leia com o app do seu banco</span>
+      <div class="ou">ou copie o código</div>
+      <div><b style="font-size:13px;color:var(--titulo)">PIX Copia e Cola</b>
+        <p class="cod" id="codigo">00020126360014BR.GOV.BCB.PIX0114BULBE00000000052040000530398654063200.005802BR5905BULBE6009SAO PAULO62070503***6304FICT</p></div>
+      <button class="btn b1" id="copiar">Copiar código</button>
+      <div>
+        <div class="info">Código válido até 05/03/2026, às 23:59</div>
+        <div class="info">Código fictício, apenas para demonstração.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Como pagar, passo a passo</h2>
+      <div class="passo"><div class="n">1</div><div><b>Abra o app do seu banco</b><span>Entre na área de pagamentos e escolha a opção PIX.</span></div></div>
+      <div class="passo"><div class="n">2</div><div><b>Leia o QR Code ou use o Copia e Cola</b><span>Aponte a câmera para o QR Code ou cole o código que você copiou acima.</span></div></div>
+      <div class="passo"><div class="n">3</div><div><b>Confira os dados</b><span>O valor deve ser R$ 344,42 e o favorecido, Bulbe (dados ilustrativos).</span></div></div>
+      <div class="passo"><div class="n">4</div><div><b>Confirme o pagamento</b><span>Valide com sua senha ou biometria. Pronto, é só isso.</span></div></div>
+    </section>
+
+    <section class="depois">
+      <h2>Depois de pagar</h2>
+      <ul>
+        <li>A confirmação do PIX chega em instantes, geralmente em até 2 minutos.</li>
+        <li>Você recebe um aviso no app e por e-mail assim que o pagamento for reconhecido.</li>
+        <li>Sua fatura passa para “Paga” na aba Faturas. Não é preciso enviar comprovante.</li>
+      </ul>
+      <button class="btn b1" id="verificar">Verificar pagamento</button>
+      <p class="ret" id="ret" role="status" hidden>Verificamos se o seu pagamento já foi reconhecido pela Bulbe.</p>
+      <a href="#" class="btn b2">Ver minhas faturas</a>
+    </section>
+
+    <section class="duv">
+      <div class="duv-i" aria-hidden="true">?</div>
+      <div class="duv-t"><b>Dúvidas?</b><span>Fale com a gente e tire suas dúvidas sobre o pagamento.</span></div>
+      <button class="btn b1">Falar com suporte</button>
+    </section>
+  </main>
+
+  <nav aria-label="Navegação principal">
+    <a href="#" aria-current="page">Faturas</a>
+    <a href="#">Consumo</a>
+    <a href="#">Indicações</a>
+  </nav>
+</div>
+
+<script>
+  // QR Code ilustrativo (não escaneável)
+  var n = 29, s = 20261020, d = '';
+  function rnd(){ s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }
+  var cantos = [[0,0],[n-7,0],[0,n-7]];
+  for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+    var escuro = false, finder = false;
+    cantos.forEach(function(c){
+      var dx = x - c[0], dy = y - c[1];
+      if (dx >= -1 && dx <= 7 && dy >= -1 && dy <= 7) {
+        finder = true;
+        escuro = dx >= 0 && dy >= 0 && dx <= 6 && dy <= 6 &&
+          (dx == 0 || dx == 6 || dy == 0 || dy == 6 || (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4));
+      }
+    });
+    if (!finder) escuro = rnd() > 0.52;
+    if (escuro) d += 'M' + x + ' ' + y + 'h1v1h-1z';
+  }
+  document.getElementById('qr').setAttribute('d', d);
+
+  var btn = document.getElementById('copiar');
+  btn.onclick = function () {
+    var codigo = document.getElementById('codigo').textContent.trim();
+    if (navigator.clipboard) navigator.clipboard.writeText(codigo);
+    btn.textContent = 'Código copiado!';
+    setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2500);
+  };
+  document.getElementById('verificar').onclick = function () {
+    document.getElementById('ret').hidden = false;
+  };
+</script>
+</body>
+</html>
