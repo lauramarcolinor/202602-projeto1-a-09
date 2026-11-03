@@ -18,5 +18,16 @@
     "economia": 40.92,
     "status": "prevista",
     "pixCopiaECola": null
+  },
+  {
+    "id": 103,
+    "clienteId": 1,
+    "referencia": "2026-03",
+    "vencimento": "2026-03-05",
+    "valor": 344.42,
+    "valorOriginal": 386.45,
+    "economia": 42.03,
+    "status": "aberta",
+    "pixCopiaECola": "PIX-FICTICIO-HU01-0003"
   }
 ]
