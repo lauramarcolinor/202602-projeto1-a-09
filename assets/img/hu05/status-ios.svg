@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="72" height="18" viewBox="0 0 72 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Status &#194;&#183; sinal Wi-Fi bateria">
+<g id="Group">
+<path id="Vector" d="M2 11H1C0.447715 11 0 11.4477 0 12V14C0 14.5523 0.447715 15 1 15H2C2.55228 15 3 14.5523 3 14V12C3 11.4477 2.55228 11 2 11Z" fill="white"/>
+<path id="Vector_2" d="M7 8H6C5.44772 8 5 8.44772 5 9V14C5 14.5523 5.44772 15 6 15H7C7.55228 15 8 14.5523 8 14V9C8 8.44772 7.55228 8 7 8Z" fill="white"/>
+<path id="Vector_3" d="M12 5H11C10.4477 5 10 5.44772 10 6V14C10 14.5523 10.4477 15 11 15H12C12.5523 15 13 14.5523 13 14V6C13 5.44772 12.5523 5 12 5Z" fill="white"/>
+<path id="Vector_4" d="M17 2H16C15.4477 2 15 2.44772 15 3V14C15 14.5523 15.4477 15 16 15H17C17.5523 15 18 14.5523 18 14V3C18 2.44772 17.5523 2 17 2Z" fill="white"/>
+</g>
+<g id="Group_2">
+<path id="Vector_5" d="M25 6C29.6667 1.33333 34.3333 1.33333 39 6M28 9C30.6667 6.33333 33.3333 6.33333 36 9M31 12H33" stroke-width="1.6" stroke-linecap="round" stroke="white"/>
+<path id="Vector_6" d="M49 3H65C66.6569 3 68 4.34315 68 6V12C68 13.6569 66.6569 15 65 15H49C47.3431 15 46 13.6569 46 12V6C46 4.34315 47.3431 3 49 3Z" stroke-width="1.6" stroke-linecap="round" stroke="white"/>
+</g>
+<path id="Vector_7" d="M63 6H50C49.4477 6 49 6.44772 49 7V11C49 11.5523 49.4477 12 50 12H63C63.5523 12 64 11.5523 64 11V7C64 6.44772 63.5523 6 63 6Z" fill="white"/>
+<g id="Vector_8">
+<path d="M70 7V11Z" fill="black"/>
+<path d="M70 7V11" stroke-width="2" stroke="white"/>
+</g>
+</g>
+</svg>
