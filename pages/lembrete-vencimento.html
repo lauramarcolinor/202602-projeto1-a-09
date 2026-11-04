@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0a91">
+  <title>Bulbe | Lembrete de vencimento</title>
+  <link rel="stylesheet" href="../assets/css/app-shell.css">
+  <link rel="stylesheet" href="../assets/css/lembrete-vencimento.css">
+  <script type="module" src="../assets/js/lembrete-vencimento.js"></script>
+</head>
+<body class="app-page">
+  <div class="app-shell" aria-label="Aplicativo Bulbe">
+    <header class="app-header">
+      <button class="icon-button" type="button" data-action="back" id="voltar" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+      </button>
+
+      <a class="brand" href="../index.html" aria-label="Bulbe, página inicial">
+        <span class="brand-name">bulbe</span><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-action="notifications" id="notificacoes" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+        </button>
+        <button class="profile-button" type="button" data-action="profile" aria-label="Perfil de Marina, disponível em breve" title="Perfil ainda não implementado" disabled>M</button>
+      </div>
+    </header>
+
+    <main class="screen-content" aria-labelledby="titulo-tela">
+      <h1 id="titulo-tela">Lembrete de vencimento</h1>
+      <section class="mensagem" aria-live="polite" aria-atomic="true">
+        <div class="mensagem-titulo"><span class="simbolo" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="simbolo-sino" d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/><path class="simbolo-confirmado" d="m5 12 4 4L19 6"/></svg></span><h2 id="titulo-mensagem">Sua fatura vence em breve</h2></div>
+        <p id="texto-mensagem">Confira o vencimento da sua primeira fatura e organize seu pagamento.</p>
+      </section>
+      <section class="fatura" aria-label="Sua primeira fatura Bulbe">
+        <div class="fatura-topo"><h2 id="referencia-fatura">Carregando fatura…</h2><span class="status" data-status-fatura>—</span></div>
+        <p class="valor" data-valor-fatura>—</p>
+        <p class="legenda">Sua primeira fatura Bulbe</p>
+        <div class="vencimento"><p class="legenda">Vencimento</p><p class="data"><time data-vencimento-fatura>—</time></p><p class="nota">Lembrete enviado antes do vencimento</p></div>
+      </section>
+      <p id="erro-fatura" class="nota" role="alert" hidden></p>
+      <button id="tentar-novamente" class="botao secundario" type="button" hidden>Tentar novamente</button>
+      <div id="acoes" class="acoes">
+        <button id="confirmar" class="botao primario" type="button" disabled>Confirmar recebimento</button>
+        <p>Confirme que você recebeu este lembrete.</p>
+        <p>Esta ação não confirma o pagamento.</p>
+      </div>
+      <aside id="alerta" class="alerta" hidden>
+        <img src="../assets/img/hu05/alerta.svg" width="22" height="22" alt="">
+        <div><h2>Fatura em aberto</h2><p>O pagamento ainda precisa ser realizado. Confirmar o lembrete não quita a fatura.</p></div>
+      </aside>
+      <button id="ver-fatura" class="botao secundario" type="button" disabled>Ver fatura</button>
+      <noscript><p class="nota">Ative o JavaScript para confirmar o recebimento deste lembrete.</p></noscript>
+    </main>
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item is-active" type="button" data-tab="faturas" id="nav-faturas" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
+        <span>Faturas</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="consumo" disabled aria-label="Consumo, disponível em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
+        <span>Consumo</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="indicacoes" disabled aria-label="Indicações, disponível em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
+        <span>Indicações</span>
+      </button>
+    </nav>
+    <dialog id="detalhes" aria-labelledby="titulo-detalhes">
+      <h2 id="titulo-detalhes">Sua primeira fatura Bulbe</h2>
+      <p class="valor" data-valor-fatura>—</p><p>Vencimento: <strong data-data-detalhes>—</strong></p><p>Status: <strong data-status-fatura>—</strong></p>
+      <p>Dados fictícios do protótipo. Consulte o resumo completo na área de faturas.</p>
+      <a class="botao secundario" href="hu01-resumo-primeira-fatura.html">Abrir resumo da fatura</a>
+      <form method="dialog"><button class="botao primario">Voltar ao lembrete</button></form>
+    </dialog>
+  </div>
+</body>
+</html>
