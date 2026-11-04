@@ -1,6 +1,6 @@
 import { buscarFaturas } from './api.js';
 
-// Mesmo identificador utilizado na HU01. Confirmar o lembrete não altera o pagamento.
+// Fatura fictícia do protótipo. Confirmar o lembrete não altera o pagamento.
 const faturaId = 103;
 const chave = `bulbe:hu05:fatura-${faturaId}:recebimento`;
 const app = document.querySelector('.app-shell');
@@ -77,14 +77,15 @@ confirmar.addEventListener('click', () => {
 
 // Navegar não desfaz a confirmação já registrada.
 document.querySelector('#voltar').addEventListener('click', () => {
-  window.location.href = 'hu01-resumo-primeira-fatura.html';
+  window.location.href = '../index.html';
 });
 document.querySelector('#notificacoes').addEventListener('click', () => {
   document.querySelector('h1').scrollIntoView({ block: 'nearest' });
 });
 verFatura.addEventListener('click', () => detalhes.showModal());
 document.querySelector('#nav-faturas').addEventListener('click', () => {
-  window.location.href = 'hu01-resumo-primeira-fatura.html';
+  if (fatura) detalhes.showModal();
+  else erro.scrollIntoView({ block: 'nearest' });
 });
 tentarNovamente.addEventListener('click', carregarFatura);
 renderizar();
