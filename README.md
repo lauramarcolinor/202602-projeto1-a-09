@@ -3,7 +3,7 @@
 > Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
 > Cliente: **Bulbe Energia** · Turma **A** · Squad **09**
 
-Aplicação web que ajuda o cliente novo a entender e pagar a primeira fatura da Bulbe, mostrando o valor, a composição, o vencimento, as formas de pagamento e a confirmação da transação.
+Aplicação web em desenvolvimento para ajudar o cliente novo a entender e pagar a primeira fatura da Bulbe, mostrando o valor, a composição, o vencimento, as formas de pagamento e a confirmação da transação.
 
 ---
 
@@ -17,12 +17,12 @@ O cliente novo pode ter dificuldade para entender e pagar a primeira fatura da B
 
 ## 2. Persona e jornada
 
-- **Persona:** cliente pessoa física no primeiro mês da Bulbe, que precisa entender e pagar corretamente sua primeira fatura; a persona detalhada está documentada em `docs/jornada.md`.
+- **Persona principal documentada:** Marina Alves, 29 anos, cliente no primeiro mês da Bulbe, que precisa compreender o serviço e pagar corretamente sua primeira fatura.
 - **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
 
 ## 3. Solução
 
-A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu valor e vencimento, conhecer as formas de pagamento, utilizar o PIX e receber lembretes antes do vencimento. O escopo será detalhado a partir do mapa de jornada e das histórias de usuário.
+A solução está organizada em seis telas, definidas a partir do mapa de jornada e das histórias de usuário. Os seis wireframes estão concluídos; a implementação em HTML, CSS e JavaScript está em andamento nas branches de cada integrante.
 
 | Tela | O que faz | História relacionada |
 | --- | --- | --- |
@@ -35,6 +35,27 @@ A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu va
 
 - **Histórias de usuário:** [docs/historias.md](docs/historias.md)
 - **Wireframes:** [docs/wireframes/](docs/wireframes/)
+
+### Status da implementação
+
+Situação consultada no GitHub em **04/11/2026**. Um PR aberto ainda depende de revisão e merge para fazer parte da `main`.
+
+| Tela | Responsável | Issue de implementação | Status / PR |
+| --- | --- | --- | --- |
+| HU01 — Resumo da primeira fatura | Laura Marcolino | [#29](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/29) | Em desenvolvimento; [PR #41 em rascunho](https://github.com/lauramarcolinor/202602-projeto1-a-09/pull/41). |
+| HU02 — Detalhes e vencimento | Alice Aroeira | [#30](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/30) | Issue aberta; sem PR de implementação aberto. |
+| HU03 — Formas de pagamento | Bruna Sanches | [#31](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/31) | Issue aberta; sem PR de implementação aberto. |
+| HU04 — Pagamento via PIX | Manuella Ferreira | [#32](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/32) | [PR #28 aberto](https://github.com/lauramarcolinor/202602-projeto1-a-09/pull/28); ainda não integrado à `main`. |
+| HU05 — Lembrete de vencimento | Maria Clara | [#33](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/33) | [PR #40 aberto](https://github.com/lauramarcolinor/202602-projeto1-a-09/pull/40); ainda não integrado à `main`. |
+| HU06 — Confirmação do pagamento | Julia Dumont | [#34](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/34) | Issue aberta; sem PR de implementação aberto. |
+
+As issues de história HU01 a HU06 foram encerradas na etapa de histórias e wireframes. Isso não significa que a implementação em código está concluída: essa etapa é acompanhada pelas issues #29 a #34.
+
+**HU01 já verificada na branch `feature/hu01-resumo-primeira-fatura`:** carregamento da fatura de ID 103 pelo JSON local, formatação dos valores e do vencimento, logo compartilhada, cabeçalho e rodapé visíveis durante a rolagem central. A centralização da logo foi testada nas larguras de 320, 375 e 430 px, sem sobreposição ou rolagem horizontal.
+
+**Pendências da HU01:** os botões de pagamento e detalhes ainda exibem mensagens, sem abrir HU03 ou HU02. Perfil e notificações também são demonstrativos; Consumo e Indicações alteram a seleção do rodapé sem abrir outra área. Os valores iniciais no HTML e o fallback no JavaScript ainda precisam ser ajustados para atender ao critério de não duplicação dos dados.
+
+**Integração do grupo:** navegação entre as telas ([#35](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/35)), integração dos dados JSON com `fetch` ([#36](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/36)), estados e validações ([#37](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/37)) e validação do layout responsivo ([#38](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/38)) permanecem em aberto.
 
 ## 4. Tecnologias
 
@@ -50,24 +71,64 @@ A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu va
    ```
 2. Abra a pasta no VS Code.
 3. Instale a extensão **Live Server** (o VS Code vai sugerir automaticamente).
-4. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
+4. Clique com o botão direito em `index.html` e escolha **Open with Live Server**. Essa página ainda é a base de demonstração do projeto, não o fluxo integrado das seis telas.
 
-> Abrir o `index.html` direto no navegador (duplo clique) não funciona: o `fetch` dos arquivos JSON exige um servidor.
+### Testar a HU01 antes do merge
+
+A implementação específica da HU01 está na feature e entra na `main` após a revisão e o merge do PR #41. Para testá-la:
+
+```bash
+git fetch origin
+git switch feature/hu01-resumo-primeira-fatura
+```
+
+Abra `pages/hu01-resumo-primeira-fatura.html` com o **Live Server**. Outra opção, com Python 3 instalado, é executar na raiz do projeto:
+
+```bash
+python3 -m http.server 4173
+```
+
+Nesse caso, acesse [HU01 no servidor local](http://127.0.0.1:4173/pages/hu01-resumo-primeira-fatura.html). Confira a fatura de ID 103 em `data/faturas.json`: valor original de R$ 386,45, desconto de R$ 42,03, total de R$ 344,42 e vencimento em 05/03/2026.
+
+> As páginas devem ser abertas por um servidor. Abrir o HTML diretamente por duplo clique (`file://`) impede o carregamento dos dados com `fetch`.
 
 ## 6. Estrutura do repositório
 
-```
-├── index.html            # Página inicial
-├── pages/                # Demais telas da solução
+Os arquivos específicos da HU01 abaixo estão na feature, aguardando merge. O CSS e as logos compartilhados já estão na `main`.
+
+```text
+├── index.html                         # Base de demonstração
+├── pages/
+│   ├── exemplo.html                   # Modelo inicial de página
+│   └── hu01-resumo-primeira-fatura.html
 ├── assets/
-│   ├── css/style.css     # Estilos
-│   ├── js/main.js        # Lógica da página inicial
-│   ├── js/api.js         # Leitura dos dados (fetch)
-│   └── img/              # Imagens e ícones
-├── data/                 # Dados fictícios em JSON
-├── docs/                 # Jornada, histórias, wireframes e sprints
-└── .github/              # Modelos de Issue e de Pull Request
+│   ├── css/
+│   │   ├── style.css                  # Página inicial de demonstração
+│   │   ├── app-shell.css              # Estrutura compartilhada do aplicativo
+│   │   └── hu01.css                   # Estilos específicos da HU01
+│   ├── js/
+│   │   ├── main.js                    # Lógica da página inicial
+│   │   ├── api.js                     # Funções compartilhadas de leitura JSON
+│   │   └── hu01.js                    # Dados e ações da HU01
+│   └── img/compartilhado/             # Logos Bulbe em SVG
+├── data/                              # Dados fictícios em JSON
+├── docs/
+│   ├── jornada.md                     # Persona e mapa de jornada
+│   ├── historias.md                   # HU01 a HU06 e critérios de aceite
+│   ├── wireframes/                    # Seis telas e mapa exportados
+│   └── sprints/                       # Orientações e evidências das reviews
+└── .github/                           # Modelos de Issue/PR e CODEOWNERS
 ```
+
+### Padrão compartilhado das telas
+
+Todas as HUs devem carregar `assets/css/app-shell.css` antes do CSS específico da tela e usar a mesma estrutura de cabeçalho, conteúdo central e navegação inferior. O padrão define cabeçalho de 72 px, rodapé de 80 px e logo de 100 × 30 px.
+
+A logo branca para o cabeçalho azul está em `assets/img/compartilhado/logo-bulbe-branca.svg`; a versão azul, para fundos claros, está em `assets/img/compartilhado/logo-bulbe.svg`. Essas versões foram integradas pelo [PR #39](https://github.com/lauramarcolinor/202602-projeto1-a-09/pull/39). A centralização das colunas do cabeçalho está proposta no PR #41.
+
+O modelo completo de HTML e as instruções de uso estão em [docs/wireframes/README.md](docs/wireframes/README.md#padrão-compartilhado-do-aplicativo).
+
+Cada integrante implementa e testa sua tela na própria branch, abre um PR e solicita revisão. A implementação deve entrar na `main` pelo merge do PR.
 
 ## 7. Quadro do projeto
 
@@ -90,13 +151,13 @@ A solução ajuda o cliente novo a entender a primeira fatura, visualizar seu va
 
 | Marco | Aula | Status |
 | --- | --- | --- |
-| Mapa de jornada | 19 | [x] |
-| Histórias de usuário | 20 | [x] |
-| Wireframes | 21–23 | [ ] |
-| Sprint Review I | 24 | [ ] |
-| Implementação | 25–28 | [ ] |
-| Sprint Review II | 29 | [ ] |
-| Versão final | 30 | [ ] |
+| Mapa de jornada | 19 | Concluído — documentação e imagem versionadas. |
+| Histórias de usuário | 20 | Concluído — seis histórias e responsáveis registrados. |
+| Wireframes | 21–23 | Concluído — seis telas exportadas em `docs/wireframes/`. |
+| Sprint Review I | 24 | Registro da review ainda precisa ser versionado em `docs/sprints/`. |
+| Implementação | 25–28 | Em andamento — acompanhar as issues #29 a #38 e os PRs abertos. |
+| Sprint Review II | 29 | Pendente. |
+| Versão final | 30 | Pendente — depende da integração e validação do fluxo. |
 
 ---
 
