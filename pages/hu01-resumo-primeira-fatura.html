@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0a91">
+  <title>Bulbe | Resumo da primeira fatura</title>
+  <link rel="stylesheet" href="../assets/css/app-shell.css">
+  <link rel="stylesheet" href="../assets/css/hu01.css">
+</head>
+<body class="app-page">
+  <div class="app-shell" aria-label="Aplicativo Bulbe">
+    <header class="app-header">
+      <button class="icon-button" type="button" data-action="back" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+      </button>
+
+      <a class="brand" href="../index.html" aria-label="Bulbe, página inicial">
+        <span class="brand-name">bulbe</span><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-action="notifications" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+        </button>
+        <button class="profile-button" type="button" data-action="profile" aria-label="Perfil de Marina">M</button>
+      </div>
+    </header>
+
+    <main class="screen-content">
+      <section class="screen-heading" aria-labelledby="screen-title">
+        <h1 id="screen-title">Resumo da fatura</h1>
+        <p>Primeira fatura · março/26</p>
+        <span class="status-pill" id="invoice-status">Em aberto · pagamento pendente</span>
+      </section>
+
+      <section class="invoice-card" aria-labelledby="invoice-card-title">
+        <h2 id="invoice-card-title" class="sr-only">Valor da primeira fatura</h2>
+
+        <div class="label-row">
+          <span>Valor da fatura</span>
+        </div>
+        <p class="original-value" id="original-value">De R$ 386,45</p>
+
+        <div class="discount-row">
+          <span>Desconto Bulbe:</span>
+          <strong id="discount-value">R$ 42,03</strong>
+        </div>
+
+        <div class="total-block">
+          <span class="total-label">Total a pagar</span>
+          <strong class="total-value" id="total-value">R$ 344,42</strong>
+        </div>
+
+        <div class="due-date">
+          <span>Vencimento</span>
+          <strong id="due-date">05/03/2026</strong>
+        </div>
+
+        <button class="primary-button" type="button" data-action="payment">Escolher forma de pagamento</button>
+      </section>
+
+      <section class="composition-card" aria-labelledby="composition-title">
+        <div>
+          <h2 id="composition-title">Composição da fatura</h2>
+          <p>Entenda como o valor foi calculado.</p>
+        </div>
+        <button class="secondary-button" type="button" data-action="details">Ver detalhes da fatura</button>
+      </section>
+
+      <p class="screen-feedback" id="screen-feedback" role="status" aria-live="polite"></p>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item is-active" type="button" data-tab="faturas" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
+        <span>Faturas</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="consumo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
+        <span>Consumo</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="indicacoes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
+        <span>Indicações</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="../assets/js/hu01.js"></script>
+</body>
+</html>

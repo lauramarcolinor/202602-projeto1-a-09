@@ -60,7 +60,7 @@ button {
   height: 72px;
   min-height: 72px;
   display: grid;
-  grid-template-columns: 44px 1fr 84px;
+  grid-template-columns: 84px minmax(0, 1fr) 84px;
   align-items: center;
   padding: 0 16px;
   background: var(--bulbe-blue);
@@ -185,7 +185,7 @@ button {
 
 @media (max-width: 340px) {
   .app-header {
-    grid-template-columns: 36px 1fr 74px;
+    grid-template-columns: 74px minmax(0, 1fr) 74px;
     padding-inline: 12px;
   }
 
