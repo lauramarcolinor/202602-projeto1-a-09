@@ -67,39 +67,21 @@ button {
   color: #fff;
 }
 
+/* SVG compartilhado: versão branca para o cabeçalho azul. */
 .brand {
   justify-self: center;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  color: #fff;
+  display: block;
+  width: 100px;
+  height: 30px;
+  background: url('../img/compartilhado/logo-bulbe-branca.svg') center / contain no-repeat;
   text-decoration: none;
 }
 
-.brand-name {
-  font-size: 27px;
-  font-weight: 650;
-  letter-spacing: -1.8px;
-  line-height: 1;
-}
-
+/* Compatibilidade com o HTML compartilhado já usado pelas HUs. */
+.brand-name,
 .brand-mark {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 3px;
-  transform: rotate(-5deg);
+  display: none;
 }
-
-.brand-mark i {
-  display: block;
-  width: 12px;
-  height: 4px;
-  border-radius: 1px;
-}
-
-.brand-mark i:nth-child(1) { background: #3bd69c; transform: translateX(-1px) rotate(-28deg); }
-.brand-mark i:nth-child(2) { background: #2e9edb; }
-.brand-mark i:nth-child(3) { background: #f5ae14; transform: translateX(-1px) rotate(28deg); }
 
 .header-actions {
   display: flex;
