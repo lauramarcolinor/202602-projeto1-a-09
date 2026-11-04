@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #E5E7EF;
+  color: #1E2142;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Moldura do celular: iPhone SE (375 x 667) */
+.aplicativo {
+  position: relative;
+  width: 375px;
+  height: 667px;
+  margin: 24px auto;
+  background: #F5F6FA;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(13, 10, 153, 0.15);
+}
+
+.somente-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+  background: #0D0A99;
+  padding: 20px 20px 52px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botao-icone {
+  width: 80px;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 1;
+  text-align: left;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.botao-icone svg {
+  width: 22px;
+  height: 26px;
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.acoes {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.acoes .botao-icone {
+  width: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.raios {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.raios i {
+  display: block;
+  width: 16px;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.raios i:nth-child(1) { background: #3FC48E; transform: rotate(-18deg); }
+.raios i:nth-child(2) { background: #4A9BE8; }
+.raios i:nth-child(3) { background: #F2B63C; transform: rotate(18deg); }
+
+/* Bolinha de perfil */
+.perfil {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #FFFFFF;
+  color: #0D0A99;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ---------- Menu inferior ---------- */
+.menu {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  background: #FFFFFF;
+  border-top: 1px solid #E3E5EE;
+  padding: 10px 8px 12px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 90px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 12px;
+  color: #6A6E87;
+  cursor: pointer;
+}
+
+.menu-item svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menu-item.ativo {
+  color: #0D0A99;
+  font-weight: 600;
+}
+
+/* ---------- Conteúdo ---------- */
+/* Só o conteúdo rola; o cabeçalho fica fixo */
+main {
+  flex: 1;
+  overflow-y: auto;
+  background: #F5F6FA;
+  border-radius: 24px 24px 0 0;
+  margin-top: -28px;
+  padding: 24px 20px 20px;
+  position: relative;
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #1E2142;
+}
+
+.subtitulo {
+  font-size: 13px;
+  color: #6A6E87;
+  margin-top: 4px;
+  margin-bottom: 28px;
+}
+
+/* ---------- Opções de pagamento ---------- */
+fieldset {
+  border: none;
+}
+
+.opcao {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* O radio fica escondido; o card responde ao estado dele */
+.opcao input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.conteudo {
+  display: block;
+  background: #FFFFFF;
+  border: 1.5px solid #E3E5EE;
+  border-radius: 18px;
+  padding: 13px 16px 14px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.opcao:hover .conteudo {
+  border-color: #B9BCE8;
+}
+
+.opcao input:checked + .conteudo {
+  background: #EEF0FF;
+  border: 2px solid #0D0A99;
+  padding: 12.5px 15.5px 13.5px;
+}
+
+.opcao input:focus-visible + .conteudo {
+  outline: 2px solid #0D0A99;
+  outline-offset: 2px;
+}
+
+.linha-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.icone {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: #6A6E87;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.opcao input:checked + .conteudo .icone {
+  stroke: #0D0A99;
+}
+
+.linha-titulo strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: #6A6E87;
+}
+
+.opcao input:checked + .conteudo .linha-titulo strong {
+  color: #0D0A99;
+}
+
+/* Selo "Recomendado" */
+.recomendado {
+  margin-left: auto;
+  background: #E1F4F7;
+  color: #3C9FB5;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.descricao {
+  display: block;
+  font-size: 12.5px;
+  color: #6A6E87;
+  line-height: 1.5;
+}
+
+.selecao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.circulo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #C4C7D8;
+  background: #FFFFFF;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.opcao input:checked + .conteudo .circulo {
+  border-color: #0D0A99;
+  background: #0D0A99;
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+}
+
+.texto-selecao {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6A6E87;
+}
+
+.opcao input:checked + .conteudo .texto-selecao {
+  color: #0D0A99;
+}
+
+/* ---------- Aviso e botões ---------- */
+.lembrete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #EAF5F9;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #4A4E68;
+  margin: 16px 0 18px;
+}
+
+.lembrete span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #D3EEF3;
+  color: #3C9FB5;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.botao-principal {
+  width: 100%;
+  height: 54px;
+  border-radius: 14px;
+  border: none;
+  background: #0D0A99;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: opacity 0.15s;
+}
+
+.botao-principal:hover {
+  opacity: 0.9;
+}
+
+.rodape {
+  text-align: left;
+  font-size: 12.5px;
+  color: #6A6E87;
+  padding: 0 4px;
+  margin: 0 0 8px;
+}
+
+/* ---------- Janela (modal) ---------- */
+dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 320px;
+  max-width: calc(100% - 40px);
+  border: 1px solid #E3E5EE;
+  border-radius: 16px;
+  background: #FFFFFF;
+  color: #1E2142;
+  padding: 24px 20px 20px;
+  box-shadow: 0 10px 40px rgba(13, 10, 153, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(30, 33, 66, 0.55);
+}
+
+dialog h2 {
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 28px;
+}
+
+dialog p {
+  font-size: 12.5px;
+  color: #6A6E87;
+  line-height: 1.5;
+  margin: 8px 0 16px;
+}
+
+#aviso-demo {
+  background: #FFF4E2;
+  color: #9A6200;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+#aviso-demo[hidden] {
+  display: none;
+}
+
+.fechar {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #6A6E87;
+  cursor: pointer;
+}
+
+dialog .botao-principal {
+  margin-bottom: 0;
+}
+
+/* Seta de voltar */
+#voltar svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2.4;
+}
