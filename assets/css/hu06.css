@@ -1,0 +1,410 @@
+/* =========================================================
+   HU06 — Confirmação do pagamento · Bulbe
+   Complementa assets/css/app-shell.css: aqui ficam só os
+   estilos do conteúdo da tela. Cabeçalho, área rolável e
+   rodapé vêm da estrutura compartilhada.
+   Tokens retirados do Figma (arquivo bulb tela, node 18:23139).
+   ========================================================= */
+
+:root {
+  --verde-flora: #26d07c;   /* Secondary/Verde Flora 500 */
+  --verde-texto: #21a664;
+  --branco: #ffffff;
+  --borda: #d1d9e0;
+  --borda-forte: #c2ccd6;   /* Primárias/Cinza/C200 */
+  --cinza-claro: #a4b3c1;
+  --cinza-medio: #536679;
+  --cinza-escuro: #3e4d5b;  /* GrayScale/700 */
+  --raio-cartao: 20px;
+  --raio-pilula: 200px;
+}
+
+/* A identidade da Bulbe usa Poppins. Vale só para esta tela,
+   porque é este arquivo que carrega a fonte. */
+body.app-page {
+  font-family: "Poppins", var(--font);
+  color: var(--cinza-escuro);
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.screen-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Estado do pagamento ---------- */
+
+.confirmacao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 20px 24px;
+  border-radius: var(--raio-cartao);
+  background: var(--verde-flora);
+  text-align: center;
+  color: var(--branco);
+}
+
+.confirmacao__icone {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--raio-pilula);
+  background: var(--branco);
+}
+
+.confirmacao__icone svg {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: var(--verde-flora);
+  stroke-width: 3.47;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.confirmacao__titulo {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.confirmacao__sub {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--raio-pilula);
+  background: var(--branco);
+  color: var(--verde-texto);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.selo svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.625;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Cartão genérico ---------- */
+
+.cartao {
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-cartao);
+  background: var(--branco);
+}
+
+.divisor {
+  width: 100%;
+  height: 1px;
+  border: none;
+  margin: 4px 0;
+  background: var(--borda);
+}
+
+.rotulo {
+  margin: 0;
+  color: var(--cinza-claro);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+}
+
+/* ---------- Valor pago ---------- */
+
+.valor {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+}
+
+.valor p {
+  margin: 0;
+}
+
+.valor__de {
+  color: var(--cinza-claro);
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: line-through;
+}
+
+.valor__desconto {
+  color: var(--verde-texto);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.valor__total {
+  color: var(--bulbe-blue);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.valor__pago-em {
+  color: var(--cinza-medio);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.valor__vencia {
+  color: var(--cinza-claro);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ---------- Seções com título ---------- */
+
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.secao__titulo {
+  margin: 0;
+  color: var(--cinza-escuro);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ---------- Comprovante ---------- */
+
+.comprovante {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  line-height: 1.4;
+}
+
+.linha__rotulo {
+  color: var(--cinza-claro);
+  font-size: 12px;
+}
+
+.linha__valor {
+  color: var(--cinza-escuro);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.autenticacao {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.4;
+}
+
+.autenticacao__rotulo {
+  color: var(--cinza-claro);
+  font-size: 11px;
+}
+
+.autenticacao__codigo {
+  color: var(--cinza-escuro);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.aviso-ficticio {
+  margin: 0;
+  color: var(--cinza-claro);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* ---------- Próximos passos ---------- */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 16px;
+  list-style: none;
+}
+
+.etapa {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.etapa__numero {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--raio-pilula);
+  background: var(--bulbe-blue);
+  color: var(--branco);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.etapa__texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  line-height: 1.4;
+}
+
+.etapa__texto p {
+  margin: 0;
+}
+
+.etapa__titulo {
+  color: var(--cinza-escuro);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.etapa__desc {
+  color: var(--cinza-medio);
+  font-size: 12px;
+}
+
+.etapa__link {
+  padding: 0;
+  background: transparent;
+  color: var(--bulbe-blue);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ---------- Botões ---------- */
+
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: var(--raio-pilula);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.botao--copiar {
+  justify-content: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--borda-forte);
+  background: var(--branco);
+  color: var(--cinza-escuro);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.32px;
+}
+
+/* Estado depois de copiar o código */
+.botao--copiado {
+  border-color: var(--verde-texto);
+  color: var(--verde-texto);
+}
+
+.botao--primario {
+  padding: 16px 12px;
+  background: var(--bulbe-blue);
+  color: var(--branco);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.botao--secundario {
+  padding: 16px 12px;
+  border: 1px solid var(--borda-forte);
+  background: var(--branco);
+  color: var(--cinza-escuro);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ---------- Ações principais e suporte ---------- */
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suporte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  line-height: 1.4;
+}
+
+.suporte__texto {
+  margin: 0;
+  color: var(--cinza-medio);
+  font-size: 13px;
+}
+
+.suporte__link {
+  padding: 0;
+  background: transparent;
+  color: var(--bulbe-blue);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ---------- Mensagens de estado ---------- */
+
+.screen-feedback {
+  min-height: 18px;
+  margin: 0;
+  color: var(--bulbe-blue);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ---------- Telas estreitas (iPhone SE 1ª geração, 320px) ---------- */
+
+@media (max-width: 340px) {
+  .confirmacao__titulo { font-size: 18px; }
+  .valor__total { font-size: 28px; }
+  .botao--primario,
+  .botao--secundario { font-size: 16px; }
+}
