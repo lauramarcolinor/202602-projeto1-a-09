@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Bulbe | Formas de pagamento</title>
+  <link rel="stylesheet" href="../assets/css/hu03.css">
+  <link rel="stylesheet" href="../assets/css/app-shell.css">
+  <script src="../assets/js/hu03.js" defer></script>
+</head>
+<body class="app-page">
+  <div class="app-shell" aria-label="Aplicativo Bulbe">
+    <header class="app-header">
+      <button class="icon-button" type="button" data-action="back" id="voltar" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+      </button>
+
+      <a class="brand" href="../index.html" aria-label="Bulbe, página inicial">
+        <span class="brand-name">bulbe</span><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-action="notifications" id="notificacoes" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+        </button>
+        <button class="profile-button" type="button" data-action="profile" id="perfil" aria-label="Perfil de Marina">M</button>
+      </div>
+    </header>
+
+    <main class="screen-content">
+      <h1>Formas de pagamento</h1>
+      <p class="subtitulo">Escolha como pagar sua fatura.</p>
+
+      <form id="formulario">
+        <fieldset>
+          <legend class="somente-leitor">Escolha uma forma de pagamento</legend>
+
+          <label class="opcao">
+            <input type="radio" name="pagamento" value="automatico" checked>
+            <span class="conteudo">
+              <span class="linha-titulo">
+                <svg class="icone" viewBox="0 0 32 36" aria-hidden="true">
+                  <path d="m17 2-13 19h11l-2 13L28 14H17l4-12Z"/>
+                </svg>
+                <strong>PIX Automático</strong>
+                <span class="recomendado">Recomendado</span>
+              </span>
+              <span class="descricao">Autorize no seu banco e pague automaticamente.</span>
+              <span class="selecao">
+                <span class="circulo"></span>
+                <span class="texto-selecao">Selecionado</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="pagamento" value="pix">
+            <span class="conteudo">
+              <span class="linha-titulo">
+                <svg class="icone" viewBox="0 0 34 34" aria-hidden="true">
+                  <rect x="3" y="3" width="28" height="28" rx="5"/>
+                  <path d="M8 8h6v6H8zM20 8h6v6h-6zM8 20h6v6H8zM20 20h3v3h3v3h-6z"/>
+                </svg>
+                <strong>PIX</strong>
+              </span>
+              <span class="descricao">Pague agora usando QR Code ou Pix Copia e Cola.</span>
+              <span class="selecao">
+                <span class="circulo"></span>
+                <span class="texto-selecao">Selecionar</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="pagamento" value="credito">
+            <span class="conteudo">
+              <span class="linha-titulo">
+                <svg class="icone" viewBox="0 0 34 28" aria-hidden="true">
+                  <rect x="2" y="3" width="30" height="22" rx="3"/>
+                  <path d="M2 10h30M7 18h8"/>
+                </svg>
+                <strong>Cartão de crédito</strong>
+              </span>
+              <span class="descricao">Pague com cartão de crédito no vencimento.</span>
+              <span class="selecao">
+                <span class="circulo"></span>
+                <span class="texto-selecao">Selecionar</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="pagamento" value="debito">
+            <span class="conteudo">
+              <span class="linha-titulo">
+                <svg class="icone" viewBox="0 0 34 28" aria-hidden="true">
+                  <rect x="2" y="3" width="30" height="22" rx="3"/>
+                  <path d="M2 10h30M7 18h8"/>
+                </svg>
+                <strong>Cartão de débito</strong>
+              </span>
+              <span class="descricao">Pague com cartão de débito no vencimento.</span>
+              <span class="selecao">
+                <span class="circulo"></span>
+                <span class="texto-selecao">Selecionar</span>
+              </span>
+            </span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="pagamento" value="boleto">
+            <span class="conteudo">
+              <span class="linha-titulo">
+                <svg class="icone" viewBox="0 0 32 36" aria-hidden="true">
+                  <rect x="6" y="2" width="21" height="32" rx="2"/>
+                  <path d="M11 7v22M16 7v22M21 7v22"/>
+                </svg>
+                <strong>Boleto bancário</strong>
+              </span>
+              <span class="descricao">Receba no e-mail e pague em qualquer banco.</span>
+              <span class="selecao">
+                <span class="circulo"></span>
+                <span class="texto-selecao">Selecionar</span>
+              </span>
+            </span>
+          </label>
+        </fieldset>
+
+        <p class="lembrete">
+          <span aria-hidden="true">i</span>
+          Lembretes antes do vencimento.
+        </p>
+
+        <button type="submit" class="botao-principal">Continuar</button>
+
+        <p class="rodape">Você pode mudar a forma de pagamento depois.</p>
+      </form>
+    </main>
+
+    <!-- Menu inferior -->
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item is-active" type="button" data-tab="faturas" id="menu-faturas" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
+        <span>Faturas</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="consumo" id="menu-consumo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
+        <span>Consumo</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="indicacoes" id="menu-indicacoes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
+        <span>Indicações</span>
+      </button>
+    </nav>
+  </div>
+
+  <dialog id="modal" aria-labelledby="titulo-modal">
+    <button id="fechar-modal" class="fechar" aria-label="Fechar">×</button>
+    <h2 id="titulo-modal"></h2>
+    <p id="mensagem-modal"></p>
+    <p id="aviso-demo" hidden>Demonstração: nenhum pagamento foi realizado.</p>
+    <button id="entendi" class="botao-principal">Entendi</button>
+  </dialog>
+</body>
+</html>

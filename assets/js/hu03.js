@@ -55,7 +55,7 @@ botaoVoltar.addEventListener('click', function () {
   if (history.length > 1) {
     history.back();
   } else {
-    window.location.href = 'index.html';
+    window.location.href = '../index.html';
   }
 });
 
@@ -69,7 +69,7 @@ botaoPerfil.addEventListener('click', function () {
 
 // Menu inferior
 menuFaturas.addEventListener('click', function () {
-  document.querySelector('main').scrollTo({ top: 0, behavior: 'smooth' });
+  window.location.href = 'hu01-resumo-primeira-fatura.html';
 });
 
 menuConsumo.addEventListener('click', function () {
