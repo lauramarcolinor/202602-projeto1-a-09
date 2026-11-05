@@ -151,10 +151,7 @@ const acoes = {
       .catch(() => marcarCopia('Não deu para copiar', true));
   },
   faturas() {
-    // A área de faturas é a tela da HU01, que ainda não está na main
-    // (PR #41). Até lá o retorno vai para a página inicial do projeto,
-    // mesmo destino que a HU01 usa no botão de voltar.
-    window.location.href = '../index.html';
+    window.location.href = 'hu01-resumo-primeira-fatura.html';
   },
   comprovante() {
     avisar('O download do comprovante será ligado na integração do MVP.');
@@ -188,9 +185,7 @@ document.querySelectorAll('[data-tab]').forEach((aba) => {
       else item.removeAttribute('aria-current');
     });
 
-    if (aba.dataset.tab !== 'faturas') {
-      avisar(`A área de ${aba.dataset.tab} será integrada ao fluxo do MVP.`);
-    }
+    // Nesta etapa, o rodapé só alterna o destaque, sem popup ou navegação.
   });
 });
 
