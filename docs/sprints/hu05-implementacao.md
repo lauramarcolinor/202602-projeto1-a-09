@@ -4,13 +4,13 @@ Implementação na branch `feature/hu05-lembrete-vencimento`.
 
 ## Como visualizar
 
-Abra `pages/lembrete-vencimento.html` com o Live Server. Configure **375 × 667 px** no modo de dispositivo do navegador (iPhone SE). A leitura do JSON por módulos JavaScript exige um servidor HTTP; abrir o HTML diretamente por `file://` não é o modo de execução do projeto.
+Abra `pages/hu05-lembrete-vencimento.html` com o Live Server. Configure **375 × 667 px** no modo de dispositivo do navegador (iPhone SE). A leitura do JSON por módulos JavaScript exige um servidor HTTP; abrir o HTML diretamente por `file://` não é o modo de execução do projeto.
 
 ## Referência e estrutura
 
 - Referência de design: arquivo Figma `di3hkruEMkuDxAuCRNex9k`, página `79:2`, frames `79:3` e `79:69`.
 - HTML, CSS e JavaScript puro. O cabeçalho, a logo e a navegação usam `assets/css/app-shell.css` e os recursos compartilhados do projeto. A aparência atual utiliza o padrão compartilhado do grupo, incluindo os tons alaranjados do aviso.
-- Os estilos e as interações específicos ficam em `assets/css/lembrete-vencimento.css` e `assets/js/lembrete-vencimento.js`.
+- Os estilos e as interações específicos ficam em `assets/css/hu05.css` e `assets/js/hu05.js`.
 - O alerta utiliza `assets/img/hu05/alerta.svg`. Os demais SVGs de referência permanecem na pasta, mas o cabeçalho e os ícones atuais usam os elementos definidos no HTML e no CSS compartilhado.
 - Fonte Poppins pelo Google Fonts, com alternativa sans-serif quando indisponível.
 

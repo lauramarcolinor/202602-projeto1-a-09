@@ -63,6 +63,8 @@ dialog { border: 1px solid #e3e3f0; border-radius: 18px; padding: 24px; width: c
 dialog h2 { font-size: 18px; }
 dialog p { margin: 14px 0; }
 dialog::backdrop { background: #15113f80; }
+.app-shell { position: relative; }
+#nav-feedback { position: absolute; bottom: 88px; left: 16px; right: 16px; margin: 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--texto); font-size: 13px; box-shadow: 0 4px 16px #0002; pointer-events: none; }
 
 /* iPhone SE: mantém texto legível e alvos de toque com pelo menos 44 px. */
 @media (max-height: 700px) {

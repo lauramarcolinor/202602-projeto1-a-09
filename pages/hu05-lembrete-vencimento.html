@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0b0a91">
   <title>Bulbe | Lembrete de vencimento</title>
   <link rel="stylesheet" href="../assets/css/app-shell.css">
-  <link rel="stylesheet" href="../assets/css/lembrete-vencimento.css">
-  <script type="module" src="../assets/js/lembrete-vencimento.js"></script>
+  <link rel="stylesheet" href="../assets/css/hu05.css">
+  <script type="module" src="../assets/js/hu05.js"></script>
 </head>
 <body class="app-page">
   <div class="app-shell" aria-label="Aplicativo Bulbe">
@@ -59,15 +59,16 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
         <span>Faturas</span>
       </button>
-      <button class="nav-item" type="button" data-tab="consumo" disabled aria-label="Consumo, disponível em breve">
+      <button class="nav-item" type="button" data-tab="consumo" aria-label="Consumo">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
         <span>Consumo</span>
       </button>
-      <button class="nav-item" type="button" data-tab="indicacoes" disabled aria-label="Indicações, disponível em breve">
+      <button class="nav-item" type="button" data-tab="indicacoes" aria-label="Indicações">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
         <span>Indicações</span>
       </button>
     </nav>
+    <p id="nav-feedback" role="status" aria-live="polite" hidden></p>
     <dialog id="detalhes" aria-labelledby="titulo-detalhes">
       <h2 id="titulo-detalhes">Sua primeira fatura Bulbe</h2>
       <p class="valor" data-valor-fatura>—</p><p>Vencimento: <strong data-data-detalhes>—</strong></p><p>Status: <strong data-status-fatura>—</strong></p>
