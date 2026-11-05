@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bulbe Acompanha — Pagamento via PIX</title>
-<link rel="stylesheet" href="../assets/css/hu04.css?v=padrao-320">
-<link rel="stylesheet" href="../assets/css/app-shell.css?v=padrao-320">
+<link rel="stylesheet" href="../assets/css/hu04.css?v=fluxo-1">
+<link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
 </head>
 <body class="app-page">
-<div class="app app-shell" aria-label="Aplicativo Bulbe">
+<div class="app-shell" aria-label="Aplicativo Bulbe">
     <header class="app-header">
       <button class="icon-button" type="button" data-action="back" aria-label="Voltar">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
@@ -26,16 +26,16 @@
       </div>
     </header>
 
-  <main>
+  <main class="screen-content">
     <section class="card">
       <div class="linha">
-        <div><h1>Pagamento da 1ª fatura</h1><p class="sub">Primeira fatura · março/26</p></div>
-        <span class="status-pill">Em aberto</span>
+        <div><h1>Pagamento da 1ª fatura</h1><p class="sub" data-field="referencia">—</p></div>
+        <span class="status-pill" data-field="status">—</span>
       </div>
-      <div><span class="rot">Valor da fatura</span><div class="de">De R$ 386,45</div></div>
-      <div class="desc">Desconto Bulbe: R$ 42,03</div>
-      <div><span class="rot">Total a pagar</span><div class="total">R$ 344,42</div></div>
-      <div><span class="sub">Vencimento</span><div class="venc">05/03/2026</div></div>
+      <div><span class="rot">Valor da fatura</span><div class="de" data-field="original">—</div></div>
+      <div class="desc" data-field="descontoTexto">—</div>
+      <div><span class="rot">Total a pagar</span><div class="total" data-field="total">—</div></div>
+      <div><span class="sub">Vencimento</span><div class="venc" data-field="vencimento">—</div></div>
     </section>
 
     <section class="card">
@@ -44,13 +44,13 @@
         <div><h2>Pague com PIX</h2><p>Rápido, seguro e confirmado na hora.</p></div>
       </div>
       <div class="qr"><svg viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="QR Code ilustrativo do PIX"><path id="qr" fill="#11167F"/></svg></div>
-      <span class="nota">QR Code ilustrativo · leia com o app do seu banco</span>
+      <span class="nota">QR Code fictício · não escaneável · apenas demonstração</span>
       <div class="ou">ou copie o código</div>
       <div><b style="font-size:13px;color:var(--titulo)">PIX Copia e Cola</b>
-        <p class="cod" id="codigo">00020126360014BR.GOV.BCB.PIX0114BULBE00000000052040000530398654063200.005802BR5905BULBE6009SAO PAULO62070503***6304FICT</p></div>
-      <button class="btn b1" id="copiar">Copiar código</button>
+        <p class="cod" id="codigo" data-field="pix">—</p></div>
+      <button class="btn b1" id="copiar" data-requires-invoice disabled>Copiar código</button>
       <div>
-        <div class="info">Código válido até 05/03/2026, às 23:59</div>
+        <div class="info" data-field="validadePix">—</div>
         <div class="info">Código fictício, apenas para demonstração.</div>
       </div>
     </section>
@@ -59,26 +59,27 @@
       <h2>Como pagar, passo a passo</h2>
       <div class="passo"><div class="n">1</div><div><b>Abra o app do seu banco</b><span>Entre na área de pagamentos e escolha a opção PIX.</span></div></div>
       <div class="passo"><div class="n">2</div><div><b>Leia o QR Code ou use o Copia e Cola</b><span>Aponte a câmera para o QR Code ou cole o código que você copiou acima.</span></div></div>
-      <div class="passo"><div class="n">3</div><div><b>Confira os dados</b><span>O valor deve ser R$ 344,42 e o favorecido, Bulbe (dados ilustrativos).</span></div></div>
+      <div class="passo"><div class="n">3</div><div><b>Confira os dados</b><span data-field="conferirPix">—</span></div></div>
       <div class="passo"><div class="n">4</div><div><b>Confirme o pagamento</b><span>Valide com sua senha ou biometria. Pronto, é só isso.</span></div></div>
     </section>
 
     <section class="depois">
       <h2>Depois de pagar</h2>
+      <p class="nota">Demonstração: o botão abaixo apenas simula o pagamento. Nenhuma cobrança real é realizada.</p>
       <ul>
         <li>A confirmação do PIX chega em instantes, geralmente em até 2 minutos.</li>
         <li>Você recebe um aviso no app e por e-mail assim que o pagamento for reconhecido.</li>
         <li>Sua fatura passa para “Paga” na aba Faturas. Não é preciso enviar comprovante.</li>
       </ul>
-      <button class="btn b1" id="verificar">Verificar pagamento</button>
+      <button class="btn b1" id="verificar" data-requires-invoice disabled>Simular confirmação do pagamento</button>
       <p class="ret" id="ret" role="status" hidden>Verificamos se o seu pagamento já foi reconhecido pela Bulbe.</p>
-      <a href="#" class="btn b2">Ver minhas faturas</a>
+      <a href="hu01-resumo-primeira-fatura.html" data-route="resumo" class="btn b2">Ver minhas faturas</a>
     </section>
 
     <section class="duv">
       <div class="duv-i" aria-hidden="true">?</div>
       <div class="duv-t"><b>Dúvidas?</b><span>Fale com a gente e tire suas dúvidas sobre o pagamento.</span></div>
-      <button class="btn b1">Falar com suporte</button>
+      <button class="btn b1" data-action="support">Falar com suporte</button>
     </section>
   </main>
 
@@ -99,6 +100,6 @@
   <p id="nav-feedback" role="status" aria-live="polite" hidden></p>
 </div>
 
-<script src="../assets/js/hu04.js"></script>
+<script type="module" src="../assets/js/hu04.js?v=fluxo-1"></script>
 </body>
 </html>

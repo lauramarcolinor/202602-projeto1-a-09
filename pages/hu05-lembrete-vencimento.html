@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0a91">
   <title>Bulbe | Lembrete de vencimento</title>
-  <link rel="stylesheet" href="../assets/css/app-shell.css?v=padrao-320">
-  <link rel="stylesheet" href="../assets/css/hu05.css?v=padrao-320">
-  <script type="module" src="../assets/js/hu05.js"></script>
+  <link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
+  <link rel="stylesheet" href="../assets/css/hu05.css?v=fluxo-1">
+  <script type="module" src="../assets/js/hu05.js?v=fluxo-1"></script>
 </head>
 <body class="app-page">
   <div class="app-shell" aria-label="Aplicativo Bulbe">
@@ -35,10 +35,10 @@
         <p id="texto-mensagem">Confira o vencimento da sua primeira fatura e organize seu pagamento.</p>
       </section>
       <section class="fatura" aria-label="Sua primeira fatura Bulbe">
-        <div class="fatura-topo"><h2 id="referencia-fatura">Carregando fatura…</h2><span class="status-pill" data-status-fatura>—</span></div>
-        <p class="valor" data-valor-fatura>—</p>
+        <div class="fatura-topo"><h2 id="referencia-fatura" data-field="referencia">Carregando fatura…</h2><span class="status-pill" data-status-fatura data-field="status">—</span></div>
+        <p class="valor" data-valor-fatura data-field="total">—</p>
         <p class="legenda">Sua primeira fatura Bulbe</p>
-        <div class="vencimento"><p class="legenda">Vencimento</p><p class="data"><time data-vencimento-fatura>—</time></p><p class="nota">Lembrete enviado antes do vencimento</p></div>
+        <div class="vencimento"><p class="legenda">Vencimento</p><p class="data"><time data-vencimento-fatura data-field="vencimentoLongo">—</time></p><p class="nota">Lembrete enviado antes do vencimento</p></div>
       </section>
       <p id="erro-fatura" class="nota" role="alert" hidden></p>
       <button id="tentar-novamente" class="botao secundario" type="button" hidden>Tentar novamente</button>
@@ -69,12 +69,6 @@
       </button>
     </nav>
     <p id="nav-feedback" role="status" aria-live="polite" hidden></p>
-    <dialog id="detalhes" aria-labelledby="titulo-detalhes">
-      <h2 id="titulo-detalhes">Sua primeira fatura Bulbe</h2>
-      <p class="valor" data-valor-fatura>—</p><p>Vencimento: <strong data-data-detalhes>—</strong></p><p>Status: <strong data-status-fatura>—</strong></p>
-      <p>Dados fictícios do protótipo. Confirmar o recebimento do lembrete não confirma o pagamento.</p>
-      <form method="dialog"><button class="botao primario">Voltar ao lembrete</button></form>
-    </dialog>
-  </div>
+      </div>
 </body>
 </html>

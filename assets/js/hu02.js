@@ -1,46 +1,30 @@
-// Telas
-const telaDetalhes = document.getElementById('tela-detalhes');
-const telaComposicao = document.getElementById('tela-composicao');
- 
-// Botões
-const btnVerComposicao = document.getElementById('btn-ver-composicao');
-const btnVoltarDetalhes = document.getElementById('btn-voltar-detalhes');
-const btnVoltarTopo = document.getElementById('btn-voltar-topo');
- 
-// Mostra uma tela e esconde a outra
-function mostrarTela(tela) {
-  telaDetalhes.classList.remove('ativa');
-  telaComposicao.classList.remove('ativa');
-  tela.classList.add('ativa');
-  document.querySelector('.screen-content').scrollTo({ top: 0, behavior: 'smooth' });
+import { buscarFaturaDemo, preencherFatura } from './demo-state.js';
+import { iniciarNavegacao, carregarTela, irPara } from './navigation.js';
+const detalhes = document.querySelector('#tela-detalhes');
+const composicao = document.querySelector('#tela-composicao');
+function mostrar(tela) {
+  detalhes.classList.toggle('ativa', tela === detalhes);
+  composicao.classList.toggle('ativa', tela === composicao);
+  document.querySelector('main').scrollTo({ top: 0 });
+  const titulo = tela.querySelector('h1');
+  titulo.tabIndex = -1;
+  titulo.focus({ preventScroll: true });
 }
- 
-// Tela 1 -> Tela 2
-btnVerComposicao.addEventListener('click', function () {
-  mostrarTela(telaComposicao);
-});
- 
-// Tela 2 -> Tela 1
-btnVoltarDetalhes.addEventListener('click', function () {
-  mostrarTela(telaDetalhes);
-});
- 
-// Seta do cabeçalho: na tela 2, volta para a tela 1
-btnVoltarTopo.addEventListener('click', function () {
-  if (telaComposicao.classList.contains('ativa')) {
-    mostrarTela(telaDetalhes);
-  } else {
-    window.location.href = 'hu01-resumo-primeira-fatura.html';
-  }
-});
-
-// Alterna apenas o destaque do rodapé, sem abrir telas ou popups.
-document.querySelectorAll('[data-tab]').forEach(function (tab) {
-  tab.addEventListener('click', function () {
-    document.querySelectorAll('[data-tab]').forEach(function (item) {
-      item.classList.toggle('is-active', item === tab);
-      if (item === tab) item.setAttribute('aria-current', 'page');
-      else item.removeAttribute('aria-current');
-    });
+iniciarNavegacao({ antesDeVoltar() {
+  if (!composicao.classList.contains('ativa')) return false;
+  mostrar(detalhes);
+  return true;
+} });
+document.querySelector('#btn-ver-composicao').addEventListener('click', () => mostrar(composicao));
+document.querySelector('#btn-voltar-detalhes').addEventListener('click', () => mostrar(detalhes));
+let paga = false;
+document.querySelectorAll('.btn-primario').forEach(botao => botao.addEventListener('click', () => irPara(paga ? 'confirmacao' : 'formas')));
+await carregarTela(async () => {
+  const fatura = await buscarFaturaDemo();
+  preencherFatura(fatura);
+  paga = fatura.status === 'paga';
+  document.querySelectorAll('.btn-primario').forEach(botao => {
+    botao.disabled = false;
+    if (paga) botao.textContent = 'Ver confirmação da simulação';
   });
 });

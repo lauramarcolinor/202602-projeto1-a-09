@@ -84,6 +84,7 @@ export function preencherFatura(fatura) {
   document.querySelectorAll('[data-field]').forEach(elemento => {
     const valor = campos[elemento.dataset.field];
     if (valor !== undefined) elemento.textContent = valor;
+    if (elemento.tagName === 'TIME' && elemento.dataset.field === 'vencimentoLongo') elemento.dateTime = fatura.vencimento;
     if (elemento.dataset.field === 'status') elemento.classList.toggle('is-paid', fatura.status === 'paga');
   });
 }

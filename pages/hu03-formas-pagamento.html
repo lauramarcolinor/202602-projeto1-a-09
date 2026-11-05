@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Bulbe | Formas de pagamento</title>
-  <link rel="stylesheet" href="../assets/css/hu03.css?v=padrao-320">
-  <link rel="stylesheet" href="../assets/css/app-shell.css?v=padrao-320">
-  <script src="../assets/js/hu03.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/hu03.css?v=fluxo-1">
+  <link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
+  <script type="module" src="../assets/js/hu03.js?v=fluxo-1"></script>
 </head>
 <body class="app-page">
   <div class="app-shell" aria-label="Aplicativo Bulbe">
@@ -131,7 +131,7 @@
           Lembretes antes do vencimento.
         </p>
 
-        <button type="submit" class="botao-principal">Continuar</button>
+        <button type="submit" data-requires-invoice disabled class="botao-principal">Continuar</button>
 
         <p class="rodape">Você pode mudar a forma de pagamento depois.</p>
       </form>
@@ -154,12 +154,5 @@
     </nav>
   </div>
 
-  <dialog id="modal" aria-labelledby="titulo-modal">
-    <button id="fechar-modal" class="fechar" aria-label="Fechar">×</button>
-    <h2 id="titulo-modal"></h2>
-    <p id="mensagem-modal"></p>
-    <p id="aviso-demo" hidden>Demonstração: nenhum pagamento foi realizado.</p>
-    <button id="entendi" class="botao-principal">Entendi</button>
-  </dialog>
 </body>
 </html>

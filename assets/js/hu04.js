@@ -1,55 +1,48 @@
-  // QR Code ilustrativo (não escaneável)
-  var n = 29, s = 20261020, d = '';
-  function rnd(){ s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; }
-  var cantos = [[0,0],[n-7,0],[0,n-7]];
-  for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
-    var escuro = false, finder = false;
-    cantos.forEach(function(c){
-      var dx = x - c[0], dy = y - c[1];
-      if (dx >= -1 && dx <= 7 && dy >= -1 && dy <= 7) {
-        finder = true;
-        escuro = dx >= 0 && dy >= 0 && dx <= 6 && dy <= 6 &&
-          (dx == 0 || dx == 6 || dy == 0 || dy == 6 || (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4));
-      }
-    });
-    if (!finder) escuro = rnd() > 0.52;
-    if (escuro) d += 'M' + x + ' ' + y + 'h1v1h-1z';
+import { buscarFaturaDemo, preencherFatura, lerEstado, salvarEstado, simularPagamento } from './demo-state.js';
+import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js';
+iniciarNavegacao({ voltar: 'formas' });
+// QR apenas ilustrativo: nunca representa uma cobrança real.
+let seed = 20261020, path = '';
+const n = 29, cantos = [[0, 0], [22, 0], [0, 22]];
+for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+  let escuro = false, finder = false;
+  for (const [cx, cy] of cantos) {
+    const dx = x - cx, dy = y - cy;
+    if (dx >= -1 && dx <= 7 && dy >= -1 && dy <= 7) {
+      finder = true;
+      escuro = dx >= 0 && dy >= 0 && dx <= 6 && dy <= 6 && (dx === 0 || dx === 6 || dy === 0 || dy === 6 || (dx >= 2 && dx <= 4 && dy >= 2 && dy <= 4));
+    }
   }
-  document.getElementById('qr').setAttribute('d', d);
-
-  var btn = document.getElementById('copiar');
-  btn.onclick = function () {
-    var codigo = document.getElementById('codigo').textContent.trim();
-    if (navigator.clipboard) navigator.clipboard.writeText(codigo);
-    btn.textContent = 'Código copiado!';
-    setTimeout(function(){ btn.textContent = 'Copiar código'; }, 2500);
-  };
-  document.getElementById('verificar').onclick = function () {
-    document.getElementById('ret').hidden = false;
-  };
-
-  var navFeedback = document.getElementById('nav-feedback');
-  var navFeedbackTimeout;
-  document.querySelectorAll('nav [data-tab]').forEach(function (tab) {
-    tab.addEventListener('click', function (event) {
-      // O rodapé apenas alterna o destaque, sem navegação ou avisos.
-      event.preventDefault();
-      document.querySelectorAll('nav [data-tab]').forEach(function (item) {
-        item.classList.toggle('is-active', item === tab);
-        if (item === tab) item.setAttribute('aria-current', 'page');
-        else item.removeAttribute('aria-current');
-      });
-    });
-  });
-  document.querySelector('[data-action="back"]').addEventListener('click', function () {
-    if (window.history.length > 1) window.history.back();
-    else window.location.href = '../index.html';
-  });
-  document.querySelectorAll('[data-action="notifications"], [data-action="profile"]').forEach(function (control) {
-    control.addEventListener('click', function () {
-      navFeedback.textContent = control.dataset.action === 'profile' ? 'Perfil de Marina Souza.' : 'Você não tem novas notificações.';
-      navFeedback.hidden = false;
-      clearTimeout(navFeedbackTimeout);
-      navFeedbackTimeout = setTimeout(function () { navFeedback.hidden = true; }, 3200);
-    });
-  });
+  if (!finder) { seed = (seed * 1664525 + 1013904223) % 4294967296; escuro = seed / 4294967296 > .52; }
+  if (escuro) path += 'M' + x + ' ' + y + 'h1v1h-1z';
+}
+document.querySelector('#qr').setAttribute('d', path);
+let fatura;
+const simular = document.querySelector('#verificar');
+const copiar = document.querySelector('#copiar');
+simular.disabled = copiar.disabled = true;
+copiar.addEventListener('click', async () => {
+  if (!fatura) return;
+  try { await copiarTexto(fatura.pixCopiaECola); avisar('Código fictício copiado. Nenhum pagamento foi realizado.'); }
+  catch { avisar('Não foi possível copiar. Selecione o código fictício manualmente.'); }
+});
+simular.addEventListener('click', () => {
+  if (!fatura || simular.disabled) return;
+  try {
+    if (fatura.status !== 'paga') simularPagamento(fatura);
+    simular.disabled = true;
+    irPara('confirmacao');
+  } catch (erro) { avisar(erro.message); }
+});
+document.querySelector('[data-action="support"]')?.addEventListener('click', () => avisar('Suporte demonstrativo; nenhuma mensagem foi enviada.'));
+await carregarTela(async () => {
+  fatura = await buscarFaturaDemo();
+  preencherFatura(fatura);
+  if (fatura.status !== 'paga' && lerEstado().forma !== 'pix') {
+    avisar('Escolha PIX na tela de formas de pagamento para iniciar a simulação.');
+    return;
+  }
+  simular.disabled = false;
+  copiar.disabled = fatura.status === 'paga';
+  if (fatura.status === 'paga') simular.textContent = 'Ver confirmação da simulação';
+});

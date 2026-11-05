@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0b0a91">
   <title>Bulbe | Confirmação do pagamento</title>
-  <link rel="stylesheet" href="../assets/css/app-shell.css?v=padrao-320">
-  <link rel="stylesheet" href="../assets/css/hu06.css?v=padrao-320">
+  <link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
+  <link rel="stylesheet" href="../assets/css/hu06.css?v=fluxo-1">
 </head>
 <body class="app-page">
   <div class="app-shell" aria-label="Aplicativo Bulbe">
@@ -30,40 +30,40 @@
     <main class="screen-content">
       <!-- Estado do pagamento: o destaque principal da tela. -->
       <section class="confirmacao" aria-labelledby="screen-title">
-        <span class="confirmacao__icone" aria-hidden="true">
+        <span class="confirmacao__icone" hidden aria-hidden="true">
           <svg viewBox="0 0 32 32"><path d="M26.6667 8L12 22.6667L5.33333 16" /></svg>
         </span>
-        <h1 id="screen-title" class="confirmacao__titulo">Pagamento confirmado</h1>
-        <p class="confirmacao__sub">Primeira fatura · março/26</p>
+        <h1 id="screen-title" class="confirmacao__titulo">Verificando simulação…</h1>
+        <p class="confirmacao__sub" data-field="referencia">—</p>
         <span class="selo">
           <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M10.8333 3.25L4.875 9.20833L2.16667 6.5" /></svg>
-          Pago · confirmado pela Bulbe
+          Demonstração · aguardando verificação
         </span>
       </section>
 
       <!-- Valor, desconto e data do pagamento. -->
-      <section class="cartao valor" aria-labelledby="valor-titulo">
+      <section class="cartao valor" hidden aria-labelledby="valor-titulo">
         <h2 id="valor-titulo" class="rotulo">VALOR PAGO</h2>
-        <p class="valor__de" id="valor-original">De R$ 386,45</p>
-        <p class="valor__desconto">Desconto Bulbe: <span id="valor-desconto">R$ 42,03</span></p>
+        <p class="valor__de" id="valor-original" data-field="original">—</p>
+        <p class="valor__desconto">Desconto Bulbe: <span id="valor-desconto" data-field="desconto">—</span></p>
         <hr class="divisor">
         <p class="rotulo">TOTAL PAGO</p>
-        <p class="valor__total" id="valor-total">R$ 344,42</p>
-        <p class="valor__pago-em" id="valor-pago-em">Pago em 03/03/2026 às 14h32 via PIX</p>
-        <p class="valor__vencia" id="valor-vencia">Vencia em 05/03/2026 · pago em dia</p>
+        <p class="valor__total" id="valor-total" data-field="total">—</p>
+        <p class="valor__pago-em" id="valor-pago-em">—</p>
+        <p class="valor__vencia" id="valor-vencia">—</p>
       </section>
 
       <!-- Resumo da transação fictícia. -->
-      <section class="secao" aria-labelledby="comprovante-titulo">
+      <section class="secao" hidden aria-labelledby="comprovante-titulo">
         <h2 id="comprovante-titulo" class="secao__titulo">Comprovante</h2>
         <div class="cartao comprovante">
           <div class="linha">
             <span class="linha__rotulo">Titular</span>
-            <span class="linha__valor">Marina Souza</span>
+            <span class="linha__valor" data-field="titular">—</span>
           </div>
           <div class="linha">
             <span class="linha__rotulo">Instalação</span>
-            <span class="linha__valor">3001423519</span>
+            <span class="linha__valor" data-field="instalacao">—</span>
           </div>
           <div class="linha">
             <span class="linha__rotulo">Forma de pagamento</span>
@@ -72,7 +72,7 @@
           <hr class="divisor">
           <div class="autenticacao">
             <span class="autenticacao__rotulo">Código de autenticação</span>
-            <span class="autenticacao__codigo" id="codigo-autenticacao">4734 4849 0000 78</span>
+            <span class="autenticacao__codigo" id="codigo-autenticacao" data-field="autenticacao">—</span>
           </div>
           <button class="botao botao--copiar" type="button" data-action="copiar">Copiar código</button>
           <p class="aviso-ficticio">Demonstração com dados fictícios: nenhuma cobrança real foi feita.</p>
@@ -93,8 +93,8 @@
           <li class="etapa">
             <span class="etapa__numero" aria-hidden="true">2</span>
             <div class="etapa__texto">
-              <p class="etapa__titulo">Próxima fatura: abril/26</p>
-              <p class="etapa__desc">Vence em 05/04/2026. Avisamos você 5 dias antes.</p>
+              <p class="etapa__titulo" data-field="proximaReferencia">—</p>
+              <p class="etapa__desc" data-field="proximoVencimento">—</p>
             </div>
           </li>
           <li class="etapa">
@@ -110,7 +110,7 @@
 
       <!-- Retorno à área de faturas e apoio. -->
       <section class="acoes">
-        <button class="botao botao--primario" type="button" data-action="comprovante">Baixar comprovante</button>
+        <button class="botao botao--primario" type="button" data-action="comprovante" hidden>Baixar comprovante</button>
         <button class="botao botao--secundario" type="button" data-action="faturas">Voltar para minhas faturas</button>
         <div class="cartao suporte">
           <p class="suporte__texto">Pagamento não apareceu no seu banco?</p>
@@ -137,6 +137,6 @@
     <p class="screen-feedback" id="screen-feedback" role="status" aria-live="polite"></p>
   </div>
 
-  <script type="module" src="../assets/js/hu06.js"></script>
+  <script type="module" src="../assets/js/hu06.js?v=fluxo-1"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0b0a91">
   <title>Bulbe | Resumo da primeira fatura</title>
-  <link rel="stylesheet" href="../assets/css/app-shell.css?v=padrao-320">
-  <link rel="stylesheet" href="../assets/css/hu01.css?v=padrao-320">
+  <link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
+  <link rel="stylesheet" href="../assets/css/hu01.css?v=fluxo-1">
 </head>
 <body class="app-page">
   <div class="app-shell" aria-label="Aplicativo Bulbe">
@@ -30,8 +30,8 @@
     <main class="screen-content">
       <section class="screen-heading" aria-labelledby="screen-title">
         <h1 id="screen-title">Resumo da fatura</h1>
-        <p>Primeira fatura · março/26</p>
-        <span class="status-pill" id="invoice-status">Em aberto · pagamento pendente</span>
+        <p data-field="referencia">—</p>
+        <span class="status-pill" id="invoice-status" data-field="status">—</span>
       </section>
 
       <section class="invoice-card" aria-labelledby="invoice-card-title">
@@ -40,24 +40,24 @@
         <div class="label-row">
           <span>Valor da fatura</span>
         </div>
-        <p class="original-value" id="original-value">De R$ 386,45</p>
+        <p class="original-value" id="original-value" data-field="original">—</p>
 
         <div class="discount-row">
           <span>Desconto Bulbe:</span>
-          <strong id="discount-value">R$ 42,03</strong>
+          <strong id="discount-value" data-field="desconto">—</strong>
         </div>
 
         <div class="total-block">
           <span class="total-label">Total a pagar</span>
-          <strong class="total-value" id="total-value">R$ 344,42</strong>
+          <strong class="total-value" id="total-value" data-field="total">—</strong>
         </div>
 
         <div class="due-date">
           <span>Vencimento</span>
-          <strong id="due-date">05/03/2026</strong>
+          <strong id="due-date" data-field="vencimento">—</strong>
         </div>
 
-        <button class="primary-button" type="button" data-action="payment">Escolher forma de pagamento</button>
+        <button class="primary-button" type="button" data-action="payment" data-requires-invoice disabled>Escolher forma de pagamento</button>
       </section>
 
       <section class="composition-card" aria-labelledby="composition-title">
@@ -87,6 +87,6 @@
     <p class="screen-feedback" id="screen-feedback" role="status" aria-live="polite"></p>
   </div>
 
-  <script type="module" src="../assets/js/hu01.js?v=rodape-destaque"></script>
+  <script type="module" src="../assets/js/hu01.js?v=fluxo-1"></script>
 </body>
 </html>
