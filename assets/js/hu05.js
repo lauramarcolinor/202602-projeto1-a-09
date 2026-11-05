@@ -27,7 +27,15 @@ async function carregar() {
 }
 confirmar.addEventListener('click', () => {
   if (!fatura) return;
-  try { salvarEstado({ lembreteRecebido: true }); renderizar(); ver.focus(); }
+  try {
+    salvarEstado({ lembreteRecebido: true });
+    renderizar();
+    // Exibe a confirmação antes de convidar a pessoa a abrir a fatura.
+    const titulo = document.querySelector('#titulo-mensagem');
+    titulo.tabIndex = -1;
+    titulo.focus({ preventScroll: true });
+    document.querySelector('.screen-content').scrollTo({ top: 0, behavior: 'instant' });
+  }
   catch { avisar('Permita o armazenamento da sessão para confirmar o recebimento.'); }
 });
 ver.addEventListener('click', () => irPara('resumo'));
