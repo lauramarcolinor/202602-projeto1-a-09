@@ -2,7 +2,7 @@ import test, { beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { lerEstado, salvarEstado, buscarFaturaDemo, simularPagamento } from '../assets/js/demo-state.js';
-import { irPara } from '../assets/js/navigation.js';
+import { irPara, copiarTexto } from '../assets/js/navigation.js';
 
 const fixture = JSON.parse(readFileSync(new URL('../data/faturas.json', import.meta.url)));
 let storage;
@@ -65,4 +65,35 @@ test('rota resolve na pasta pages e rejeita destinos desconhecidos', () => {
   irPara('pix');
   assert.equal(new URL(window.location.href).pathname.endsWith('/pages/hu04-pagamento-pix.html'), true);
   assert.throws(() => irPara('inexistente'), /inválido/);
+});
+
+function prepararCopia(clipboard, resultado) {
+  const chamadas = { removido: false, texto: null, restaurado: false };
+  Object.defineProperty(globalThis, 'navigator', { configurable: true, value: { clipboard } });
+  globalThis.window = { getSelection: () => null };
+  globalThis.document = {
+    activeElement: { focus() { chamadas.restaurado = true; } },
+    body: { append(campo) { chamadas.texto = campo.value; } },
+    createElement: () => ({ style: {}, setAttribute() {}, focus() {}, select() {}, setSelectionRange() {}, remove() { chamadas.removido = true; } }),
+    execCommand: () => resultado
+  };
+  return chamadas;
+}
+test('cópia usa Clipboard API quando autorizada', async () => {
+  let copiado;
+  prepararCopia({ writeText: async texto => { copiado = texto; } }, false);
+  await copiarTexto('PIX-FICTICIO');
+  assert.equal(copiado, 'PIX-FICTICIO');
+});
+test('cópia negada usa alternativa e restaura foco', async () => {
+  const chamadas = prepararCopia({ writeText: async () => { throw new Error('negado'); } }, true);
+  await copiarTexto('PIX-FICTICIO');
+  assert.equal(chamadas.texto, 'PIX-FICTICIO');
+  assert.equal(chamadas.removido, true);
+  assert.equal(chamadas.restaurado, true);
+});
+test('cópia bloqueada não informa sucesso e remove campo temporário', async () => {
+  const chamadas = prepararCopia(undefined, false);
+  await assert.rejects(() => copiarTexto('PIX-FICTICIO'), /bloqueada/);
+  assert.equal(chamadas.removido, true);
 });

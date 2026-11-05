@@ -1,5 +1,5 @@
 import { buscarFaturaDemo, preencherFatura, lerEstado, salvarEstado, simularPagamento } from './demo-state.js';
-import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js';
+import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js?v=copia-2';
 iniciarNavegacao({ voltar: 'formas' });
 // QR apenas ilustrativo: nunca representa uma cobrança real.
 let seed = 20261020, path = '';
@@ -21,10 +21,31 @@ let fatura;
 const simular = document.querySelector('#verificar');
 const copiar = document.querySelector('#copiar');
 simular.disabled = copiar.disabled = true;
+let copiando = false;
+let copiaTimer;
 copiar.addEventListener('click', async () => {
-  if (!fatura) return;
-  try { await copiarTexto(fatura.pixCopiaECola); avisar('Código fictício copiado. Nenhum pagamento foi realizado.'); }
-  catch { avisar('Não foi possível copiar. Selecione o código fictício manualmente.'); }
+  if (!fatura || copiando) return;
+  copiando = true;
+  clearTimeout(copiaTimer);
+  copiar.textContent = 'Copiando…';
+  try {
+    await copiarTexto(fatura.pixCopiaECola);
+    copiar.textContent = 'Código copiado!';
+    avisar('Código fictício copiado. Nenhum pagamento foi realizado.');
+  } catch {
+    copiar.textContent = 'Selecione e copie o código';
+    const selecao = window.getSelection();
+    if (selecao) {
+      const range = document.createRange();
+      range.selectNodeContents(document.querySelector('#codigo'));
+      selecao.removeAllRanges();
+      selecao.addRange(range);
+    }
+    avisar('A cópia automática foi bloqueada. O código está selecionado: use Copiar ou Ctrl+C.');
+  } finally {
+    copiando = false;
+    copiaTimer = setTimeout(() => { copiar.textContent = 'Copiar código'; }, 3500);
+  }
 });
 simular.addEventListener('click', () => {
   if (!fatura || simular.disabled) return;
@@ -38,11 +59,12 @@ document.querySelector('[data-action="support"]')?.addEventListener('click', () 
 await carregarTela(async () => {
   fatura = await buscarFaturaDemo();
   preencherFatura(fatura);
+  // Copiar o código fictício não depende de confirmar a escolha ou pagar.
+  copiar.disabled = false;
   if (fatura.status !== 'paga' && lerEstado().forma !== 'pix') {
     avisar('Escolha PIX na tela de formas de pagamento para iniciar a simulação.');
     return;
   }
   simular.disabled = false;
-  copiar.disabled = fatura.status === 'paga';
   if (fatura.status === 'paga') simular.textContent = 'Ver confirmação da simulação';
 });

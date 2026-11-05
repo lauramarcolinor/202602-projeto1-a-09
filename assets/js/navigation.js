@@ -66,6 +66,28 @@ export async function carregarTela(renderizar) {
 }
 
 export async function copiarTexto(texto) {
-  if (!navigator.clipboard?.writeText) throw new Error('Cópia indisponível neste navegador.');
-  await navigator.clipboard.writeText(texto);
+  if (navigator.clipboard?.writeText) {
+    try { await navigator.clipboard.writeText(texto); return; }
+    catch { /* Tenta a alternativa quando a permissão é negada. */ }
+  }
+  const anterior = document.activeElement;
+  const selecao = window.getSelection();
+  const ranges = [];
+  if (selecao) for (let i = 0; i < selecao.rangeCount; i++) ranges.push(selecao.getRangeAt(i).cloneRange());
+  const campo = document.createElement('textarea');
+  campo.value = texto;
+  campo.setAttribute('readonly', '');
+  campo.setAttribute('aria-label', 'Código para copiar');
+  campo.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;';
+  document.body.append(campo);
+  try {
+    campo.focus({ preventScroll: true });
+    campo.select();
+    campo.setSelectionRange(0, texto.length);
+    if (!document.execCommand?.('copy')) throw new Error('Cópia bloqueada pelo navegador.');
+  } finally {
+    campo.remove();
+    anterior?.focus?.({ preventScroll: true });
+    if (selecao) { selecao.removeAllRanges(); ranges.forEach(range => selecao.addRange(range)); }
+  }
 }
