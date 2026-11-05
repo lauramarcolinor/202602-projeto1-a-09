@@ -134,6 +134,14 @@
 .total-detalhes { margin-top: 16px; }
 .resumo-fatura .btn-primario { margin-top: 17px; margin-bottom: 0; }
 
+/* No resumo da composição, o total divide espaço com o rótulo da linha. */
+#tela-composicao .linha .total {
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+  white-space: nowrap;
+}
+
 /* Passos */
 .passo {
   margin-top: 12px;
