@@ -121,16 +121,16 @@ Cada integrante implementa e testa sua tela na própria branch, abre um PR e sol
 
 ## 8. Equipe
 
-| Integrante | GitHub | Papel principal |
+| Integrante | GitHub | Entrega sob responsabilidade principal |
 | --- | --- | --- |
-| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | Organização do projeto |
-| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | Pesquisa e jornada do cliente |
-| Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | Design e wireframes |
-| Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | Desenvolvimento das telas |
-| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | Dados e funcionalidades |
-| Julia Dumont | [@juliamelodumont](https://github.com/juliamelodumont) | Revisão e documentação |
+| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | HU01 — resumo da primeira fatura; integração da navegação e validação conjunta das telas. |
+| Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | HU02 — composição da fatura e vencimento. |
+| Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | HU03 — escolha da forma de pagamento. |
+| Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | HU04 — pagamento via PIX. |
+| Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | HU05 — lembrete de vencimento. |
+| Julia Dumont | [@juliamelodumont](https://github.com/juliamelodumont) | HU06 — confirmação do pagamento. |
 
-> Os papéis indicam o foco principal de cada integrante. Todas participam das decisões, revisões, testes e demais atividades do projeto.
+Cada integrante teve uma tela/história como foco principal; portanto, as responsabilidades não são todas iguais. A definição do fluxo, o padrão visual compartilhado, a integração, os testes e as revisões são atividades colaborativas. As atribuições indicam responsabilidade principal, não autoria exclusiva de todas as decisões ou alterações relacionadas à tela.
 
 ## 9. Entregas
 
@@ -139,10 +139,10 @@ Cada integrante implementa e testa sua tela na própria branch, abre um PR e sol
 | Mapa de jornada | 19 | Concluído — documentação e imagem versionadas. |
 | Histórias de usuário | 20 | Concluído — seis histórias e responsáveis registrados. |
 | Wireframes | 21–23 | Concluído — seis telas exportadas em `docs/wireframes/`. |
-| Sprint Review I | 24 | Registro da review ainda precisa ser versionado em `docs/sprints/`. |
-| Implementação | 25–28 | Em andamento — acompanhar as issues #29 a #38 e os PRs abertos. |
-| Sprint Review II | 29 | Pendente. |
-| Versão final | 30 | Pendente — depende da integração e validação do fluxo. |
+| Sprint Review I | 24 | A review ocorreu; o registro ainda precisa ser versionado em `docs/sprints/`. |
+| Implementação | 25–28 | As seis telas e o fluxo demonstrativo HU01–HU06 estão integrados na `main`; acompanhar as issues #29 a #38 para verificar pendências e critérios de aceite. |
+| Sprint Review II | 29 | Pendente de registro em `docs/sprints/`. |
+| Versão final | 30 | Pendente — concluir a validação do fluxo e registrar a entrega final. |
 
 ---
 
