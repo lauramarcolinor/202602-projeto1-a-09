@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulbe – Fatura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/hu02-composicao-vencimento.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Cabeçalho (comum às duas telas) -->
+    <header class="header">
+      <div class="header-bar">
+        <div class="header-lado">
+        <button class="icon-btn" id="btn-voltar-topo" aria-label="Voltar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        </div>
+
+        <div class="logo">
+          <span>bulbe</span>
+          <svg width="26" height="30" viewBox="0 0 26 30" fill="none" stroke-width="3.5" stroke-linecap="round">
+            <path d="M4 7 L20 3" stroke="#3DDC97"/>
+            <path d="M4 15 L22 15" stroke="#2D9CFF"/>
+            <path d="M4 23 L20 27" stroke="#FFB020"/>
+          </svg>
+        </div>
+
+        <div class="header-lado direita">
+          <button class="icon-btn" aria-label="Notificações">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+          </button>
+          <button class="avatar" aria-label="Perfil">M</button>
+        </div>
+      </div>
+
+      <p class="header-label">FATURAS</p>
+    </header>
+
+    <main class="content">
+
+      <!-- ============ TELA 1: Detalhes da fatura ============ -->
+      <section class="tela ativa" id="tela-detalhes">
+        <h1 class="titulo">Detalhes da fatura</h1>
+        <p class="subtitulo">Sua primeira fatura · março de 2026</p>
+
+        <div class="card">
+          <div class="linha-topo">
+            <span class="rotulo-caps">PRIMEIRA FATURA</span>
+            <span class="status-aberto">Em aberto</span>
+          </div>
+
+          <p class="texto-cinza">Total a pagar à Bulbe</p>
+          <p class="valor-de">De <s>R$ 386,45</s></p>
+          <p class="valor-por">Por R$ 344,42</p>
+
+          <div class="vencimento">
+            <span class="vencimento-rotulo">PAGUE ATÉ</span>
+            <span class="vencimento-data">05 de março de 2026</span>
+            <span class="vencimento-dia">Quinta-feira</span>
+          </div>
+
+          <p class="texto-cinza">Você paga uma única fatura à Bulbe. A parte da CEMIG já está incluída neste valor.</p>
+
+          <div class="economia">Você economiza R$ 42,03 nesta fatura.</div>
+        </div>
+
+        <button class="btn btn-primario">Escolher forma de pagamento</button>
+        <button class="btn btn-secundario" id="btn-ver-composicao">Ver composição da fatura</button>
+
+        <div class="card">
+          <h2 class="card-titulo">Como funciona sua primeira cobrança?</h2>
+
+          <div class="passo">
+            <p class="passo-titulo">1 · A CEMIG lê seu medidor</p>
+            <p class="texto-cinza">Todo mês, a CEMIG mede a energia que você usou. Isso continua igual.</p>
+          </div>
+          <div class="passo">
+            <p class="passo-titulo">2 · A Bulbe aplica seu desconto</p>
+            <p class="texto-cinza">Parte da sua energia vem das usinas da Bulbe, com desconto. É daí que vem sua economia.</p>
+          </div>
+          <div class="passo">
+            <p class="passo-titulo">3 · Você paga só para a Bulbe</p>
+            <p class="texto-cinza">A Bulbe inclui a parte da CEMIG e repassa esse valor para ela.</p>
+          </div>
+          <div class="passo">
+            <p class="passo-titulo">4 · Por que a primeira é diferente?</p>
+            <p class="texto-cinza">A primeira fatura pode incluir dias proporcionais à sua entrada e ajustes do desconto.</p>
+          </div>
+        </div>
+
+        <p class="rodape-aviso">Dados ilustrativos do protótipo.</p>
+      </section>
+
+      <!-- ============ TELA 2: Composição da fatura ============ -->
+      <section class="tela" id="tela-composicao">
+        <h1 class="titulo">Composição da fatura</h1>
+        <p class="subtitulo">Sua primeira fatura · março de 2026</p>
+
+        <div class="card">
+          <h2 class="card-titulo">Energia que você usou</h2>
+          <p class="texto-cinza">Cobrança de energia antes do desconto Bulbe.</p>
+          <div class="divisor"></div>
+          <div class="linha">
+            <span class="linha-forte">Subtotal de energia</span>
+            <span class="valor-forte">R$ 354,83</span>
+          </div>
+          <p class="texto-cinza">O desconto Bulbe aparece separado abaixo e já está incluído no total a pagar.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-titulo">Taxas e impostos obrigatórios</h2>
+          <p class="texto-cinza">Incluem iluminação pública e tributos sobre a energia.</p>
+          <div class="linha">
+            <span class="texto-cinza">Iluminação pública</span>
+            <span class="valor-forte">R$ 27,01</span>
+          </div>
+          <div class="linha">
+            <span class="texto-cinza">PIS/COFINS</span>
+            <span class="valor-forte">R$ 4,61</span>
+          </div>
+          <div class="divisor"></div>
+          <div class="linha">
+            <span class="linha-forte">Subtotal de taxas</span>
+            <span class="valor-forte">R$ 31,62</span>
+          </div>
+          <p class="texto-cinza">PIS/COFINS são tributos federais incluídos na cobrança.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-titulo verde">Desconto</h2>
+          <p class="texto-cinza">Este valor já foi abatido do total.</p>
+          <div class="linha">
+            <span class="texto-cinza">Desconto Bulbe</span>
+            <span class="valor-verde">- R$ 42,03</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card-titulo">Resumo do cálculo</h2>
+          <div class="linha">
+            <span class="texto-cinza">Energia</span>
+            <span class="valor-forte">R$ 354,83</span>
+          </div>
+          <div class="linha">
+            <span class="texto-cinza">Taxas e impostos</span>
+            <span class="valor-forte">+ R$ 31,62</span>
+          </div>
+          <div class="linha">
+            <span class="texto-cinza">Desconto</span>
+            <span class="valor-verde">- R$ 42,03</span>
+          </div>
+          <div class="divisor"></div>
+          <div class="linha">
+            <span class="linha-forte">Total a pagar</span>
+            <span class="total">R$ 344,42</span>
+          </div>
+          <p class="vencimento-resumo">Vencimento: 05/03/2026</p>
+        </div>
+
+        <button class="btn btn-primario">Escolher forma de pagamento</button>
+        <button class="btn btn-secundario" id="btn-voltar-detalhes">Voltar para detalhes e vencimento</button>
+
+        <p class="rodape-aviso">Dados ilustrativos do protótipo.</p>
+      </section>
+
+    </main>
+
+    <!-- Menu inferior (comum às duas telas) -->
+    <nav class="menu">
+      <a class="menu-item ativo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
+        Faturas
+      </a>
+      <a class="menu-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg>
+        Consumo
+      </a>
+      <a class="menu-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M2 21v-1a7 7 0 0 1 14 0v1M16 3.1a4 4 0 0 1 0 7.8M22 21v-1a7 7 0 0 0-4-6.3"/></svg>
+        Indicações
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="../assets/js/hu02-composicao-vencimento.js"></script>
+</body>
+</html>
