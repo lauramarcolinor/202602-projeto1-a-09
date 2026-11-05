@@ -22,15 +22,7 @@
   font-size: 13px;
 }
 
-.status-pill {
-  display: inline-flex;
-  padding: 4px 7px;
-  border-radius: 4px;
-  background: var(--warning-bg);
-  color: var(--warning);
-  font-size: 12px;
-  line-height: 1.25;
-}
+
 
 .invoice-card,
 .composition-card {

@@ -31,6 +31,12 @@ a {
   font: inherit;
 }
 
+input,
+select,
+textarea {
+  font-family: var(--font);
+}
+
 button {
   border: 0;
 }
@@ -44,7 +50,7 @@ button {
 
 /* Estrutura compartilhada: cabeçalho fixo, conteúdo rolável e rodapé fixo. */
 .app-shell {
-  width: min(100%, 375px);
+  width: min(100%, 320px);
   height: min(667px, calc(100dvh - 48px));
   min-height: 0;
   display: grid;
@@ -177,7 +183,7 @@ button {
   }
 
   .app-shell {
-    width: 100%;
+    width: min(100%, 320px);
     height: 100dvh;
     min-height: 0;
   }
@@ -218,4 +224,19 @@ button {
   .screen-content {
     padding-top: 18px;
   }
+}
+
+/* Status compartilhado: mesmo formato e cores da HU01. */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff5e8;
+  color: #a75406;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
 }

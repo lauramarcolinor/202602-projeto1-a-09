@@ -1,5 +1,5 @@
 /* Estilos da HU02; cabeçalho, logo e rodapé vêm de app-shell.css. */
-.screen-content { background: #F5F6FA; font-family: Poppins, sans-serif; min-width: 0; overflow-wrap: anywhere; }
+.screen-content { background: #F5F6FA; font-family: var(--font); min-width: 0; overflow-wrap: anywhere; }
 .screen-content button { font-family: inherit; }
 /* Só a tela ativa aparece */
 .tela {
@@ -68,11 +68,7 @@
   letter-spacing: 0.3px;
 }
 
-.status-aberto {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #9A6200;
-}
+
 
 .valor-de {
   font-size: 13px;

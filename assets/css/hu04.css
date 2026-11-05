@@ -1,14 +1,13 @@
 :root{--azul:#08068D;--titulo:#11167F;--texto:#1A1F5C;--suave:#4D5375;--borda:#DDE1EE;--verde:#0B7F4B}
 *{box-sizing:border-box}
-body{margin:0;background:#EEF0F7;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--texto)}
+body{margin:0;background:#EEF0F7;font-family:var(--font);color:var(--texto)}
 button{font-family:inherit;cursor:pointer}
-.app{width:100%;max-width:375px;height:100dvh;margin:0 auto;min-height:0;background:var(--azul);display:grid;grid-template-rows:72px minmax(0,1fr) 80px;overflow:hidden}
+.app{width:100%;max-width:320px;height:100dvh;margin:0 auto;min-height:0;background:var(--azul);display:grid;grid-template-rows:72px minmax(0,1fr) 80px;overflow:hidden}
 main{min-height:0;min-width:0;overflow-y:auto;background:#fff;padding:16px;display:flex;flex-direction:column;gap:14px}
 main > *{flex-shrink:0;min-width:0}
 .card{border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
 h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .linha{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.tag{font-size:11px;font-weight:700;color:#7A4B00;background:#FFF1CC;border-radius:999px;padding:4px 10px;white-space:nowrap}
 .sub{margin:4px 0 0;font-size:13px;color:var(--suave)}
 .rot{font-size:11px;font-weight:700;text-transform:uppercase}
 .de{font-size:15px;font-weight:700;color:#6B7194;text-decoration:line-through}
@@ -23,7 +22,7 @@ h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .nota{align-self:center;font-size:12px;color:#5B6178;text-align:center}
 .ou{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#5B6178}
 .ou::before,.ou::after{content:"";flex:1;height:1px;background:var(--borda)}
-.cod{background:#EDEBF8;border-radius:8px;padding:12px;margin:6px 0 0;font:12.5px/1.5 ui-monospace,Consolas,monospace;word-break:break-all}
+.cod{background:#EDEBF8;border-radius:8px;padding:12px;margin:6px 0 0;font:12.5px/1.5 var(--font);word-break:break-all}
 .btn{height:52px;border-radius:8px;font-size:15px;font-weight:700;width:100%;display:flex;align-items:center;justify-content:center;text-decoration:none}
 .b1{border:0;background:var(--azul);color:#fff}
 .b2{border:2px solid var(--azul);background:#fff;color:var(--azul);height:48px;font-size:14px}
@@ -51,4 +50,4 @@ h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 #nav-feedback{position:absolute;bottom:88px;left:16px;right:16px;margin:0;padding:12px;border:1px solid var(--borda);border-radius:8px;background:#fff;color:var(--texto);font-size:13px;box-shadow:0 4px 16px #0002;pointer-events:none}
 
 /* Mantém a tipografia dos cartões; header e rodapé usam app-shell.css. */
-main{font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+main{font-family:var(--font)}

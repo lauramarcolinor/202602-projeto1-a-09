@@ -19,10 +19,9 @@
   --raio-pilula: 200px;
 }
 
-/* A identidade da Bulbe usa Poppins. Vale só para esta tela,
-   porque é este arquivo que carrega a fonte. */
+/* Usa a mesma família tipográfica compartilhada da HU01. */
 body.app-page {
-  font-family: "Poppins", var(--font);
+  font-family: var(--font);
   color: var(--cinza-escuro);
 }
 
