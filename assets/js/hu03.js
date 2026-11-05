@@ -72,12 +72,15 @@ menuFaturas.addEventListener('click', function () {
   window.location.href = 'hu01-resumo-primeira-fatura.html';
 });
 
-menuConsumo.addEventListener('click', function () {
-  abrirModal('Consumo', 'Esta área estará disponível em breve.', false);
-});
-
-menuIndicacoes.addEventListener('click', function () {
-  abrirModal('Indicações', 'Esta área estará disponível em breve.', false);
+// As abas ainda não têm telas próprias: apenas atualizam a seleção do menu.
+[menuConsumo, menuIndicacoes].forEach(function (aba) {
+  aba.addEventListener('click', function () {
+    [menuFaturas, menuConsumo, menuIndicacoes].forEach(function (item) {
+      item.classList.toggle('is-active', item === aba);
+      if (item === aba) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+  });
 });
 
 // Atualiza o texto "Selecionado" / "Selecionar" de cada opção
