@@ -10,12 +10,13 @@ export function lerEstado() {
     return {
       forma: METHODS.includes(value?.forma) ? value.forma : null,
       lembreteRecebido: value?.lembreteRecebido === true,
+      pixAutomatico: value?.pixAutomatico === true,
       pagamento: value?.pagamento?.ficticio === true
         && value.pagamento.forma === 'pix'
         && Number.isFinite(value.pagamento.valor)
         && !Number.isNaN(Date.parse(value.pagamento.em)) ? value.pagamento : null
     };
-  } catch { return { forma: null, lembreteRecebido: false, pagamento: null }; }
+    } catch { return { forma: null, lembreteRecebido: false, pixAutomatico: false, pagamento: null }; }
 }
 
 export function salvarEstado(changes) {

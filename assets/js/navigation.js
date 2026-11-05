@@ -3,8 +3,32 @@ export const rotas = {
   formas: 'hu03-formas-pagamento.html', pix: 'hu04-pagamento-pix.html',
   lembrete: 'hu05-lembrete-vencimento.html', confirmacao: 'hu06-confirmacao-pagamento.html'
 };
+const historicoKey = 'bulbe.navigation.history';
+const destinoKey = 'bulbe.navigation.pending';
+const rotaAtual = () => typeof window === 'undefined' || !window.location?.pathname
+  ? undefined
+  : Object.keys(rotas).find(nome => window.location.pathname.endsWith(`/pages/${rotas[nome]}`));
+function lerHistorico() {
+  try {
+    const valor = JSON.parse(sessionStorage.getItem(historicoKey) || '[]');
+    return Array.isArray(valor) ? valor.filter(nome => Object.hasOwn(rotas, nome)) : [];
+  } catch { return []; }
+}
+function guardarHistorico(historico, destino) {
+  try {
+    sessionStorage.setItem(historicoKey, JSON.stringify(historico));
+    if (destino) sessionStorage.setItem(destinoKey, destino);
+    else sessionStorage.removeItem(destinoKey);
+  } catch { /* A tela continua navegável pelos destinos alternativos. */ }
+}
 export function irPara(destino) {
   if (!rotas[destino]) throw new Error('Destino inválido.');
+  const atual = rotaAtual();
+  if (atual && atual !== destino) {
+    const historico = lerHistorico();
+    historico.push(atual);
+    guardarHistorico(historico, destino);
+  }
   window.location.href = new URL(`../../pages/${rotas[destino]}`, import.meta.url).href;
 }
 
@@ -25,6 +49,12 @@ export function avisar(mensagem) {
 }
 
 export function iniciarNavegacao({ voltar = 'resumo', antesDeVoltar } = {}) {
+  const atual = rotaAtual();
+  try {
+    const pendente = sessionStorage.getItem(destinoKey);
+    if (pendente === atual) sessionStorage.removeItem(destinoKey);
+    else if (atual) guardarHistorico([], null); // Entrada direta ou navegação externa: descarta histórico antigo.
+  } catch { /* O fallback de voltar continua disponível sem sessionStorage. */ }
   document.querySelectorAll('.bottom-nav [data-tab]').forEach(aba => {
     aba.addEventListener('click', () => {
       // Mantém a decisão do grupo: rodapé só alterna o destaque.
@@ -37,7 +67,22 @@ export function iniciarNavegacao({ voltar = 'resumo', antesDeVoltar } = {}) {
   });
   document.querySelector('[data-action="back"]')?.addEventListener('click', () => {
     if (antesDeVoltar?.()) return;
-    irPara(voltar);
+    const historico = lerHistorico();
+    const anterior = historico.pop();
+    if (anterior && rotas[anterior]) {
+      guardarHistorico(historico, anterior);
+      window.location.href = new URL(`../../pages/${rotas[anterior]}`, import.meta.url).href;
+      return;
+    }
+    // Se a página foi aberta diretamente, use o destino padrão da tela.
+    if (atual === 'resumo') {
+      window.location.href = new URL('../../index.html', import.meta.url).href;
+      return;
+    }
+    if (rotas[voltar]) {
+      guardarHistorico([], voltar);
+      window.location.href = new URL(`../../pages/${rotas[voltar]}`, import.meta.url).href;
+    }
   });
   document.querySelector('[data-action="notifications"]')?.addEventListener('click', () => irPara('lembrete'));
   const perfil = document.querySelector('[data-action="profile"]');

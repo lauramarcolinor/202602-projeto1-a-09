@@ -26,6 +26,12 @@ test('receber lembrete não paga a fatura nem apaga a escolha', async () => {
   assert.equal(lerEstado().lembreteRecebido, true);
   assert.equal((await buscarFaturaDemo()).status, 'aberta');
 });
+test('ativação fictícia do PIX Automático persiste sem registrar pagamento', async () => {
+  salvarEstado({ pixAutomatico: true });
+  assert.equal(lerEstado().pixAutomatico, true);
+  assert.equal((await buscarFaturaDemo()).status, 'aberta');
+  assert.equal(lerEstado().pagamento, null);
+});
 test('pagamento exige seleção PIX', async () => {
   const fatura = await buscarFaturaDemo();
   assert.throws(() => simularPagamento(fatura), /Selecione PIX/);

@@ -1,4 +1,4 @@
-import { buscarFaturaDemo, preencherFatura, lerEstado } from './demo-state.js';
+import { buscarFaturaDemo, preencherFatura, lerEstado, salvarEstado } from './demo-state.js';
 import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js';
 iniciarNavegacao({ voltar: 'pix' });
 const estado = lerEstado();
@@ -9,8 +9,20 @@ const passos = document.querySelector('[aria-labelledby="passos-titulo"]');
 const valor = document.querySelector('[aria-labelledby="valor-titulo"]');
 const baixar = document.querySelector('[data-action="comprovante"]');
 const copiar = document.querySelector('[data-action="copiar"]');
+let timerCopiado;
 const pagoEm = document.querySelector('#valor-pago-em');
 const vencia = document.querySelector('#valor-vencia');
+const ativarPix = document.querySelector('[data-action="pix-automatico"]');
+const textoPix = ativarPix.parentElement.querySelector('.etapa__desc');
+function renderizarPixAutomatico() {
+  const ativo = lerEstado().pixAutomatico;
+  ativarPix.textContent = ativo ? 'Ativado (simulação)' : 'Quero ativar';
+  ativarPix.setAttribute('aria-pressed', String(ativo));
+  textoPix.textContent = ativo
+    ? 'Ativado ficticiamente para a próxima fatura.'
+    : 'A fatura é paga sozinha no vencimento.';
+}
+renderizarPixAutomatico();
 function pendente() {
   titulo.textContent = 'Nenhum pagamento simulado';
   confirmacao.classList.add('demo-pending');
@@ -22,8 +34,18 @@ function pendente() {
 pendente();
 document.querySelector('[data-action="faturas"]').addEventListener('click', () => irPara('resumo'));
 copiar.addEventListener('click', async () => {
-  try { await copiarTexto(document.querySelector('#codigo-autenticacao').textContent.trim()); avisar('Código fictício copiado.'); }
-  catch { avisar('Não foi possível copiar. Selecione o código manualmente.'); }
+  const textoOriginal = 'Copiar código';
+  clearTimeout(timerCopiado);
+  try {
+    await copiarTexto(document.querySelector('#codigo-autenticacao').textContent.trim());
+    copiar.textContent = 'Código copiado!';
+    copiar.classList.add('botao--copiado');
+    avisar('Código fictício copiado.');
+    timerCopiado = setTimeout(() => {
+      copiar.textContent = textoOriginal;
+      copiar.classList.remove('botao--copiado');
+    }, 2500);
+  } catch { avisar('Não foi possível copiar. Selecione o código manualmente.'); }
 });
 baixar.addEventListener('click', () => {
   const linhas = [
@@ -51,9 +73,14 @@ baixar.addEventListener('click', () => {
   avisar('Comprovante demonstrativo baixado.');
 });
 
-for (const action of ['pix-automatico', 'suporte']) {
-  document.querySelector('[data-action="' + action + '"]').addEventListener('click', () => avisar('Recurso demonstrativo, ainda sem ação real nesta entrega.'));
-}
+ativarPix.addEventListener('click', () => {
+  try {
+    salvarEstado({ pixAutomatico: true });
+    renderizarPixAutomatico();
+    avisar('PIX Automático ativado apenas na demonstração. Nenhum pagamento real foi autorizado.');
+  } catch { avisar('Não foi possível guardar a ativação demonstrativa nesta sessão.'); }
+});
+document.querySelector('[data-action="suporte"]').addEventListener('click', () => avisar('Suporte demonstrativo; nenhuma mensagem foi enviada.'));
 await carregarTela(async () => {
   const fatura = await buscarFaturaDemo();
   preencherFatura(fatura);
