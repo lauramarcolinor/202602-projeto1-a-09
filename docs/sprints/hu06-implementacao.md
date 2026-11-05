@@ -19,14 +19,14 @@ Cabeçalho, logo e rodapé reutilizam os recursos compartilhados, sem alteraçõ
 
 ## O que a tela faz
 
-- Apresenta o estado **Pagamento confirmado** em destaque, no topo da área rolável.
+- Apresenta o estado do pagamento simulado em destaque, no topo da área rolável.
 - Mostra valor original, desconto Bulbe e total pago, lidos de `data/faturas.json`
   (fatura de ID 103), formatados com `Intl.NumberFormat` em `pt-BR`.
 - Mostra a data do pagamento e compara com o vencimento para dizer se foi pago em dia.
 - Apresenta o comprovante com titular, instalação, forma de pagamento e código de
   autenticação, com botão para copiar o código.
 - Lista os próximos passos do cliente em três etapas.
-- Permite voltar para a área de faturas e oferece caminho de suporte.
+- Permite voltar para a área de faturas e oferece uma interação demonstrativa de suporte.
 
 ## Dados
 
@@ -46,11 +46,12 @@ diz explicitamente que a confirmação é uma demonstração com dados fictício
 7. Trocar os itens do rodapé e conferir a troca do item ativo.
 8. Conferir o layout em 320, 375 e 430 px e o console do navegador.
 
-## Pendências
+## Limites da demonstração
 
-- O botão de retorno abre `pages/hu01-resumo-primeira-fatura.html`, já integrada.
-  O rodapé apenas alterna o item ativo, sem popup nem mudança de tela.
-- Baixar comprovante, PIX Automático e suporte por WhatsApp exibem mensagem de
-  estado, sem ação real, e dependem da integração do MVP (issues #35 a #38).
-- A linha da HU06 na tabela de status do `README.md` não foi alterada aqui para
-  evitar conflito com o PR #41, que mexe no mesmo arquivo.
+- O botão de retorno abre `pages/hu01-resumo-primeira-fatura.html`. O rodapé
+  apenas alterna o item ativo, sem popup nem mudança de tela.
+- **Baixar comprovante** gera um arquivo demonstrativo local com dados fictícios;
+  não envia o arquivo por e-mail ou WhatsApp. PIX Automático e suporte também
+  são interações demonstrativas, sem ativação ou atendimento real.
+- A confirmação altera apenas o estado local da demonstração; não envia uma
+  transação a um banco nem confirma uma cobrança real.

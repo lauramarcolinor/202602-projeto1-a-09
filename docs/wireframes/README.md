@@ -15,9 +15,10 @@ Também está disponível a imagem atualizada do mapa de jornada:
 
 - `jornada-atualizada.png`
 
-Os arquivos desta pasta são referências visuais. Os seis wireframes prontos não
-significam que as seis telas já foram implementadas em código. O status das
-implementações, as issues e os PRs estão no [README principal](../../README.md#status-da-implementação).
+Os arquivos desta pasta são referências visuais das seis telas. A implementação
+HTML, CSS e JavaScript do fluxo demonstrativo HU01–HU06 está integrada na `main`;
+consulte a seção [Entregas do README principal](../../README.md#9-entregas) para
+o status registrado do projeto.
 
 ## Padrão compartilhado do aplicativo
 
@@ -84,12 +85,12 @@ original não mostrar o rodapé, ele deve ser acrescentado mesmo assim para mant
 a navegação do MVP consistente. O botão ativo muda conforme a área da tela; na
 HU01, `Faturas` fica ativo.
 
-Os atributos `data-action` e `data-tab` identificam os controles para o
-JavaScript de cada tela; o HTML e o CSS compartilhados não implementam a
-navegação automaticamente. A letra `M` é a representação atual do perfil da
-persona. Cada integrante deve conectar os botões às ações existentes e
-informar o que ainda depende de integração.
+Os atributos `data-action` e `data-tab` identificam os controles. A navegação
+compartilhada — voltar, notificações, perfil e destaque do rodapé — é centralizada
+em `assets/js/navigation.js`; cada HU mantém suas ações específicas no próprio
+JavaScript. A letra `M` representa o perfil demonstrativo da persona. Ações sem
+integração real, como pagamento ou envio de notificações, são identificadas como
+simulação nas telas e nos relatórios.
 
-O padrão de logo já está na `main` pelo PR #39. A HU01 e o ajuste de
-centralização do cabeçalho estão na branch
-`feature/hu01-resumo-primeira-fatura`, aguardando o merge do PR #41.
+O padrão de logo foi integrado pelo PR #39. A HU01 e o ajuste de centralização
+do cabeçalho também já foram integrados à `main` pelo PR #41.

@@ -12,7 +12,7 @@ Demonstração web para ajudar o cliente novo a entender e pagar a primeira fatu
 O cliente novo pode ter dificuldade para entender e pagar a primeira fatura da Bulbe. A falta de clareza sobre o valor, a composição, o vencimento e as formas de pagamento pode gerar atrasos.
 
 - **Dor escolhida:** dificuldade para compreender e pagar a primeira fatura.
-- **Evidência:** a inadimplência da primeira fatura chega a 32,4%.
+- **Evidência:** o indicador de inadimplência da primeira fatura é de 32,4%. Fonte: Bulbe Energia. *Bulbe & Ibmec*, set. 2026, slide 4 (indicador de primeira fatura: set. 2025 a jul. 2026).
 - **Indicador que a solução pretende mover:** pagamento da primeira fatura.
 
 ## 2. Persona e jornada
@@ -140,7 +140,7 @@ Cada integrante teve uma tela/história como foco principal; portanto, as respon
 | Histórias de usuário | 20 | Concluído — seis histórias e responsáveis registrados. |
 | Wireframes | 21–23 | Concluído — seis telas exportadas em `docs/wireframes/`. |
 | Sprint Review I | 24 | A review ocorreu; o registro ainda precisa ser versionado em `docs/sprints/`. |
-| Implementação | 25–28 | As seis telas e o fluxo demonstrativo HU01–HU06 estão integrados na `main`; acompanhar as issues #29 a #38 para verificar pendências e critérios de aceite. |
+| Implementação | 25–28 | As seis telas e o fluxo demonstrativo HU01–HU06 estão integrados na `main` (PR #45). As issues #29–#38 foram encerradas; esse status não substitui a validação individual dos critérios de aceite. |
 | Sprint Review II | 29 | Pendente de registro em `docs/sprints/`. |
 | Versão final | 30 | Pendente — concluir a validação do fluxo e registrar a entrega final. |
 

@@ -13,6 +13,11 @@
 
 ## Critérios de aceite
 
+> As caixas abaixo registram os critérios definidos para cada história, não o
+> resultado da validação final. Permanecem desmarcadas até que cada critério
+> seja verificado com evidência; o fechamento de uma issue, por si só, não os
+> marca como validados.
+
 ### HU01 — Resumo da primeira fatura
 
 - [ ] O valor total da primeira fatura aparece com destaque.
