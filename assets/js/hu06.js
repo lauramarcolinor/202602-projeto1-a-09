@@ -25,7 +25,33 @@ copiar.addEventListener('click', async () => {
   try { await copiarTexto(document.querySelector('#codigo-autenticacao').textContent.trim()); avisar('Código fictício copiado.'); }
   catch { avisar('Não foi possível copiar. Selecione o código manualmente.'); }
 });
-for (const action of ['comprovante', 'pix-automatico', 'suporte']) {
+baixar.addEventListener('click', () => {
+  const linhas = [
+    'BULBE ENERGIA — COMPROVANTE DEMONSTRATIVO',
+    '',
+    'Titular: ' + document.querySelector('[data-field="titular"]').textContent.trim(),
+    'Instalação: ' + document.querySelector('[data-field="instalacao"]').textContent.trim(),
+    'Referência: ' + document.querySelector('[data-field="referencia"]').textContent.trim(),
+    'Forma de pagamento: PIX',
+    'Valor pago: ' + document.querySelector('[data-field="total"]').textContent.trim(),
+    document.querySelector('#valor-pago-em').textContent.trim(),
+    'Código de autenticação: ' + document.querySelector('#codigo-autenticacao').textContent.trim(),
+    '',
+    'Comprovante de demonstração com dados fictícios. Não representa uma transação bancária real.'
+  ];
+  const arquivo = new Blob(['\uFEFF' + linhas.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(arquivo);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'comprovante-bulbe-demonstracao.txt';
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  avisar('Comprovante demonstrativo baixado.');
+});
+
+for (const action of ['pix-automatico', 'suporte']) {
   document.querySelector('[data-action="' + action + '"]').addEventListener('click', () => avisar('Recurso demonstrativo, ainda sem ação real nesta entrega.'));
 }
 await carregarTela(async () => {
