@@ -1,5 +1,5 @@
 import { buscarFaturaDemo, preencherFatura, lerEstado, salvarEstado, simularPagamento } from './demo-state.js';
-import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js?v=copia-2';
+import { iniciarNavegacao, carregarTela, irPara, avisar, copiarTexto } from './navigation.js?v=voltar-1';
 iniciarNavegacao({ voltar: 'formas' });
 // QR apenas ilustrativo: nunca representa uma cobrança real.
 let seed = 20261020, path = '';

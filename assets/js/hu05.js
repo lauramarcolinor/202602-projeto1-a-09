@@ -1,5 +1,5 @@
 import { buscarFaturaDemo, preencherFatura, lerEstado, salvarEstado } from './demo-state.js';
-import { iniciarNavegacao, carregarTela, irPara, avisar } from './navigation.js';
+import { iniciarNavegacao, carregarTela, irPara, avisar } from './navigation.js?v=voltar-1';
 iniciarNavegacao();
 let fatura;
 const confirmar = document.querySelector('#confirmar');

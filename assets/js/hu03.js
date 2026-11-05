@@ -1,5 +1,5 @@
 import { buscarFaturaDemo, lerEstado, salvarEstado } from './demo-state.js';
-import { iniciarNavegacao, carregarTela, irPara, avisar } from './navigation.js';
+import { iniciarNavegacao, carregarTela, irPara, avisar } from './navigation.js?v=voltar-1';
 iniciarNavegacao();
 const opcoes = [...document.querySelectorAll('input[name="pagamento"]')];
 const continuar = document.querySelector('button[type="submit"]');

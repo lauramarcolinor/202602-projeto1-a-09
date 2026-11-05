@@ -1,5 +1,5 @@
 import { buscarFaturaDemo, preencherFatura } from './demo-state.js';
-import { iniciarNavegacao, carregarTela, irPara } from './navigation.js';
+import { iniciarNavegacao, carregarTela, irPara } from './navigation.js?v=voltar-1';
 const detalhes = document.querySelector('#tela-detalhes');
 const composicao = document.querySelector('#tela-composicao');
 function mostrar(tela) {
