@@ -8,6 +8,8 @@ main > *{flex-shrink:0;min-width:0}
 .card{border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
 h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .linha{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card > .linha{flex-direction:column}
+.card > .linha > .status-pill{white-space:nowrap}
 .sub{margin:4px 0 0;font-size:13px;color:var(--suave)}
 .rot{font-size:11px;font-weight:700;text-transform:uppercase}
 .de{font-size:15px;font-weight:700;color:#6B7194;text-decoration:line-through}
