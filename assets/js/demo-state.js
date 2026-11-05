@@ -67,7 +67,7 @@ export function preencherFatura(fatura) {
     vencimento: dataCurta(fatura.vencimento), vencimentoLongo: dataLonga(fatura.vencimento),
     diaSemana: new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date(`${fatura.vencimento}T12:00:00`)),
     referencia: `Primeira fatura · ${referencia}`,
-    status: fatura.status === 'paga' ? 'Paga · simulação' : 'Em aberto · pagamento pendente',
+    status: fatura.status === 'paga' ? 'Paga · simulação' : 'Em aberto',
     energia: moeda(fatura.composicao.energia), iluminacao: moeda(fatura.composicao.iluminacaoPublica),
     tributos: moeda(fatura.composicao.pisCofins), taxas: moeda(taxas),
     taxasSoma: `+ ${moeda(taxas)}`, descontoMenos: `− ${moeda(fatura.economia)}`,
