@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Bulbe – Fatura</title>
-<link rel="stylesheet" href="../assets/css/hu02.css?v=fluxo-1">
+<link rel="stylesheet" href="../assets/css/hu02.css?v=layout-laura-2">
   <link rel="stylesheet" href="../assets/css/app-shell.css?v=fluxo-1">
   <link rel="stylesheet" href="../assets/css/typography.css?v=laura-1">
 </head>
@@ -35,33 +35,36 @@
       <section class="tela ativa" id="tela-detalhes">
         <h1 class="titulo">Detalhes da fatura</h1>
         <p class="subtitulo" data-field="referencia">—</p>
+        <span class="status-pill" data-field="status">—</span>
 
-        <div class="card">
-          <div class="linha-topo">
-            <span class="rotulo-caps">PRIMEIRA FATURA</span>
-            <span class="status-pill" data-field="status">—</span>
+        <div class="card resumo-fatura">
+          <span class="rotulo-caps">Valor da fatura</span>
+          <p class="valor-de" data-field="original">—</p>
+
+          <div class="economia">
+            <span>Desconto Bulbe:</span>
+            <strong data-field="desconto">—</strong>
           </div>
 
-          <p class="texto-cinza">Total a pagar à Bulbe</p>
-          <p class="valor-de">De <s data-field="originalNumero">—</s></p>
-          <p class="valor-por" data-field="totalPor">—</p>
+          <div class="total-detalhes">
+            <span class="rotulo-caps">Total a pagar à Bulbe</span>
+            <p class="valor-por" data-field="total">—</p>
+          </div>
 
           <div class="vencimento">
-            <span class="vencimento-rotulo">PAGUE ATÉ</span>
+            <span class="vencimento-rotulo">Vencimento</span>
             <span class="vencimento-data" data-field="vencimentoLongo">—</span>
             <span class="vencimento-dia" data-field="diaSemana">—</span>
           </div>
 
-          <p class="texto-cinza">Você paga uma única fatura à Bulbe. A parte da CEMIG já está incluída neste valor.</p>
-
-          <div class="economia" data-field="economia">—</div>
+          <button class="btn btn-primario" data-requires-invoice disabled>Escolher forma de pagamento</button>
         </div>
 
-        <button class="btn btn-primario" data-requires-invoice disabled>Escolher forma de pagamento</button>
         <button class="btn btn-secundario" id="btn-ver-composicao">Ver composição da fatura</button>
 
         <div class="card">
           <h2 class="card-titulo">Como funciona sua primeira cobrança?</h2>
+          <p class="texto-cinza">Você paga uma única fatura à Bulbe. A parte da CEMIG já está incluída neste valor.</p>
 
           <div class="passo">
             <p class="passo-titulo">1 · A CEMIG lê seu medidor</p>
