@@ -83,23 +83,13 @@ document.querySelector('#notificacoes').addEventListener('click', () => {
   document.querySelector('h1').scrollIntoView({ block: 'nearest' });
 });
 verFatura.addEventListener('click', () => detalhes.showModal());
-document.querySelector('#nav-faturas').addEventListener('click', () => {
-  window.location.href = 'hu01-resumo-primeira-fatura.html';
-});
-const navFeedback = document.querySelector('#nav-feedback');
-let navFeedbackTimeout;
-document.querySelectorAll('[data-tab]:not([data-tab="faturas"])').forEach((tab) => {
+document.querySelectorAll('[data-tab]').forEach((tab) => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('[data-tab]').forEach((item) => {
       item.classList.toggle('is-active', item === tab);
       if (item === tab) item.setAttribute('aria-current', 'page');
       else item.removeAttribute('aria-current');
     });
-    const area = tab.dataset.tab === 'indicacoes' ? 'indicações' : 'consumo';
-    navFeedback.textContent = `A área de ${area} será integrada ao fluxo do MVP.`;
-    navFeedback.hidden = false;
-    window.clearTimeout(navFeedbackTimeout);
-    navFeedbackTimeout = window.setTimeout(() => { navFeedback.hidden = true; }, 3200);
   });
 });
 tentarNovamente.addEventListener('click', carregarFatura);

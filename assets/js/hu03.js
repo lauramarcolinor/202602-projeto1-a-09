@@ -68,12 +68,8 @@ botaoPerfil.addEventListener('click', function () {
 });
 
 // Menu inferior
-menuFaturas.addEventListener('click', function () {
-  window.location.href = 'hu01-resumo-primeira-fatura.html';
-});
-
 // As abas ainda não têm telas próprias: apenas atualizam a seleção do menu.
-[menuConsumo, menuIndicacoes].forEach(function (aba) {
+[menuFaturas, menuConsumo, menuIndicacoes].forEach(function (aba) {
   aba.addEventListener('click', function () {
     [menuFaturas, menuConsumo, menuIndicacoes].forEach(function (item) {
       item.classList.toggle('is-active', item === aba);

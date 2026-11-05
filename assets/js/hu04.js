@@ -32,23 +32,13 @@
   var navFeedbackTimeout;
   document.querySelectorAll('nav [data-tab]').forEach(function (tab) {
     tab.addEventListener('click', function (event) {
-      // Faturas abre o resumo; as demais áreas ainda não foram implementadas.
-      if (tab.dataset.tab === 'faturas') {
-        window.location.href = 'hu01-resumo-primeira-fatura.html';
-        return;
-      }
+      // O rodapé apenas alterna o destaque, sem navegação ou avisos.
       event.preventDefault();
       document.querySelectorAll('nav [data-tab]').forEach(function (item) {
         item.classList.toggle('is-active', item === tab);
         if (item === tab) item.setAttribute('aria-current', 'page');
         else item.removeAttribute('aria-current');
       });
-      navFeedback.textContent = 'A área de ' + tab.dataset.tab + ' será integrada ao fluxo do MVP.';
-      navFeedback.hidden = false;
-      clearTimeout(navFeedbackTimeout);
-      navFeedbackTimeout = setTimeout(function () {
-        navFeedback.hidden = true;
-      }, 3200);
     });
   });
   document.querySelector('[data-action="back"]').addEventListener('click', function () {

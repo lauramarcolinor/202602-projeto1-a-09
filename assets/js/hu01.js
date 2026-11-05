@@ -97,9 +97,6 @@ document.querySelectorAll('[data-tab]').forEach((tab) => {
       else item.removeAttribute('aria-current');
     });
 
-    if (tab.dataset.tab !== 'faturas') {
-      showFeedback(`A área de ${tab.dataset.tab} será integrada ao fluxo do MVP.`);
-    }
   });
 });
 
