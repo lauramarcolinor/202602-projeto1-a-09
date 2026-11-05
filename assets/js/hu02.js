@@ -12,7 +12,7 @@ function mostrarTela(tela) {
   telaDetalhes.classList.remove('ativa');
   telaComposicao.classList.remove('ativa');
   tela.classList.add('ativa');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelector('.screen-content').scrollTo({ top: 0, behavior: 'smooth' });
 }
  
 // Tela 1 -> Tela 2
@@ -29,5 +29,18 @@ btnVoltarDetalhes.addEventListener('click', function () {
 btnVoltarTopo.addEventListener('click', function () {
   if (telaComposicao.classList.contains('ativa')) {
     mostrarTela(telaDetalhes);
+  } else {
+    window.location.href = 'hu01-resumo-primeira-fatura.html';
   }
+});
+
+// Alterna apenas o destaque do rodapé, sem abrir telas ou popups.
+document.querySelectorAll('[data-tab]').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    document.querySelectorAll('[data-tab]').forEach(function (item) {
+      item.classList.toggle('is-active', item === tab);
+      if (item === tab) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+  });
 });
