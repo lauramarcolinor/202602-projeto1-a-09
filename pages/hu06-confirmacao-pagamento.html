@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0a91">
+  <title>Bulbe | Confirmação do pagamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/app-shell.css">
+  <link rel="stylesheet" href="../assets/css/hu06.css">
+</head>
+<body class="app-page">
+  <div class="app-shell" aria-label="Aplicativo Bulbe">
+    <header class="app-header">
+      <button class="icon-button" type="button" data-action="back" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+      </button>
+
+      <a class="brand" href="../index.html" aria-label="Bulbe, página inicial">
+        <span class="brand-name">bulbe</span><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-action="notifications" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+        </button>
+        <button class="profile-button" type="button" data-action="profile" aria-label="Perfil de Marina">M</button>
+      </div>
+    </header>
+
+    <main class="screen-content">
+      <!-- Estado do pagamento: o destaque principal da tela. -->
+      <section class="confirmacao" aria-labelledby="screen-title">
+        <span class="confirmacao__icone" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M26.6667 8L12 22.6667L5.33333 16" /></svg>
+        </span>
+        <h1 id="screen-title" class="confirmacao__titulo">Pagamento confirmado</h1>
+        <p class="confirmacao__sub">Primeira fatura · março/26</p>
+        <span class="selo">
+          <svg viewBox="0 0 13 13" aria-hidden="true"><path d="M10.8333 3.25L4.875 9.20833L2.16667 6.5" /></svg>
+          Pago · confirmado pela Bulbe
+        </span>
+      </section>
+
+      <!-- Valor, desconto e data do pagamento. -->
+      <section class="cartao valor" aria-labelledby="valor-titulo">
+        <h2 id="valor-titulo" class="rotulo">VALOR PAGO</h2>
+        <p class="valor__de" id="valor-original">De R$ 386,45</p>
+        <p class="valor__desconto">Desconto Bulbe: <span id="valor-desconto">R$ 42,03</span></p>
+        <hr class="divisor">
+        <p class="rotulo">TOTAL PAGO</p>
+        <p class="valor__total" id="valor-total">R$ 344,42</p>
+        <p class="valor__pago-em" id="valor-pago-em">Pago em 03/03/2026 às 14h32 via PIX</p>
+        <p class="valor__vencia" id="valor-vencia">Vencia em 05/03/2026 · pago em dia</p>
+      </section>
+
+      <!-- Resumo da transação fictícia. -->
+      <section class="secao" aria-labelledby="comprovante-titulo">
+        <h2 id="comprovante-titulo" class="secao__titulo">Comprovante</h2>
+        <div class="cartao comprovante">
+          <div class="linha">
+            <span class="linha__rotulo">Titular</span>
+            <span class="linha__valor">Marina Souza</span>
+          </div>
+          <div class="linha">
+            <span class="linha__rotulo">Instalação</span>
+            <span class="linha__valor">3001423519</span>
+          </div>
+          <div class="linha">
+            <span class="linha__rotulo">Forma de pagamento</span>
+            <span class="linha__valor">PIX</span>
+          </div>
+          <hr class="divisor">
+          <div class="autenticacao">
+            <span class="autenticacao__rotulo">Código de autenticação</span>
+            <span class="autenticacao__codigo" id="codigo-autenticacao">4734 4849 0000 78</span>
+          </div>
+          <button class="botao botao--copiar" type="button" data-action="copiar">Copiar código</button>
+          <p class="aviso-ficticio">Demonstração com dados fictícios: nenhuma cobrança real foi feita.</p>
+        </div>
+      </section>
+
+      <!-- Próximos passos do cliente. -->
+      <section class="secao" aria-labelledby="passos-titulo">
+        <h2 id="passos-titulo" class="secao__titulo">Próximos passos</h2>
+        <ol class="cartao timeline">
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">1</span>
+            <div class="etapa__texto">
+              <p class="etapa__titulo">Comprovante a caminho</p>
+              <p class="etapa__desc">Enviamos por e-mail e WhatsApp em até 5 minutos.</p>
+            </div>
+          </li>
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">2</span>
+            <div class="etapa__texto">
+              <p class="etapa__titulo">Próxima fatura: abril/26</p>
+              <p class="etapa__desc">Vence em 05/04/2026. Avisamos você 5 dias antes.</p>
+            </div>
+          </li>
+          <li class="etapa">
+            <span class="etapa__numero" aria-hidden="true">3</span>
+            <div class="etapa__texto">
+              <p class="etapa__titulo">Ative o PIX Automático</p>
+              <p class="etapa__desc">A fatura é paga sozinha no vencimento.</p>
+              <button class="etapa__link" type="button" data-action="pix-automatico">Quero ativar</button>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Retorno à área de faturas e apoio. -->
+      <section class="acoes">
+        <button class="botao botao--primario" type="button" data-action="comprovante">Baixar comprovante</button>
+        <button class="botao botao--secundario" type="button" data-action="faturas">Voltar para minhas faturas</button>
+        <div class="cartao suporte">
+          <p class="suporte__texto">Pagamento não apareceu no seu banco?</p>
+          <button class="suporte__link" type="button" data-action="suporte">Fale com a gente pelo WhatsApp</button>
+        </div>
+      </section>
+
+      <p class="screen-feedback" id="screen-feedback" role="status" aria-live="polite"></p>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item is-active" type="button" data-tab="faturas" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
+        <span>Faturas</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="consumo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
+        <span>Consumo</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="indicacoes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
+        <span>Indicações</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="../assets/js/hu06.js"></script>
+</body>
+</html>
