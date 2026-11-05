@@ -33,9 +33,13 @@
   document.querySelectorAll('nav [data-tab]').forEach(function (tab) {
     tab.addEventListener('click', function (event) {
       // Faturas abre o resumo; as demais áreas ainda não foram implementadas.
-      if (tab.dataset.tab === 'faturas') return;
+      if (tab.dataset.tab === 'faturas') {
+        window.location.href = 'hu01-resumo-primeira-fatura.html';
+        return;
+      }
       event.preventDefault();
       document.querySelectorAll('nav [data-tab]').forEach(function (item) {
+        item.classList.toggle('is-active', item === tab);
         if (item === tab) item.setAttribute('aria-current', 'page');
         else item.removeAttribute('aria-current');
       });
@@ -45,5 +49,17 @@
       navFeedbackTimeout = setTimeout(function () {
         navFeedback.hidden = true;
       }, 3200);
+    });
+  });
+  document.querySelector('[data-action="back"]').addEventListener('click', function () {
+    if (window.history.length > 1) window.history.back();
+    else window.location.href = '../index.html';
+  });
+  document.querySelectorAll('[data-action="notifications"], [data-action="profile"]').forEach(function (control) {
+    control.addEventListener('click', function () {
+      navFeedback.textContent = control.dataset.action === 'profile' ? 'Perfil de Marina Souza.' : 'Você não tem novas notificações.';
+      navFeedback.hidden = false;
+      clearTimeout(navFeedbackTimeout);
+      navFeedbackTimeout = setTimeout(function () { navFeedback.hidden = true; }, 3200);
     });
   });

@@ -2,21 +2,30 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bulbe Acompanha — Pagamento via PIX</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/hu04.css">
+<link rel="stylesheet" href="../assets/css/app-shell.css">
 </head>
-<body>
-<div class="app">
-  <header class="topo">
-    <button class="ib" aria-label="Voltar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
-    <span class="logo" aria-label="Bulbe">bulbe<svg width="13" height="24" viewBox="0 0 13 24" aria-hidden="true"><path d="M2 6.5 11 2" stroke="#2BB673" stroke-width="3" stroke-linecap="round"/><path d="M2 13h9" stroke="#2F6BFF" stroke-width="3" stroke-linecap="round"/><path d="m2 19 8 4" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/></svg></span>
-    <div class="dir">
-      <button class="ib" aria-label="Notificações"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 1 1 12 0c0 6 2 7 2 7H4s2-1 2-7Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></button>
-      <button class="av" aria-label="Minha conta">M</button>
-    </div>
-  </header>
+<body class="app-page">
+<div class="app app-shell" aria-label="Aplicativo Bulbe">
+    <header class="app-header">
+      <button class="icon-button" type="button" data-action="back" aria-label="Voltar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+      </button>
+
+      <a class="brand" href="../index.html" aria-label="Bulbe, página inicial">
+        <span class="brand-name">bulbe</span><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-action="notifications" aria-label="Notificações">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg>
+        </button>
+        <button class="profile-button" type="button" data-action="profile" aria-label="Perfil de Marina">M</button>
+      </div>
+    </header>
 
   <main>
     <section class="card">
@@ -74,20 +83,20 @@
     </section>
   </main>
 
-  <nav aria-label="Navegação principal">
-    <a href="hu01-resumo-primeira-fatura.html" data-tab="faturas" aria-current="page">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6Z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>
-      Faturas
-    </a>
-    <a href="#consumo" data-tab="consumo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6Z"/></svg>
-      Consumo
-    </a>
-    <a href="#indicacoes" data-tab="indicacoes">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.8-3.6 3.4-5.2 6.5-5.2s5.7 1.6 6.5 5.2M19 8v6M16 11h6"/></svg>
-      Indicações
-    </a>
-  </nav>
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item is-active" type="button" data-tab="faturas" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM15 3v4h4M9 12h6M9 16h6" /></svg>
+        <span>Faturas</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="consumo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-8 12h6l-1 8 8-12h-6z" /></svg>
+        <span>Consumo</span>
+      </button>
+      <button class="nav-item" type="button" data-tab="indicacoes">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" /><path d="M5 21a7 7 0 0 1 14 0M18 8h4M20 6v4" /></svg>
+        <span>Indicações</span>
+      </button>
+    </nav>
   <p id="nav-feedback" role="status" aria-live="polite" hidden></p>
 </div>
 
