@@ -15,7 +15,7 @@ Implementação da sexta tela da solução, a partir do wireframe aprovado
 | `assets/css/hu06.css` | Estilos do conteúdo da tela. Cabeçalho, área rolável e rodapé vêm de `app-shell.css`. |
 | `assets/js/hu06.js` | Leitura da fatura, cópia do código de autenticação e navegação do rodapé. |
 
-Nenhum arquivo compartilhado foi alterado, para não conflitar com os PRs #28, #40 e #41, que estão abertos.
+Cabeçalho, logo e rodapé reutilizam os recursos compartilhados, sem alterações em `app-shell.css`.
 
 ## O que a tela faz
 
@@ -48,9 +48,8 @@ diz explicitamente que a confirmação é uma demonstração com dados fictício
 
 ## Pendências
 
-- O retorno para faturas aponta para `index.html` enquanto a tela da HU01 não está
-  na `main` (PR #41). Depois do merge, passa a apontar para
-  `pages/hu01-resumo-primeira-fatura.html`.
+- O botão de retorno abre `pages/hu01-resumo-primeira-fatura.html`, já integrada.
+  O rodapé apenas alterna o item ativo, sem popup nem mudança de tela.
 - Baixar comprovante, PIX Automático e suporte por WhatsApp exibem mensagem de
   estado, sem ação real, e dependem da integração do MVP (issues #35 a #38).
 - A linha da HU06 na tabela de status do `README.md` não foi alterada aqui para

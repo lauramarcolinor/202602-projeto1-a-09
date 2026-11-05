@@ -22,15 +22,7 @@
   font-size: 13px;
 }
 
-.status-pill {
-  display: inline-flex;
-  padding: 4px 7px;
-  border-radius: 4px;
-  background: var(--warning-bg);
-  color: var(--warning);
-  font-size: 12px;
-  line-height: 1.25;
-}
+
 
 .invoice-card,
 .composition-card {
@@ -167,13 +159,25 @@
   font-size: 12px;
 }
 
+.app-shell { position: relative; }
+
 .screen-feedback {
-  min-height: 18px;
-  margin: 10px 4px 0;
+  position: absolute;
+  bottom: 88px;
+  left: 16px;
+  right: 16px;
+  margin: 0;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px #0002;
+  pointer-events: none;
   color: var(--bulbe-blue);
   font-size: 12px;
   text-align: center;
 }
+.screen-feedback:empty { display: none; }
 
 .sr-only {
   position: absolute;

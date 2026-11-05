@@ -28,6 +28,19 @@
     "valorOriginal": 386.45,
     "economia": 42.03,
     "status": "aberta",
-    "pixCopiaECola": "PIX-FICTICIO-HU01-0003"
+    "pixCopiaECola": "PIX-FICTICIO-HU01-0003",
+    "composicao": {
+      "energia": 354.83,
+      "iluminacaoPublica": 27.01,
+      "pisCofins": 4.61
+    },
+    "demonstracao": {
+      "titular": "Marina Souza",
+      "instalacao": "3001423519",
+      "autenticacao": "4734 4849 0000 78",
+      "pagamentoEm": "2026-03-03T14:32:00-03:00",
+      "proximaReferencia": "abril/26",
+      "proximoVencimento": "2026-04-05"
+    }
   }
 ]

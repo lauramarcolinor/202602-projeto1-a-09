@@ -5,7 +5,7 @@
 const BASE = new URL('../../data/', import.meta.url);
 
 async function lerJSON(arquivo) {
-  const resposta = await fetch(new URL(arquivo, BASE));
+  const resposta = await fetch(new URL(arquivo, BASE), { cache: 'no-store' });
   if (!resposta.ok) {
     throw new Error(`Erro ao carregar ${arquivo}: ${resposta.status}`);
   }

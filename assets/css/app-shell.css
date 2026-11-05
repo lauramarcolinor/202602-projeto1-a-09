@@ -31,6 +31,12 @@ a {
   font: inherit;
 }
 
+input,
+select,
+textarea {
+  font-family: var(--font);
+}
+
 button {
   border: 0;
 }
@@ -44,7 +50,7 @@ button {
 
 /* Estrutura compartilhada: cabeçalho fixo, conteúdo rolável e rodapé fixo. */
 .app-shell {
-  width: min(100%, 375px);
+  width: min(100%, 320px);
   height: min(667px, calc(100dvh - 48px));
   min-height: 0;
   display: grid;
@@ -60,7 +66,7 @@ button {
   height: 72px;
   min-height: 72px;
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr) 84px;
+  grid-template-columns: 88px minmax(0, 1fr) 88px;
   align-items: center;
   padding: 0 16px;
   background: var(--bulbe-blue);
@@ -87,7 +93,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 0;
 }
 
 .icon-button,
@@ -101,8 +107,8 @@ button {
 }
 
 .icon-button {
-  width: 30px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
 }
 
 .icon-button svg,
@@ -117,6 +123,7 @@ button {
 }
 
 .profile-button {
+  position: relative;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -125,6 +132,8 @@ button {
   font-size: 15px;
   font-weight: 750;
 }
+.profile-button::after { content: ''; position: absolute; inset: -5px; }
+.header-actions .profile-button { margin-inline: 5px; }
 
 .screen-content {
   min-height: 0;
@@ -177,7 +186,7 @@ button {
   }
 
   .app-shell {
-    width: 100%;
+    width: min(100%, 320px);
     height: 100dvh;
     min-height: 0;
   }
@@ -185,12 +194,12 @@ button {
 
 @media (max-width: 340px) {
   .app-header {
-    grid-template-columns: 74px minmax(0, 1fr) 74px;
+    grid-template-columns: 88px minmax(0, 1fr) 88px;
     padding-inline: 12px;
   }
 
   .header-actions {
-    gap: 4px;
+    gap: 0;
   }
 
   .screen-content {
@@ -219,3 +228,25 @@ button {
     padding-top: 18px;
   }
 }
+
+/* Status compartilhado: mesmo formato e cores da HU01. */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 7px;
+  border: 0;
+  border-radius: 4px;
+  background: #fff5e8;
+  color: #a75406;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.status-pill.is-paid { color: #087b52; background: #d9f4e8; }
+.app-shell { position: relative; }
+.app-feedback { position: absolute; z-index: 2; bottom: 88px; left: 12px; right: 12px; padding: 12px; margin: 0; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--ink); font: 12px/1.4 var(--font); box-shadow: 0 4px 16px #0002; pointer-events: none; }
+.app-feedback:empty { display: none; }
+button:disabled { cursor: not-allowed; opacity: .6; }
+[hidden] { display: none !important; }
+.demo-pending { background: #fff5e8; color: #a75406; }

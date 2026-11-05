@@ -1,0 +1,55 @@
+:root{--azul:#08068D;--titulo:#11167F;--texto:#1A1F5C;--suave:#4D5375;--borda:#DDE1EE;--verde:#0B7F4B}
+*{box-sizing:border-box}
+body{margin:0;background:#EEF0F7;font-family:var(--font);color:var(--texto)}
+button{font-family:inherit;cursor:pointer}
+.app{width:100%;max-width:320px;height:100dvh;margin:0 auto;min-height:0;background:var(--azul);display:grid;grid-template-rows:72px minmax(0,1fr) 80px;overflow:hidden}
+main{min-height:0;min-width:0;overflow-y:auto;background:#fff;padding:16px;display:flex;flex-direction:column;gap:14px}
+main > *{flex-shrink:0;min-width:0}
+.card{border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
+h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
+.linha{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card > .linha{flex-direction:column}
+.card > .linha > .status-pill{white-space:nowrap}
+.sub{margin:4px 0 0;font-size:13px;color:var(--suave)}
+.rot{font-size:11px;font-weight:700;text-transform:uppercase}
+.de{font-size:15px;font-weight:700;color:#6B7194;text-decoration:line-through}
+.desc{background:#DDF3E6;color:var(--verde);border-radius:6px;padding:10px 12px;font-size:14px;font-weight:700}
+.total{font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--titulo);line-height:1.1}
+.venc{font-size:17px;font-weight:800;color:var(--titulo)}
+.pix{display:flex;gap:10px;align-items:center}
+.pix p{margin:0;font-size:12px;color:var(--suave)}
+.pix-i{width:38px;height:38px;border-radius:10px;background:#E8F7EF;display:flex;align-items:center;justify-content:center;flex:none}
+.qr{align-self:center;width:214px;height:214px;padding:12px;border:2px solid var(--borda);border-radius:12px}
+.qr svg{width:100%;height:100%}
+.nota{align-self:center;font-size:12px;color:#5B6178;text-align:center}
+.ou{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#5B6178}
+.ou::before,.ou::after{content:"";flex:1;height:1px;background:var(--borda)}
+.cod{background:#EDEBF8;border-radius:8px;padding:12px;margin:6px 0 0;font:12.5px/1.5 var(--font);word-break:break-all}
+.btn{height:52px;border-radius:8px;font-size:15px;font-weight:700;width:100%;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.b1{border:0;background:var(--azul);color:#fff}
+.b2{border:2px solid var(--azul);background:#fff;color:var(--azul);height:48px;font-size:14px}
+.info{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--suave);margin-top:6px}
+.passo{display:flex;gap:12px}
+.n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.passo b{display:block;font-size:15px}
+.passo span{font-size:13px;color:var(--suave);line-height:1.45}
+.depois{background:#E8F7EF;border:1px solid #BFE5D0;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
+.depois h2{color:#0B5E38}
+.depois ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.depois li{display:flex;gap:10px;font-size:14px;line-height:1.45}
+.depois li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--verde);margin-top:7px}
+.ret{margin:0;text-align:center;font-size:13px;color:var(--suave)}
+.duv{background:#F3F4FB;border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.duv-i{width:44px;height:44px;border-radius:50%;border:2px solid var(--azul);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--azul)}
+.duv-t{flex:1;min-width:140px}
+.duv-t b{display:block;font-size:15px;color:var(--titulo)}
+.duv-t span{font-size:13px;color:var(--suave)}
+.duv .btn{width:auto;height:48px;padding:0 14px;font-size:13px}
+@media(max-width:360px){.duv .btn{width:100%}.qr{width:190px;height:190px}.total{font-size:36px}}
+@media(min-width:421px){body{min-height:100dvh;display:grid;place-items:center;padding:24px}.app{height:min(667px,calc(100dvh - 48px));border-radius:24px}}
+@media(max-height:680px) and (min-width:421px){body{padding:8px}.app{height:min(667px,calc(100dvh - 16px))}}
+.app{position:relative}
+#nav-feedback{position:absolute;bottom:88px;left:16px;right:16px;margin:0;padding:12px;border:1px solid var(--borda);border-radius:8px;background:#fff;color:var(--texto);font-size:13px;box-shadow:0 4px 16px #0002;pointer-events:none}
+
+/* Mantém a tipografia dos cartões; header e rodapé usam app-shell.css. */
+main{font-family:var(--font)}

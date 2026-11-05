@@ -1,0 +1,104 @@
+/* Escala compartilhada: referência visual da HU01 (Laura).
+   Carregado por último para que estilos de uma HU não mudem a hierarquia. */
+.app-page main {
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.app-page main h1 {
+  color: var(--bulbe-blue);
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.45px;
+}
+
+.app-page main h2:not(.sr-only):not(.rotulo):not(#referencia-fatura) {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.15px;
+}
+
+.app-page main [data-field="referencia"],
+.app-page main .subtitulo {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.app-page main .confirmacao [data-field="referencia"] { color: inherit; }
+
+.app-page main :is(.total-value, .valor-por, .total, p.valor, .valor__total) {
+  color: var(--bulbe-blue);
+  font-size: 36px;
+  font-weight: 780;
+  line-height: 1;
+  letter-spacing: -1.6px;
+}
+
+.app-page main :is(.rot, .rotulo, .rotulo-caps, .total-label, .label-row, .due-date > span, .vencimento-rotulo, .vencimento > .legenda) {
+  color: #5d6d8d;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.app-page main :is(.original-value, .valor-de, .de, .valor__de) {
+  color: #67758f;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.app-page main :is(.due-date strong, .vencimento-data, .data, .venc, .vencimento-resumo) {
+  color: var(--bulbe-blue-dark);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.discount-row, .desc, .economia, .valor__desconto) {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.texto-cinza, .descricao, .legenda, .composition-card p, .passo span, .etapa__desc, .linha__rotulo, .suporte__texto) {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+.app-page main :is(.nota, .rodape-aviso, .aviso-ficticio, .acoes p) {
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.primary-button, .btn-primario, .botao-principal, .b1, .primario, .botao--primario) {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.app-page main :is(.secondary-button, .btn-secundario, .b2, .secundario, .botao--secundario, .botao--copiar) {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+@media (max-width: 340px) {
+  .app-page main :is(.total-value, .valor-por, .total, p.valor, .valor__total) { font-size: 32px; }
+}
