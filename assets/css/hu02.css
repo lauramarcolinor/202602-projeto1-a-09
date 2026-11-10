@@ -87,7 +87,7 @@
 .valor-por {
   font-size: 30px;
   font-weight: 700;
-  color: #0D0A99;
+  color: var(--bulbe-blue);
   margin: 4px 0 0;
 }
 
@@ -150,7 +150,7 @@
 .passo-titulo {
   font-size: 12.5px;
   font-weight: 600;
-  color: #0D0A99;
+  color: var(--bulbe-blue);
   margin-bottom: 2px;
 }
 
@@ -183,7 +183,7 @@
 .total {
   font-size: 24px;
   font-weight: 700;
-  color: #0D0A99;
+  color: var(--bulbe-blue);
 }
 
 .vencimento-resumo {

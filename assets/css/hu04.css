@@ -1,4 +1,4 @@
-:root{--azul:#08068D;--titulo:#11167F;--texto:#1A1F5C;--suave:#4D5375;--borda:#DDE1EE;--verde:#0B7F4B}
+:root{--azul:#08068D;--titulo:#08068D;--texto:#3E4D5B;--suave:#536679;--borda:#DDE1EE;--verde:#0B7F4B}
 *{box-sizing:border-box}
 body{margin:0;background:#EEF0F7;font-family:var(--font);color:var(--texto)}
 button{font-family:inherit;cursor:pointer}

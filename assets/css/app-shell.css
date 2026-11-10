@@ -1,12 +1,41 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/poppins/Poppins-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/poppins/Poppins-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  --bulbe-blue: #0b0a91;
-  --bulbe-blue-dark: #080777;
-  --ink: #17234f;
-  --muted: #667493;
+  --bulbe-blue: #08068d;
+  --bulbe-blue-dark: #08068d;
+  --ink: #3e4d5b;
+  --muted: #536679;
   --canvas: #f3f7fc;
   --line: #cbdaf1;
   --radius-shell: 26px;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -236,8 +265,8 @@ button {
   padding: 4px 7px;
   border: 0;
   border-radius: 4px;
-  background: #fff5e8;
-  color: #a75406;
+  background: #e6f1fe;
+  color: #054894;
   font-family: var(--font);
   font-size: 12px;
   font-weight: 400;
