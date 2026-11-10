@@ -9,6 +9,8 @@ const passos = document.querySelector('[aria-labelledby="passos-titulo"]');
 const valor = document.querySelector('[aria-labelledby="valor-titulo"]');
 const baixar = document.querySelector('[data-action="comprovante"]');
 const copiar = document.querySelector('[data-action="copiar"]');
+let copiaTimer;
+let copiando = false;
 const pagoEm = document.querySelector('#valor-pago-em');
 const vencia = document.querySelector('#valor-vencia');
 function pendente() {
@@ -22,8 +24,21 @@ function pendente() {
 pendente();
 document.querySelector('[data-action="faturas"]').addEventListener('click', () => irPara('resumo'));
 copiar.addEventListener('click', async () => {
-  try { await copiarTexto(document.querySelector('#codigo-autenticacao').textContent.trim()); avisar('Código fictício copiado.'); }
-  catch { avisar('Não foi possível copiar. Selecione o código manualmente.'); }
+  if (copiando) return;
+  copiando = true;
+  clearTimeout(copiaTimer);
+  copiar.textContent = 'Copiando…';
+  try {
+    await copiarTexto(document.querySelector('#codigo-autenticacao').textContent.trim());
+    copiar.textContent = 'Código copiado!';
+    avisar('Código fictício copiado.');
+  } catch {
+    copiar.textContent = 'Não foi possível copiar';
+    avisar('Não foi possível copiar. Selecione o código manualmente.');
+  } finally {
+    copiando = false;
+    copiaTimer = setTimeout(() => { copiar.textContent = 'Copiar código'; }, 3500);
+  }
 });
 baixar.addEventListener('click', () => {
   const linhas = [
