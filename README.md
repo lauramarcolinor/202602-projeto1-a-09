@@ -1,149 +1,157 @@
 # Bulbe Acompanha
 
-> Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026
-> Cliente: **Bulbe Energia** · Turma **A** · Squad **09**
+> Projeto em Ciência de Dados I · Ibmec BH · 2º semestre de 2026<br>
+> Bulbe Energia · Turma A · Squad 09
 
-Demonstração web para ajudar o cliente novo a entender e pagar a primeira fatura da Bulbe, mostrando o valor, a composição, o vencimento, as formas de pagamento e a confirmação simulada da transação.
+Protótipo web mobile-first para ajudar uma pessoa que acabou de se tornar cliente da Bulbe a entender a primeira fatura e percorrer, de forma demonstrativa, as etapas de escolha do pagamento até a confirmação simulada.
 
----
+> **Importante:** este projeto acadêmico usa dados fictícios. Não realiza cobranças, pagamentos, envio de e-mails ou mensagens, nem contato real com suporte.
 
-## 1. Problema
+## Demonstração
 
-O cliente novo pode ter dificuldade para entender e pagar a primeira fatura da Bulbe. A falta de clareza sobre o valor, a composição, o vencimento e as formas de pagamento pode gerar atrasos.
+A página inicial (`index.html`) redireciona para o resumo da primeira fatura. Para testar o fluxo, inicie a aplicação por um servidor local conforme as instruções abaixo; abrir os arquivos diretamente com `file://` não permite carregar os dados JSON com `fetch`.
 
-- **Dor escolhida:** dificuldade para compreender e pagar a primeira fatura.
-- **Evidência:** o indicador de inadimplência da primeira fatura é de 32,4%. Fonte: Bulbe Energia. *Bulbe & Ibmec*, set. 2026, slide 4 (indicador de primeira fatura: set. 2025 a jul. 2026).
-- **Indicador que a solução pretende mover:** pagamento da primeira fatura.
+## Problema e objetivo
 
-## 2. Persona e jornada
+A primeira fatura pode ser difícil de entender: o cliente precisa identificar o total, o desconto, a composição, o vencimento e como pagar. A proposta organiza essas informações em uma jornada curta, explica o valor da cobrança e deixa claro quando uma ação é apenas uma simulação.
 
-- **Persona principal documentada:** Marina Alves, 29 anos, cliente no primeiro mês da Bulbe, que precisa compreender o serviço e pagar corretamente sua primeira fatura.
-- **Mapa de jornada:** [docs/jornada.md](docs/jornada.md)
+- **Dor priorizada:** dificuldade para compreender e pagar a primeira fatura.
+- **Evidência registrada no projeto:** indicador de inadimplência da primeira fatura de 32,4%, atribuído à apresentação *Bulbe & Ibmec*, set. 2026, slide 4 (período indicado: set. 2025 a jul. 2026).
+- **Objetivo do protótipo:** facilitar a compreensão da cobrança e demonstrar o caminho de pagamento; o protótipo não mede impacto real sobre inadimplência.
 
-## 3. Solução
+## Persona e artefatos do projeto
 
-A demonstração em HTML, CSS e JavaScript conecta as seis telas definidas a partir do mapa de jornada e das histórias de usuário. O fluxo principal vai do resumo da primeira fatura à confirmação simulada do pagamento; o lembrete pode ser acessado pelo sino.
+- **Persona:** Marina Alves, 29 anos, cliente no primeiro mês da Bulbe. Os dados exibidos na demonstração são fictícios.
+- [Mapa de jornada](docs/jornada.md)
+- [Histórias de usuário e critérios de aceite](docs/historias.md)
+- [Wireframes das seis telas](docs/wireframes/)
+- [Documentação da integração do fluxo](docs/sprints/integracao-navegacao.md)
+- [Documentação das telas HU05 e HU06](docs/sprints/)
+- [Issues do repositório](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues) · [Quadro do projeto](https://github.com/users/lauramarcolinor/projects/2/views/1)
 
-| Tela | O que faz | História relacionada |
+## Telas e fluxo
+
+| Etapa | Tela | O que a pessoa pode fazer |
 | --- | --- | --- |
-| Resumo da primeira fatura | Apresenta o valor total e a situação da primeira cobrança. | [HU01 — visualizar o resumo da primeira fatura](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/12) |
-| Detalhes e vencimento | Explica a composição da fatura e destaca a data de vencimento. | [HU02 — entender a composição e o vencimento](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/13) |
-| Formas de pagamento | Apresenta as opções disponíveis para quitar a fatura. | [HU03 — consultar formas de pagamento](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/10) |
-| Pagamento via PIX | Orienta o cliente no pagamento por PIX. | [HU04 — realizar pagamento via PIX](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/15) |
-| Lembrete de vencimento | Permite acompanhar o prazo e receber um lembrete. | [HU05 — receber lembrete de vencimento](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/11) |
-| Confirmação do pagamento | Informa se o pagamento foi realizado e confirmado. | [HU06 — confirmar o pagamento realizado](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues/14) |
+| HU01 | [Resumo da primeira fatura](pages/hu01-resumo-primeira-fatura.html) | Conferir total, desconto, vencimento e situação; avançar para detalhes ou formas de pagamento. |
+| HU02 | [Composição e vencimento](pages/hu02-composicao-vencimento.html) | Entender os componentes usados no cálculo e consultar o vencimento. |
+| HU03 | [Formas de pagamento](pages/hu03-formas-pagamento.html) | Ver opções e selecionar uma forma; nesta entrega, somente PIX segue para a próxima etapa. |
+| HU04 | [Pagamento via PIX](pages/hu04-pagamento-pix.html) | Ver um QR ilustrativo e copiar um código PIX fictício; opcionalmente, iniciar a simulação. |
+| HU05 | [Lembrete de vencimento](pages/hu05-lembrete-vencimento.html) | Consultar a fatura e confirmar o recebimento do lembrete, sem alterar o estado do pagamento. |
+| HU06 | [Confirmação do pagamento](pages/hu06-confirmacao-pagamento.html) | Consultar a confirmação fictícia após a simulação e baixar um comprovante demonstrativo. |
 
-- **Histórias de usuário:** [docs/historias.md](docs/historias.md)
-- **Wireframes:** [docs/wireframes/](docs/wireframes/)
+Fluxo principal: **HU01 → HU02 (opcional) → HU03 → HU04 → HU06**. O lembrete **HU05** é acessado pelo sino e pode ser visitado sem interromper o fluxo de pagamento. Depois de confirmar o recebimento do lembrete, a pessoa permanece na tela e pode escolher **Ver fatura** para voltar à HU01.
 
-As histórias de usuário e a integração do protótipo são acompanhadas pelas [issues do projeto](https://github.com/lauramarcolinor/202602-projeto1-a-09/issues) e pelo [quadro do GitHub Projects](https://github.com/users/lauramarcolinor/projects/2/views/1).
+O botão Voltar tem destinos definidos para as etapas. A navegação inferior apenas muda o destaque da aba; não abre outras telas. A composição detalhada da fatura é expandida dentro da HU02.
 
-## 4. Tecnologias
+## Dados e limites da simulação
 
-- HTML, CSS e JavaScript puro (vanilla)
-- Dados fictícios em JSON, lidos com `fetch` (pasta [`data/`](data/))
-- Git e GitHub (Issues, Projects e Pull Requests)
+- As páginas carregam `data/faturas.json` e `data/clientes.json` por `fetch`; a integração não usa backend nem API de pagamentos.
+- O cenário principal usa a fatura fictícia de ID `103`: valor original **R$ 386,45**, desconto **R$ 42,03**, total **R$ 344,42** e vencimento **05/03/2026**.
+- A composição do JSON é validada antes da exibição. Se os dados não carregarem ou forem inconsistentes, as ações que dependem deles ficam bloqueadas, sem inventar valores de reserva.
+- `sessionStorage` guarda, apenas na sessão da aba, a forma escolhida, o recebimento do lembrete e a simulação. A simulação PIX atualiza o estado exibido nas telas; não altera o JSON nem contata banco.
+- Apenas PIX tem caminho demonstrativo até a confirmação. Boleto, cartões e PIX Automático não iniciam um pagamento real nem têm o fluxo completo implementado.
+- O QR Code é ilustrativo e não escaneável. Copiar o código não paga a fatura.
+- O comprovante baixado é um arquivo demonstrativo local. Ativação de PIX Automático, perfil, suporte e envio de notificações não realizam ações externas.
 
-## 5. Como executar
+## Tecnologias
 
-1. Clone o repositório:
+- HTML5, CSS3 e JavaScript nativo (módulos ES), sem framework.
+- JSON local carregado com `fetch`.
+- `sessionStorage` para estado temporário da demonstração.
+- Node.js `node:test` para testes automatizados da lógica de estado, navegação e cópia.
+- GitHub para versionamento, issues, pull requests e quadro do projeto.
+
+## Como executar
+
+### Opção 1 — VS Code e Live Server
+
+1. Clone o repositório e abra a pasta no VS Code:
+
    ```bash
    git clone https://github.com/lauramarcolinor/202602-projeto1-a-09.git
+   cd 202602-projeto1-a-09
    ```
-2. Abra a pasta no VS Code.
-3. Instale a extensão **Live Server** no VS Code.
-4. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
 
-### Testar a navegação integrada
+2. Instale/ative a extensão **Live Server**.
+3. Abra `index.html` e escolha **Open with Live Server**.
+4. A página inicial deve encaminhar para HU01. Se necessário, abra `pages/hu01-resumo-primeira-fatura.html` pelo mesmo servidor.
 
-Com o servidor local em execução, abra `pages/hu01-resumo-primeira-fatura.html` e siga o fluxo:
+### Opção 2 — servidor HTTP com Python
 
-1. Em HU01, abra **Ver detalhes** para consultar HU02; a composição da cobrança pode ser aberta nessa tela.
-2. Use **Escolher forma de pagamento** para chegar à HU03. PIX é a opção com fluxo completo nesta demonstração.
-3. Em HU04, use **Simular confirmação do pagamento** para abrir HU06. O botão apenas registra uma simulação local; não realiza cobrança real.
-4. Use **Voltar para minhas faturas** para retornar a HU01 e conferir o estado pago da simulação.
-5. O sino abre HU05. **Confirmar recebimento** registra apenas o recebimento do lembrete; **Ver fatura** retorna a HU01.
-6. Teste os controles de voltar em cada etapa e recarregue a página para conferir a persistência da sessão.
-
-Para iniciar um servidor sem a extensão, com Python 3 instalado, execute na raiz do projeto:
+Com Python 3 instalado, execute na raiz do projeto:
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Nesse caso, abra [HU01 no servidor local](http://127.0.0.1:4173/pages/hu01-resumo-primeira-fatura.html). Confira a fatura fictícia de ID 103 em `data/faturas.json`: valor original de R$ 386,45, desconto de R$ 42,03, total de R$ 344,42 e vencimento em 05/03/2026. Detalhes técnicos e limites da demonstração estão em [docs/sprints/integracao-navegacao.md](docs/sprints/integracao-navegacao.md).
+Então acesse [HU01 no servidor local](http://127.0.0.1:4173/pages/hu01-resumo-primeira-fatura.html). Para encerrar o servidor, use `Ctrl+C` no terminal.
 
-> As páginas devem ser abertas por um servidor. Abrir o HTML diretamente por duplo clique (`file://`) impede o carregamento dos dados com `fetch`.
+## Roteiro de teste manual
 
-## 6. Estrutura do repositório
+1. Em HU01, confira total, desconto, vencimento e status **Em aberto**.
+2. Abra **Ver detalhes da fatura** e confira a composição na HU02; use **Escolher forma de pagamento**.
+3. Em HU03, selecione PIX e continue. Selecione outra opção para conferir o aviso de que ela não tem próxima etapa implementada.
+4. Em HU04, confirme que o QR é identificado como fictício, copie o código e confira o retorno visual. Copiar não deve marcar a fatura como paga.
+5. Acione **Simular confirmação do pagamento**. Em HU06, confira o selo de simulação, o valor e os dados fictícios; teste copiar o código de autenticação e baixar o comprovante demonstrativo.
+6. Volte para minhas faturas e confira que HU01 mostra **Paga · simulação** na mesma sessão.
+7. Use o sino para abrir HU05. Confirme o recebimento e verifique que a confirmação aparece sem rolar automaticamente para outra parte e sem marcar a fatura como paga. **Ver fatura** deve retornar a HU01.
+8. Teste Voltar, a navegação inferior, o layout em largura de 320 px e o console do navegador.
 
-As seis telas da demonstração ficam em `pages`; estrutura, estilos e lógica compartilhados ficam em `assets`.
+## Testes automatizados
 
-```text
-├── index.html                         # Base de demonstração
-├── pages/
-│   ├── exemplo.html                   # Modelo inicial de página
-│   └── hu01–hu06-*.html               # Seis telas da demonstração
-├── assets/
-│   ├── css/
-│   │   ├── style.css                  # Página inicial de demonstração
-│   │   ├── app-shell.css              # Estrutura compartilhada do aplicativo
-│   │   ├── typography.css              # Hierarquia tipográfica compartilhada
-│   │   └── hu01–hu06.css               # Estilos específicos de cada tela
-│   ├── js/
-│   │   ├── main.js                    # Lógica da página inicial
-│   │   ├── api.js, navigation.js       # Leitura de dados e navegação compartilhada
-│   │   ├── demo-state.js               # Dados e estado da demonstração
-│   │   └── hu01–hu06.js                # Ações específicas de cada tela
-│   └── img/compartilhado/             # Logos Bulbe em SVG
-├── data/                              # Dados fictícios em JSON
-├── docs/
-│   ├── jornada.md                     # Persona e mapa de jornada
-│   ├── historias.md                   # HU01 a HU06 e critérios de aceite
-│   ├── wireframes/                    # Seis telas e mapa exportados
-│   └── sprints/                       # Orientações e evidências das reviews
-└── .github/                           # Modelos de Issue/PR e CODEOWNERS
+Requer Node.js. Na raiz do projeto, execute:
+
+```bash
+node --test --test-isolation=none tests/demo-state.test.mjs
 ```
 
-### Padrão compartilhado das telas
+Os testes cobrem consistência dos dados, separação entre lembrete e pagamento, exigência de seleção PIX para simular, persistência/idempotência do estado, falhas de armazenamento e rede, resolução de rotas e cópia de texto. Na última verificação registrada neste README, **11 testes passaram**. Os testes automatizados não substituem a conferência visual e manual nos navegadores.
 
-Todas as HUs devem carregar `assets/css/app-shell.css` antes do CSS específico da tela e usar a mesma estrutura de cabeçalho, conteúdo central e navegação inferior. O padrão define cabeçalho de 72 px, rodapé de 80 px e logo de 100 × 30 px.
+## Estrutura do repositório
 
-A logo branca para o cabeçalho azul está em `assets/img/compartilhado/logo-bulbe-branca.svg`; a versão azul, para fundos claros, está em `assets/img/compartilhado/logo-bulbe.svg`. Essas versões foram integradas pelo [PR #39](https://github.com/lauramarcolinor/202602-projeto1-a-09/pull/39). O cabeçalho compartilhado mantém a logo centralizada.
+```text
+├── index.html
+├── pages/                         # HU01–HU06 e exemplo inicial
+├── assets/
+│   ├── css/                       # Estilos compartilhados e por tela
+│   ├── js/                        # Navegação, dados/estado e lógica por tela
+│   └── img/                       # Logos e imagens ilustrativas
+├── data/                          # Clientes e faturas fictícias em JSON
+├── tests/                         # Testes automatizados Node.js
+├── docs/
+│   ├── jornada.md
+│   ├── historias.md
+│   ├── wireframes/                # Wireframes e instruções do padrão visual
+│   └── sprints/                   # Notas de implementação e integração
+└── .github/                       # Modelos de issue/PR e CODEOWNERS
+```
 
-O modelo completo de HTML e as instruções de uso estão em [docs/wireframes/README.md](docs/wireframes/README.md#padrão-compartilhado-do-aplicativo).
+O cabeçalho, a navegação inferior e as regras tipográficas compartilhadas estão em `assets/css/app-shell.css` e `assets/css/typography.css`. Cada tela tem seu CSS e JavaScript próprios (`hu01` a `hu06`), enquanto `assets/js/navigation.js` e `assets/js/demo-state.js` centralizam navegação e estado compartilhados.
 
-Cada integrante implementa e testa sua tela na própria branch, abre um PR e solicita revisão. A implementação deve entrar na `main` pelo merge do PR.
+## Equipe
 
-## 7. Quadro do projeto
+Cada integrante teve uma história/tela como foco principal. A atribuição indica responsabilidade principal, não autoria exclusiva; decisões de fluxo, revisões, testes e integração são colaborativos.
 
-- **GitHub Projects:** [Quadro do projeto](https://github.com/users/lauramarcolinor/projects/2/views/1)
-
-## 8. Equipe
-
-| Integrante | GitHub | Entrega sob responsabilidade principal |
+| Integrante | GitHub | Foco principal |
 | --- | --- | --- |
-| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | HU01 — resumo da primeira fatura; integração da navegação e validação conjunta das telas. |
+| Laura Marcolino | [@lauramarcolinor](https://github.com/lauramarcolinor) | HU01 — resumo da primeira fatura; integração da navegação e validação conjunta. |
 | Alice Aroeira | [@alicearoeira](https://github.com/alicearoeira) | HU02 — composição da fatura e vencimento. |
 | Bruna Sanches | [@brunassanchess](https://github.com/brunassanchess) | HU03 — escolha da forma de pagamento. |
 | Manuella Ferreira | [@manufpinheiro](https://github.com/manufpinheiro) | HU04 — pagamento via PIX. |
 | Maria Clara | [@mariaclarag23](https://github.com/mariaclarag23) | HU05 — lembrete de vencimento. |
 | Julia Dumont | [@juliamelodumont](https://github.com/juliamelodumont) | HU06 — confirmação do pagamento. |
 
-Cada integrante teve uma tela/história como foco principal; portanto, as responsabilidades não são todas iguais. A definição do fluxo, o padrão visual compartilhado, a integração, os testes e as revisões são atividades colaborativas. As atribuições indicam responsabilidade principal, não autoria exclusiva de todas as decisões ou alterações relacionadas à tela.
+## Estado das entregas
 
-## 9. Entregas
+- **Mapa de jornada, histórias e wireframes:** documentados em `docs/`.
+- **Implementação:** seis telas e fluxo demonstrativo integrados na `main` (PR #45).
+- **Testes automatizados:** 11 testes existentes passaram na última execução descrita acima.
+- **Critérios de aceite:** registrados em `docs/historias.md`; as caixas representam requisitos e não foram marcadas como validação final apenas porque issues foram encerradas.
+- **Sprint Reviews:** os arquivos de registro das reviews ainda não estão presentes em `docs/sprints/`; não são declarados como entregues neste README.
 
-| Marco | Aula | Status |
-| --- | --- | --- |
-| Mapa de jornada | 19 | Concluído — documentação e imagem versionadas. |
-| Histórias de usuário | 20 | Concluído — seis histórias e responsáveis registrados. |
-| Wireframes | 21–23 | Concluído — seis telas exportadas em `docs/wireframes/`. |
-| Sprint Review I | 24 | A review ocorreu; o registro ainda precisa ser versionado em `docs/sprints/`. |
-| Implementação | 25–28 | As seis telas e o fluxo demonstrativo HU01–HU06 estão integrados na `main` (PR #45). As issues #29–#38 foram encerradas; esse status não substitui a validação individual dos critérios de aceite. |
-| Sprint Review II | 29 | Pendente de registro em `docs/sprints/`. |
-| Versão final | 30 | Pendente — concluir a validação do fluxo e registrar a entrega final. |
+Consulte o [quadro do GitHub Projects](https://github.com/users/lauramarcolinor/projects/2/views/1) para o acompanhamento das tarefas. O estado do quadro e o fechamento de uma issue, isoladamente, não substituem evidências de teste ou validação dos critérios.
 
 ---
 
-> Todos os dados deste repositório são fictícios. Nenhum dado real de cliente da Bulbe Energia é utilizado.
+Todos os dados do protótipo são fictícios. Nenhum pagamento, cobrança, envio de notificação ou atendimento real é realizado.
