@@ -8,11 +8,12 @@
   --radius-card: 18px;
 }
 
-/* Menu de linhas finas da referência Bulbe, com área de toque preservada. */
+/* Menu alinhado à referência Bulbe, com área de toque preservada. */
 .menu-button svg {
   justify-self: start;
-  stroke-width: 1.2;
-  stroke-linecap: butt;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .screen-heading h1 {
@@ -87,12 +88,17 @@
   margin-top: 16px;
 }
 
-.total-value {
+.app-page main #total-value {
   color: var(--bulbe-blue);
   font-size: 36px;
-  font-weight: 780;
-  letter-spacing: -1.6px;
-  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.72px;
+  line-height: 44px;
+}
+
+.total-currency {
+  font-size: 16px;
+  letter-spacing: 0;
 }
 
 .due-date {

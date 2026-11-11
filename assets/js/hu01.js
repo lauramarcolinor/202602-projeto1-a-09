@@ -8,6 +8,13 @@ document.querySelector('[data-action="details"]').addEventListener('click', () =
 await carregarTela(async () => {
   const fatura = await buscarFaturaDemo();
   preencherFatura(fatura);
+  const total = document.querySelector('#total-value');
+  const valor = total.textContent.trim().replace(/^R\$\s*/, '');
+  const moeda = document.createElement('span');
+  moeda.className = 'total-currency';
+  moeda.textContent = 'R$ ';
+  total.textContent = valor;
+  total.prepend(moeda);
   paga = fatura.status === 'paga';
   document.querySelector('.total-label').textContent = paga ? 'Total pago na simulação' : 'Total a pagar';
   document.querySelector('[data-action="payment"]').disabled = false;
