@@ -19,9 +19,12 @@ A primeira fatura pode ser difícil de entender: o cliente precisa identificar o
 - **Evidência registrada no projeto:** indicador de inadimplência da primeira fatura de 32,4%, atribuído à apresentação *Bulbe & Ibmec*, set. 2026, slide 4 (período indicado: set. 2025 a jul. 2026).
 - **Objetivo do protótipo:** facilitar a compreensão da cobrança e demonstrar o caminho de pagamento; o protótipo não mede impacto real sobre inadimplência.
 
-## Persona e artefatos do projeto
+## Personas e artefatos do projeto
 
-- **Persona:** Marina Alves, 29 anos, cliente no primeiro mês da Bulbe. Os dados exibidos na demonstração são fictícios.
+- **Persona principal — Marina Alves, 29 anos:** cliente no primeiro mês da Bulbe; precisa entender a jornada após a adesão e como pagar corretamente a primeira fatura.
+- **Persona complementar — Renata Oliveira, 42 anos:** precisa entender a composição da fatura, o desconto e a lógica financeira do valor cobrado.
+
+As duas personas são fictícias. Marina orienta o fluxo principal do protótipo; Renata complementa a análise com foco na explicação dos valores. Os dados exibidos nas telas também são fictícios.
 - [Mapa de jornada](docs/jornada.md)
 - [Histórias de usuário e critérios de aceite](docs/historias.md)
 - [Wireframes das seis telas](docs/wireframes/)

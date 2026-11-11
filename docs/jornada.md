@@ -1,14 +1,22 @@
 # Mapa de jornada do usuário
 
-> Entregável da aula 19. A persona abaixo é fictícia e representa o cliente pessoa física no primeiro mês de relacionamento com a Bulbe Energia, com foco na compreensão e no pagamento da primeira fatura.
+> Entregável da aula 19. As personas abaixo são fictícias e representam necessidades relacionadas à compreensão da primeira fatura da Bulbe Energia.
 
-## Persona
+## Persona principal — Marina Alves
 
 - **Nome e idade:** Marina Alves, 29 anos
 - **Contexto:** Conheceu a Bulbe por indicação, aderiu ao serviço pela internet e está no primeiro mês como cliente. Recebeu ou aguarda sua primeira fatura.
 - **Objetivo:** Entender o valor, a composição e o vencimento da primeira fatura para escolher uma forma de pagamento e pagar dentro do prazo.
 - **Medos e dúvidas:** Não entender a cobrança, não saber como o valor foi calculado, perder o vencimento, não saber utilizar o PIX ou não receber a confirmação do pagamento.
 - **Canais que usa:** Site, WhatsApp e e-mail para consultar a fatura, receber lembretes e acompanhar o pagamento.
+
+## Persona complementar — Renata Oliveira
+
+- **Idade:** 42 anos
+- **Necessidade:** Entender a composição da fatura, o desconto aplicado e a lógica financeira do valor cobrado.
+- **Relação com a jornada:** Complementa o foco de Marina ao destacar a necessidade de explicar como o total da cobrança é formado.
+
+Marina orienta a jornada principal documentada abaixo. Renata amplia a análise com foco na transparência dos valores; por isso, seu perfil é resumido aos dados apresentados no material da apresentação, sem acrescentar características não documentadas.
 
 ## Mapa
 
