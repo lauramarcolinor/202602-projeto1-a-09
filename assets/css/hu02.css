@@ -129,7 +129,7 @@
   font-weight: 500;
   color: #087b52;
 }
-.economia strong { white-space: nowrap; font-weight: 750; }
+.economia strong { white-space: nowrap; font-weight: 600; }
 .resumo-fatura { margin-top: 17px; padding: 22px 19px; }
 .total-detalhes { margin-top: 16px; }
 .resumo-fatura .btn-primario { margin-top: 17px; margin-bottom: 0; }

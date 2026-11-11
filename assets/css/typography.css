@@ -1,9 +1,20 @@
-/* Escala compartilhada: referência visual da HU01 (Laura).
-   Carregado por último para que estilos de uma HU não mudem a hierarquia. */
+/*
+ * Tipografia compartilhada das seis telas, alinhada à referência do app Bulbe.
+ * A família local Poppins e os pesos 400/500/600/700 são definidos em app-shell.css.
+ * Cada regra abaixo ajusta apenas hierarquia tipográfica; espaçamento e layout
+ * continuam sob responsabilidade do CSS específico de cada HU.
+ */
+.app-page {
+  font-family: var(--font);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
 .app-page main {
   font-family: var(--font);
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
 }
 
 .app-page main h1 {
@@ -11,94 +22,183 @@
   font-family: var(--font);
   font-size: 22px;
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.45px;
+  line-height: 28px;
+  letter-spacing: -0.44px;
 }
 
-.app-page main h2:not(.sr-only):not(.rotulo):not(#referencia-fatura) {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.15px;
+.app-page main h2:not(.sr-only):not(.somente-leitor):not(.rotulo):not(#referencia-fatura) {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
 }
 
-.app-page main [data-field="referencia"],
-.app-page main .subtitulo {
+.app-page main #referencia-fatura {
   color: var(--muted);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.4;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
   letter-spacing: 0;
   text-transform: none;
 }
-.app-page main .confirmacao [data-field="referencia"] { color: inherit; }
 
-.app-page main :is(.total-value, .valor-por, .total, p.valor, .valor__total) {
-  color: var(--bulbe-blue);
-  font-size: 36px;
-  font-weight: 780;
-  line-height: 1;
-  letter-spacing: -1.6px;
+.app-page main :is(.subtitulo, .sub, [data-field="referencia"]) {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
-.app-page main :is(.rot, .rotulo, .rotulo-caps, .total-label, .label-row, .due-date > span, .vencimento-rotulo, .vencimento > .legenda) {
+.app-page main .confirmacao [data-field="referencia"] {
+  color: inherit;
+}
+
+/* Valores principais seguem o padrão Poppins SemiBold 36/44 da Bulbe. */
+.app-page main :is(.total-value, .valor-por, .total, p.valor, .valor__total) {
+  color: var(--bulbe-blue);
+  font-family: var(--font);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: -0.72px;
+}
+
+.app-page main #total-value {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 44px;
+  letter-spacing: -0.72px;
+}
+
+.app-page main #total-value .total-currency {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.rot, .rotulo, .rotulo-caps, .total-label, .label-row,
+  .due-date > span, .vencimento-rotulo, .vencimento > .legenda) {
   color: #5d6d8d;
-  font-size: 11px;
-  font-weight: 750;
-  line-height: 1.3;
-  letter-spacing: 0.35px;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.2px;
 }
 
 .app-page main :is(.original-value, .valor-de, .de, .valor__de) {
   color: #67758f;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 20px;
 }
 
 .app-page main :is(.due-date strong, .vencimento-data, .data, .venc, .vencimento-resumo) {
   color: var(--bulbe-blue-dark);
   font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 600;
+  line-height: 24px;
   letter-spacing: 0;
 }
 
 .app-page main :is(.discount-row, .desc, .economia, .valor__desconto) {
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 18px;
   letter-spacing: 0;
 }
 
-.app-page main :is(.texto-cinza, .descricao, .legenda, .composition-card p, .passo span, .etapa__desc, .linha__rotulo, .suporte__texto) {
+.app-page main :is(.discount-row strong, .economia strong, .valor-forte,
+  .valor-verde, .linha-forte, .linha__valor, .autenticacao__codigo,
+  .passo-titulo, .passo b, .texto-selecao, .linha-titulo strong, .duv-t b) {
+  font-weight: 600;
+}
+
+.app-page main :is(.valor-forte, .valor-verde, .linha-forte, .texto-selecao,
+  .passo-titulo, .passo b, .autenticacao__codigo) {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.app-page main .etapa__titulo {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.app-page main .confirmacao__titulo {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.texto-cinza, .descricao, .legenda, .sub, .subtitulo,
+  .composition-card p, .passo span, .etapa__desc, .linha__rotulo,
+  .suporte__texto, .info, .pix p, .vencimento-dia, .ret, .rodape) {
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.45;
-  letter-spacing: 0;
-}
-.app-page main :is(.nota, .rodape-aviso, .aviso-ficticio, .acoes p) {
-  font-size: 11px;
-  line-height: 1.45;
+  line-height: 18px;
   letter-spacing: 0;
 }
 
-.app-page main :is(.primary-button, .btn-primario, .botao-principal, .b1, .primario, .botao--primario) {
+.app-page main :is(.nota, .rodape-aviso, .aviso-ficticio, .acoes p) {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.primary-button, .btn-primario, .botao-principal,
+  .b1, .primario, .botao--primario) {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.secondary-button, .btn-secundario, .b2, .secundario,
+  .botao--secundario, .botao--copiar, .etapa__link, .suporte__link) {
   font-family: var(--font);
   font-size: 14px;
-  font-weight: 750;
-  line-height: 1.3;
-  letter-spacing: 0;
-}
-.app-page main :is(.secondary-button, .btn-secundario, .b2, .secundario, .botao--secundario, .botao--copiar) {
-  font-family: var(--font);
-  font-size: 13px;
-  font-weight: 750;
-  line-height: 1.3;
+  font-weight: 600;
+  line-height: 20px;
   letter-spacing: 0;
 }
 
-@media (max-width: 340px) {
-  .app-page main :is(.total-value, .valor-por, .total, p.valor, .valor__total) { font-size: 32px; }
+.app-page main :is(.status-pill, .selo) {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.app-page main :is(.card-titulo, .linha-titulo strong,
+  .secao__titulo, .mensagem h2, .alerta h2, .duv-t b) {
+  font-family: var(--font);
+  font-weight: 600;
+}
+
+.app-page :is(dialog, #nav-feedback, .screen-feedback, .app-feedback) {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.app-page dialog h2 {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.app-page :is(#nav-feedback, .screen-feedback, .app-feedback) {
+  font-size: 12px;
+  line-height: 18px;
 }

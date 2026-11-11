@@ -6,7 +6,7 @@ button{font-family:inherit;cursor:pointer}
 main{min-height:0;min-width:0;overflow-y:auto;background:#fff;padding:16px;display:flex;flex-direction:column;gap:14px}
 main > *{flex-shrink:0;min-width:0}
 .card{border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
-h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
+h1,h2{margin:0;font-size:17px;font-weight:700;color:var(--titulo)}
 .linha{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .card > .linha{flex-direction:column}
 .card > .linha > .status-pill{white-space:nowrap}
@@ -14,8 +14,8 @@ h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .rot{font-size:11px;font-weight:700;text-transform:uppercase}
 .de{font-size:15px;font-weight:700;color:#6B7194;text-decoration:line-through}
 .desc{background:#DDF3E6;color:var(--verde);border-radius:6px;padding:10px 12px;font-size:14px;font-weight:700}
-.total{font-size:40px;font-weight:800;letter-spacing:-1px;color:var(--titulo);line-height:1.1}
-.venc{font-size:17px;font-weight:800;color:var(--titulo)}
+.total{font-size:40px;font-weight:700;letter-spacing:-1px;color:var(--titulo);line-height:1.1}
+.venc{font-size:17px;font-weight:700;color:var(--titulo)}
 .pix{display:flex;gap:10px;align-items:center}
 .pix p{margin:0;font-size:12px;color:var(--suave)}
 .pix-i{width:38px;height:38px;border-radius:10px;background:#E8F7EF;display:flex;align-items:center;justify-content:center;flex:none}
@@ -30,7 +30,7 @@ h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .b2{border:2px solid var(--azul);background:#fff;color:var(--azul);height:48px;font-size:14px}
 .info{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--suave);margin-top:6px}
 .passo{display:flex;gap:12px}
-.n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center}
 .passo b{display:block;font-size:15px}
 .passo span{font-size:13px;color:var(--suave);line-height:1.45}
 .depois{background:#E8F7EF;border:1px solid #BFE5D0;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:14px}
@@ -41,7 +41,7 @@ h1,h2{margin:0;font-size:17px;font-weight:800;color:var(--titulo)}
 .depois li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--verde);margin-top:7px}
 .ret{margin:0;text-align:center;font-size:13px;color:var(--suave)}
 .duv{background:#F3F4FB;border:1px solid var(--borda);border-radius:8px;padding:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.duv-i{width:44px;height:44px;border-radius:50%;border:2px solid var(--azul);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:var(--azul)}
+.duv-i{width:44px;height:44px;border-radius:50%;border:2px solid var(--azul);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;color:var(--azul)}
 .duv-t{flex:1;min-width:140px}
 .duv-t b{display:block;font-size:15px;color:var(--titulo)}
 .duv-t span{font-size:13px;color:var(--suave)}
